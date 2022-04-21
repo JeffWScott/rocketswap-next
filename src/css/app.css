@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+	font-family: 'Poppins', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	
+	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
+	--primary-gradient-webkit: -webkit-linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
+	--secondary-gradient: linear-gradient(95.08deg, #CF69FC 2.49%, #AF05FA 48.36%, #8C04C8 97.19%);
+	--secondary-gradient-webkit: linear-gradient(95.08deg, #CF69FC 2.49%, #AF05FA 48.36%, #8C04C8 97.19%);
+
+	--pure-white: #ffffff;
+	--primary-color: #24FFBD;
+	--secondary-color: #A128FD;
+	--tertiary-color: #edf0f8;
+	--accent-color: #ff3e00;
+	--red-color: #ea4c1c;
+	--green-color: #24ffbd;
+
+
+
+	--background-color: #0E1621;
+	--panel-background-color: #1B2734;
+
+	--font-primary-color: #eaeaea;
+	--font-primary-color-dark: #908e8e;
+
+	--table-divider-color: #0E1621
+
+
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--font-primary-color);
+	font-style: normal;
+	font-weight: 200;
+	font-size: 0.85vw;
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h2{
+	font-weight: 300;
+	font-size: 1.6vw;	
+}
+
+.text-red{
+	color: var(--red-color);
+}
+
+.text-green{
+	color: var(--green-color);
+}
+
+.text-gradient-primary{
+	background: var(--primary-gradient);
+	background-clip: text;
+	background: var(--primary-gradient-webkit);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.link-primary{
+	color: var(--primary-color);
+}
+
+table{
+	background-color: var(--panel-background-color);
+	width: 100%;
+	font-size: 1.2vw;
+	border-spacing: 0;
+}
+
+table, th, td {
+	text-align: left;
+	padding: 0.5vw;
+}
+table, td, th{
+	font-weight: 200;
+}
+table, th {
+	border-bottom: 1px solid var(--table-divider-color);
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
