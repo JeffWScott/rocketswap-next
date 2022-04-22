@@ -1,19 +1,13 @@
 <script>
-    
-    import verified_token from '$lib/svg/verified_token.svg'
+    import TokenName from '$lib/misc-components/TokenName.svelte'
 
     // MOCK IMAGES
     import temp_chart from '$lib/mock_images/temp_chart.svg'
-
-    import token_logo_RSWP from '$lib/mock_images/token_logos/RSWP.svg'
-    import token_logo_WETH from '$lib/mock_images/token_logos/WETH.svg'
-    import token_logo_LUSD from '$lib/mock_images/token_logos/LUSD.svg'
 
     const mock_token_details = [
         {
             token_name: "Rocketswap",
             token_symbol: "RSWP",
-            token_logo: token_logo_RSWP,
             verified: true,
             price: "0.29446243",
             daily_price_change: "-6.04%",
@@ -23,7 +17,6 @@
         {
             token_name: "Wrapped Ethereum",
             token_symbol: "WETH",
-            token_logo: token_logo_WETH,
             verified: true,
             price: "24198.63315276",
             daily_price_change: "+4.38",
@@ -33,7 +26,6 @@
         {
             token_name: "Lamden USD",
             token_symbol: "LUSD",
-            token_logo: token_logo_LUSD,
             verified: true,
             price: "5.56118638",
             daily_price_change: "+1.87",
@@ -67,16 +59,8 @@
             {#each mock_token_details as token_details, index}
                 <tr>
                     <td>{index + 1}</td>
-                    <td >
-                        <div class="cell-token-name flex row align-center">
-                            <img src={token_details.token_logo} alt="token logo" class="token-logo" />
-                            {token_details.token_name} 
-                            <span>{token_details.token_symbol} </span>
-                            {#if token_details.verified}
-                                <img src={verified_token} alt="verified token" class="verified" />
-                            {/if}
-                        </div>
-
+                    <td>
+                        <TokenName token_name={token_details.token_name} token_symbol={token_details.token_symbol} is_verified={token_details.verified} />
                     </td>
                     <td>{token_details.price}</td>
                     <td class:text-red={is_negative(token_details.daily_price_change)} class:text-green={!is_negative(token_details.daily_price_change)}>{token_details.daily_price_change}</td>
@@ -96,19 +80,8 @@
     .top-token{
         padding-top: 2vw;
     }
-    img.token-logo{
-        width: 2.5vw;
-        margin-right: 2vw;
-    }
-    img.verified{
-        width: 1.5vw;
-        margin-left: 1vw;
-    }
+
     img.chart{
         width: 6vw;
-    }
-    .cell-token-name > span{
-        color: var(--font-primary-color-dark);
-        margin-left: 1vw;
     }
 </style>

@@ -89,6 +89,22 @@ table, th {
 	border-bottom: 1px solid var(--table-divider-color);
 }
 
+.cell-token-name > img.token-logo{
+	width: 2.5vw;
+	margin-right: 2vw;
+}
+.cell-token-name > img.verified{
+	width: 1.5vw;
+	margin-left: 1vw;
+}
+.cell-token-name > img.chart{
+	width: 6vw;
+}
+.cell-token-name > span{
+	color: var(--font-primary-color-dark);
+	margin-left: 1vw;
+}
+
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
