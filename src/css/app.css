@@ -17,15 +17,17 @@
 	--red-color: #ea4c1c;
 	--green-color: #24ffbd;
 
-
-
 	--background-color: #0E1621;
 	--panel-background-color: #1B2734;
 
 	--font-primary-color: #eaeaea;
 	--font-primary-color-dark: #908e8e;
 
-	--table-divider-color: #0E1621
+	--table-divider-color: #0E1621;
+
+	--checkbox-the-checkmark: var(--primary-color);
+    --checkbox-border: var(--primary-gradient);
+    --checkbox-bg: transparent;
 
 
 }
@@ -40,6 +42,11 @@ body {
 	font-size: 0.85vw;
 }
 
+select, button{
+	font-family: 'Poppins', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 #svelte {
 	min-height: 100vh;
 	display: flex;
@@ -49,6 +56,10 @@ body {
 h2{
 	font-weight: 300;
 	font-size: 1.6vw;	
+}
+
+.text-primary-color{
+	color: var(--primary-color);
 }
 
 .text-red{
@@ -76,18 +87,67 @@ table{
 	width: 100%;
 	font-size: 1.2vw;
 	border-spacing: 0;
+	border-radius: 1vw;
+    padding: 0.7vw 0 2.5vw;
+
+}
+
+th{
+    padding: 0.5vw 0 1.2vw 2vw;
+}
+
+td{
+    padding: 0.5vw 0 0.5vw 2vw;
 }
 
 table, th, td {
 	text-align: left;
-	padding: 0.5vw;
 }
 table, td, th{
-	font-weight: 200;
+	font-weight: 300;
 }
 table, th {
 	border-bottom: 1px solid var(--table-divider-color);
+
 }
+
+button.text{
+	background-color: transparent;
+	border: none;
+	padding: 0;
+    font-size: 1.15vw;
+    font-weight: 500;
+	line-height: 3vw;
+	letter-spacing: 0em;
+	cursor: pointer;	
+}
+
+button.text:hover{
+	text-decoration: underline;
+}
+
+button.white{
+	color: var(--font-primary-color);
+}
+
+button.primary-color{
+	color: var(--primary-color);
+}
+
+button.outlined{
+	border: none;
+	border-radius: 0.7vw;
+    font-size: 1.2vw;
+	padding: 0.15vw 0.2vw;
+	background: var(--primary-gradient);
+}
+
+button.outlined > div{
+	border-radius: 0.65vw;
+    background-color: var(--panel-background-color);
+    padding: 0.7vw 4.2vw;
+}
+
 
 .cell-token-name > img.token-logo{
 	width: 2.5vw;
@@ -100,7 +160,7 @@ table, th {
 .cell-token-name > img.chart{
 	width: 6vw;
 }
-.cell-token-name > span{
+.cell-token-name > div{
 	color: var(--font-primary-color-dark);
 	margin-left: 1vw;
 }

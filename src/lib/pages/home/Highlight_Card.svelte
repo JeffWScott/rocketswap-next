@@ -10,7 +10,7 @@
 
 <style>
     .highlight{
-        min-width: 25vw;
+        width: 30%;
         border-radius: 1vw;
         background-color: var(--panel-background-color);
         padding: 1vw;

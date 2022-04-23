@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.chk-container{
+    position: relative;
+}
+
+.chk-container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    transition: 0.5s border ease-in-out;
+    position: absolute;
+}
+
+.chk-container>span {
+    margin-right: 1vw;
+}
+
+.chk-checkmark {
+    position: relative;
+    margin-left:  0.1vw;
+    height: 1.7vw;
+    width:  1.7vw;
+    border: 0.1vw solid var(--primary-color);
+    color: red;
+}
+
+.chk-container:hover input~.chk-checkmark {
+    filter: brightness(125%);
+}
+
+.chk-container input:checked~.chk-checkmark {
+    background-color: var(--checkbox-bg);
+}
+
+.chk-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.chk-container input:disabled~.chk-checkmark {
+    background-color: blue;
+}
+
+.chk-container input:checked~.chk-checkmark:after {
+    display: block;
+}
+
+.chk-container .chk-checkmark:after {
+    position: relative;
+    left: 0.6vw;
+    top: 0.25vw;
+    width: 0.3vw;
+    height: 0.7vw;
+    border: solid var(--primary-color);
+    border-radius: 0.11vw;
+    border-width: 0 0.2vw 0.208vw 0;
+    -webkit-transform: rotate(49deg);
+    -ms-transform: rotate(49deg);
+    transform: rotate(49deg);
+}
+
+select{
+    padding: 1vw 2vw;
+    border: 1px solid var(--panel-background-color);
+    border-radius: 1vw;
+    font-size: 1.2vw;
+    font-weight: 200;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select > option{
+    padding: 0;
+    min-height: unset;
+    white-space: unset;
+    font-weight: 200;
+}
+
+
+/* For IE10 */
+select::-ms-expand {
+    display: none;
+}

@@ -1,8 +1,20 @@
 <script>
+    // Images
+    import filter_settings from '$lib/svg/filter-settings.svg'
+
+    // Components
     import TokenName from '$lib/misc-components/TokenName.svelte'
+    
+    //Stores
+    import {
+        show_low_liquidity_filter,
+        show_low_volume_filter,
+        show_unverified_filter} from '$lib/js/stores/filter-stores'
 
     // MOCK IMAGES
     import temp_chart from '$lib/mock_images/temp_chart.svg'
+
+    let top_token_filter_open = false
 
     const mock_token_details = [
         {
@@ -34,14 +46,49 @@
         }
     ]
 
-    function is_negative(str_value){
-        console.log(str_value)
-        return str_value.includes("-")
+    const is_negative = (str_value) => str_value.includes("-")
+
+    function toggle_top_token_filter(){
+        if (top_token_filter_open) top_token_filter_open = false
+        else{
+            top_token_filter_open = true
+        }
     }
+
 </script>
 
 <div class="top-token">
     <h2>Top Tokens</h2>
+
+    <div class="multiselect">
+        <div class="selectBox" on:click={toggle_top_token_filter}>
+            <select class:open={top_token_filter_open}>
+                <option>Filter</option>
+            </select>
+            <div class="flex flex-align-center overSelect">
+                <img src={filter_settings} alt="filter settings" class="settings-icon"/>
+            </div>
+            
+        </div>
+        <div id="checkboxes" class:open={top_token_filter_open}>
+            <label class="flex row chk-container align-center" class:checked={$show_low_liquidity_filter} id="chk-showLowLiquidity">
+                <input type="checkbox" bind:checked={$show_low_liquidity_filter} on:change={(e) => show_low_liquidity_filter.set(e.target.checked)}>
+                <span class="chk-checkmark chk-small"></span>
+                Show Low Liquidity
+            </label>
+            <label class="flex row chk-container align-center" class:checked={$show_low_volume_filter} id="chk-showLowVolume">
+                <input type="checkbox" bind:checked={$show_low_volume_filter} on:change={(e) => show_low_volume_filter.set(e.target.checked)}>
+                <span class="chk-checkmark chk-small"></span>
+                Show Low Volume
+            </label>
+            <label class="flex row chk-container align-center" class:checked={$show_unverified_filter} id="chk-showNotVerified">
+                <input type="checkbox" bind:checked={$show_unverified_filter} on:change={(e) => show_unverified_filter.set(e.target.checked)}>
+                <span class="chk-checkmark chk-small"></span>
+                Show Unverified Tokens
+            </label>
+            <button class="outlined white close-button" on:click={toggle_top_token_filter}><div>Close</div></button>
+        </div>
+    </div>
 
     <table>
         <thead>
@@ -83,5 +130,76 @@
 
     img.chart{
         width: 6vw;
+    }
+
+    label{
+        margin-top: 0.5vw;
+        margin-bottom: 0.5vw;
+        padding-left: 2vw;
+    }
+
+    .multiselect {
+        position: relative;
+        width: 20vw;
+        margin-bottom: 1vw;
+        font-size: 1.2vw;
+    }
+
+
+    select.open{
+        border-radius: 1vw 1vw 0 0;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+    .selectBox:hover > select {
+        cursor: pointer;
+    }
+
+    .selectBox select {
+        width: 100%;
+        background: var(--panel-background-color);
+        color: var(--font-primary-color);
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkboxes {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background: var(--panel-background-color);
+        border-radius: 0 0 1vw 1vw;
+        border-top: 1px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: 2vw;
+    }
+
+    #checkboxes.open{
+        display: block;
+    }
+
+    #checkboxes label:hover {
+        background-color: #1e90ff;
+    }
+    button{
+        display: block;
+        margin: 1.5vw auto 0;
+    }
+    .settings-icon{
+        width: 2.3vw;
+        font-weight: 600;
+        margin-left: 10px;
+        cursor: pointer;
+        margin: 0 1.2vw 0 auto;
     }
 </style>

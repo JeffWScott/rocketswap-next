@@ -5,6 +5,7 @@
 	import '../css/app.css';
 	import '../css/flex.css';
 	import '../css/layout.css';
+	import '../css/styled-defaults.css';
 </script>
 
 <Header />

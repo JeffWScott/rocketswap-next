@@ -22,7 +22,9 @@
 
 <style>
     .cards{
-        justify-content: space-between;
         box-sizing: border-box;
+    }
+    .cards:last-child{
+        margin-right: 0;
     }
 </style>
