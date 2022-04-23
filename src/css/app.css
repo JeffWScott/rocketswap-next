@@ -19,6 +19,7 @@
 
 	--background-color: #0E1621;
 	--panel-background-color: #1B2734;
+	--panel-background-highlight: #27384a;
 
 	--font-primary-color: #eaeaea;
 	--font-primary-color-dark: #908e8e;
@@ -146,8 +147,17 @@ button.outlined > div{
 	border-radius: 0.65vw;
     background-color: var(--panel-background-color);
     padding: 0.7vw 4.2vw;
+	cursor: pointer;
 }
 
+button.outlined > div:hover{
+	background-color: var(--panel-background-highlight);
+}
+
+button:active{
+	position: relative;
+	top: 0.1vw;
+}
 
 .cell-token-name > img.token-logo{
 	width: 2.5vw;

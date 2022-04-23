@@ -85,3 +85,11 @@ select > option{
 select::-ms-expand {
     display: none;
 }
+
+input.primary_input{
+    padding: 6px 10px;
+    font-size: 1.2vw;
+    background: var(--panel-background-color);
+    color: var(--font-primary-color);
+    border: none;
+}
