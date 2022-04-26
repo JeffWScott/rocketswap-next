@@ -259,19 +259,20 @@
     }
 
     input{
-        width: 15.8vw;
-        min-width: 142.25px;
+        width: inherit;
         font-size: var(--font-size-1_2);
         background: var(--panel-background-color);
         color: var(--font-primary-color);
         padding: var(--units-1_1625vw) var(--units-2vw);
         border: 1px solid var(--panel-background-color);
         border-radius: var(--units-1vw);
+        box-sizing: border-box;
     }
 
     @media (max-width: 480px) {
         .multiselect{
             width: 100%;
+            margin-right: 0;
         }
         .token-search{
             width: 100%;
