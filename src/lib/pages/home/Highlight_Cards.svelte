@@ -27,4 +27,10 @@
     .cards:last-child{
         margin-right: 0;
     }
+
+    @media (max-width: 480px) {
+        .cards{
+            flex-direction: column;
+        }
+    }
 </style>

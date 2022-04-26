@@ -5,22 +5,31 @@
 
 <div class="highlight flex col align-center">
     <img src="{temp_chart}" alt="temp_chart" />
-    <h2>{card_data.title}</h2>
+    <h3>{card_data.title}</h3>
 </div>
 
 <style>
     .highlight{
-        width: 30%;
+        text-align: center;
+        box-sizing: border-box;
+        width: 32%;
         border-radius: var(--units-1vw);
         background-color: var(--panel-background-color);
         padding: var(--units-1vw);
-        box-shadow: var(--panel-box-shadow);
+        box-shadow: var(--panel-box-shadow-shallow);
     }
     img{
         margin-top: var(--units-2vw);
         width: 70%;
     }
-    h2{
+    h3{
         margin: 0;
+    }
+
+    @media (max-width: 480px) {
+        .highlight{
+            width: 100%;
+            margin-bottom: var(--units-2vw);
+        }
     }
 </style>

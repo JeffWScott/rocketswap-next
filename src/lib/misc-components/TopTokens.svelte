@@ -90,8 +90,7 @@
 
 <div class="top-token">
     <h2>Top Tokens</h2>
-    <div class="flex row align-center">
-
+    <div class="flex row align-center wrap">
         <div class="multiselect">
             <div class="selectBox" on:click={toggle_top_token_filter}>
                 <select class:open={top_token_filter_open}>
@@ -255,7 +254,7 @@
         cursor: pointer;
         position: absolute;
         width: var(--units-2vw);
-        top: var(--units-08vw);
+        top: 25%;
         right: var(--units-1_4vw);
     }
 
@@ -270,7 +269,16 @@
         border-radius: var(--units-1vw);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
+        .multiselect{
+            width: 100%;
+        }
+        .token-search{
+            width: 100%;
 
+        }
+        input{
+            width: 100%;
+        }
     }
 </style>

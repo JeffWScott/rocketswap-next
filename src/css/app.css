@@ -60,6 +60,7 @@
 	--panel-background-color: #1B2734;
 	--panel-background-highlight: #27384a;
 	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 55%);
+	--panel-box-shadow-shallow: 0 var(--units-01vw) var(--units-01vw) 0 rgb(0 0 0 / 55%);
 
 	--font-primary-color: #eaeaea;
 	--font-primary-color-dark: #908e8e;
@@ -72,6 +73,8 @@
 }
 
 body {
+	overflow-y: scroll;
+
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--background-color);
@@ -79,6 +82,8 @@ body {
 	font-style: normal;
 	font-weight: 200;
 	font-size: var(--font-size-5);
+
+	-webkit-overflow-scrolling: touch;
 }
 
 select, button{
@@ -95,6 +100,11 @@ select, button{
 h2{
 	font-weight: 300;
 	font-size: var(--units-1_6vw);	
+}
+
+h3{
+	font-size: 1.8vw;
+	font-weight: 300;
 }
 
 .text-primary-color{
@@ -252,8 +262,7 @@ button:active{
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
 	}
 	body {
-	
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 	table{
 		width: 653.656px;
@@ -261,4 +270,8 @@ button:active{
 	.table-wrapper{
 		overflow-x: scroll;
 	}
+}
+
+@media (max-width: 480px) {
+
 }

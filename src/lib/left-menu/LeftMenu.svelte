@@ -89,12 +89,19 @@
         nav{
             padding-top:  53.76px;
             font-size: var(--font-size-fixed-768);
+            font-size: var(--units-09vw);
         }
         li img{
             margin-bottom: 2.307px;
         }
         li {
             margin: 15.38px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav{
+            display: none;
         }
     }
 </style>

@@ -103,7 +103,7 @@
 	
 	@media (max-width: 768px) {
         header{
-			font-size: var(--font-size-fixed-768);
+			font-size: var(--units-1vw);
         }
 		.corner.left{
 			width: 307.594px;

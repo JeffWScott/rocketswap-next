@@ -22,4 +22,16 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+
+	@media (max-width: 768px) {
+		main {
+			padding: 10vw 3vw 15vw 10vw;
+		}
+	}
+
+	@media (max-width: 480px) {
+		main {
+			padding: 55px 10vw 15vw;
+		}
+    }
 </style>
