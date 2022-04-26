@@ -127,43 +127,44 @@
         </div>
         
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Price TAU</th>
-                <th>24hr %</th>
-                <th>Volume (24hrs)</th>
-                <th>Liquidity</th>
-                <th>Last 7 Days</th>
-            </tr>
-        </thead>
-        <tbody>
-            {#each mock_token_details_filtered as token_details, index}
+    <div class="table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td>{index + 1}</td>
-                    <td>
-                        <TokenName token_name={token_details.token_name} token_symbol={token_details.token_symbol} is_verified={token_details.verified} />
-                    </td>
-                    <td>{token_details.price}</td>
-                    <td class:text-red={is_negative(token_details.daily_price_change)} class:text-green={!is_negative(token_details.daily_price_change)}>{token_details.daily_price_change}</td>
-                    <td>{token_details.daily_trade_volume}</td>
-                    <td>{token_details.liquidity}</td>
-                    <td>
-                        <img src={temp_chart} alt="last 7 days chart" class="chart"/>
-                    </td>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price TAU</th>
+                    <th>24hr %</th>
+                    <th>Volume (24hrs)</th>
+                    <th>Liquidity</th>
+                    <th>Last 7 Days</th>
                 </tr>
-            {/each}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {#each mock_token_details_filtered as token_details, index}
+                    <tr>
+                        <td>{index + 1}</td>
+                        <td>
+                            <TokenName token_name={token_details.token_name} token_symbol={token_details.token_symbol} is_verified={token_details.verified} />
+                        </td>
+                        <td>{token_details.price}</td>
+                        <td class:text-red={is_negative(token_details.daily_price_change)} class:text-green={!is_negative(token_details.daily_price_change)}>{token_details.daily_price_change}</td>
+                        <td>{token_details.daily_trade_volume}</td>
+                        <td>{token_details.liquidity}</td>
+                        <td>
+                            <img src={temp_chart} alt="last 7 days chart" class="chart"/>
+                        </td>
+                    </tr>
+                {/each}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
 <style>
     .top-token{
-        padding-top: 2vw;
+        padding-top: var(--units-2vw);
     }
 
     img.chart{
@@ -171,22 +172,13 @@
     }
 
     label{
-        margin-top: 0.5vw;
-        margin-bottom: 0.5vw;
-        padding-left: 2vw;
+        margin-top: var(--units-05vw);
+        margin-bottom: var(--units-05vw);
+        padding-left: var(--units-2vw);
     }
-
-    .multiselect {
-        position: relative;
-        width: 20vw;
-        margin-bottom: 1vw;
-        margin-right: 1vw;;
-        font-size: 1.2vw;
-    }
-
 
     select.open{
-        border-radius: 1vw 1vw 0 0;
+        border-radius: var(--units-1vw) var(--units-1vw) 0 0;
     }
 
     .selectBox {
@@ -211,16 +203,28 @@
         bottom: 0;
     }
 
+    .multiselect {
+        z-index: 2;
+        position: relative;
+        width: 20vw;
+        min-width: 175px;
+        margin-bottom: var(--units-1vw);
+        margin-right: var(--units-1vw);
+        font-size: var(--font-size-1_2);
+        box-shadow: var(--panel-box-shadow);
+    }
+
     #checkboxes {
+        z-index: -1;
         display: none;
         position: absolute;
-        z-index: 1;
         background: var(--panel-background-color);
-        border-radius: 0 0 1vw 1vw;
+        border-radius: 0 0 var(--units-1vw) var(--units-1vw);
         border-top: 1px;
         width: 100%;
         box-sizing: border-box;
-        padding-bottom: 2vw;
+        padding-bottom: var(--units-2vw);
+        box-shadow: var(--panel-box-shadow);
     }
 
     #checkboxes.open{
@@ -232,34 +236,41 @@
     }
     button{
         display: block;
-        margin: 1.5vw auto 0;
+        margin: var(--units-1_5vw) auto 0;
     }
     .settings-icon{
         width: 2.3vw;
+        min-width: 17.6797px;
         cursor: pointer;
-        margin: 0 1.2vw 0 auto;
+        margin: 0 var(--units-1_2vw) 0 auto;
     }
 
     .token-search{
         position: relative;
-        margin-bottom: 1vw;
+        margin-bottom: var(--units-1vw);
+        min-width: 175px;
     }
 
     .search-icon{
         cursor: pointer;
         position: absolute;
-        width: 2vw;
-        top: 0.8vw;
-        right: 1.4vw;
+        width: var(--units-2vw);
+        top: var(--units-08vw);
+        right: var(--units-1_4vw);
     }
 
     input{
         width: 15.8vw;
-        font-size: 1.2vw;
+        min-width: 142.25px;
+        font-size: var(--font-size-1_2);
         background: var(--panel-background-color);
         color: var(--font-primary-color);
-        padding: 1.1625vw 2vw;
+        padding: var(--units-1_1625vw) var(--units-2vw);
         border: 1px solid var(--panel-background-color);
-        border-radius: 1vw;
+        border-radius: var(--units-1vw);
+    }
+
+    @media (max-width: 768px) {
+
     }
 </style>

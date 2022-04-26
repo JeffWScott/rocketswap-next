@@ -19,11 +19,11 @@
 
 .chk-checkmark {
     position: relative;
-    margin-left:  0.1vw;
-    height: 1.7vw;
-    width:  1.7vw;
-    border: 0.1vw solid var(--primary-color);
-    color: red;
+    margin-left:  var(--units-01vw);
+    height: var(--units-1_7vw);
+    width:  var(--units-1_7vw);
+    border: var(--units-015vw) solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .chk-container:hover input~.chk-checkmark {
@@ -41,7 +41,7 @@
 }
 
 .chk-container input:disabled~.chk-checkmark {
-    background-color: blue;
+    background-color: var(--panel-background-highlight);
 }
 
 .chk-container input:checked~.chk-checkmark:after {
@@ -50,23 +50,23 @@
 
 .chk-container .chk-checkmark:after {
     position: relative;
-    left: 0.6vw;
-    top: 0.25vw;
-    width: 0.3vw;
-    height: 0.7vw;
+    left: var(--units-06vw);
+    top: var(--units-025vw);
+    width: var(--units-03vw);
+    height: var(--units-07vw);
     border: solid var(--primary-color);
-    border-radius: 0.11vw;
-    border-width: 0 0.2vw 0.208vw 0;
+    border-radius: var(--units-011vw);
+    border-width: 0 var(--units-02vw) var(--units-0208vw) 0;
     -webkit-transform: rotate(49deg);
     -ms-transform: rotate(49deg);
     transform: rotate(49deg);
 }
 
 select{
-    padding: 1vw 2vw;
+    padding: var(--units-1vw) var(--units-2vw);
     border: 1px solid var(--panel-background-color);
-    border-radius: 1vw;
-    font-size: 1.2vw;
+    border-radius: var(--units-1vw);
+    font-size: var(--font-size-1_2);
     font-weight: 200;
 
     -moz-appearance: none;
@@ -88,8 +88,13 @@ select::-ms-expand {
 
 input.primary_input{
     padding: 6px 10px;
-    font-size: 1.2vw;
+    font-size: var(--font-size-1_2);
     background: var(--panel-background-color);
     color: var(--font-primary-color);
     border: none;
+    box-shadow: var(--panel-box-shadow);
+}
+
+@media (max-width: 768px) {
+
 }

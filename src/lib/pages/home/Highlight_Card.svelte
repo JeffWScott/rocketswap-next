@@ -11,12 +11,13 @@
 <style>
     .highlight{
         width: 30%;
-        border-radius: 1vw;
+        border-radius: var(--units-1vw);
         background-color: var(--panel-background-color);
-        padding: 1vw;
+        padding: var(--units-1vw);
+        box-shadow: var(--panel-box-shadow);
     }
     img{
-        margin-top: 2vw;
+        margin-top: var(--units-2vw);
         width: 70%;
     }
     h2{

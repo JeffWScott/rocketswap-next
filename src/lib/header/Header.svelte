@@ -10,7 +10,7 @@
 <header class="flex">
 	<div class="corner left flex row">
 		<a href="https://rocketswap.exchange/" class="max-content">
-			<img src={logo_rocket} alt="Rocketswap" />
+			<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
 		</a>
 		<div class="flex row max-content">
 			<div class="ml-1 rocketswap">
@@ -45,6 +45,7 @@
 <style>
 	header {
 		position: fixed;
+		box-sizing: border-box;
 		top: 0;
 		left: 0;
 		width: 100vw;
@@ -52,9 +53,9 @@
 		display: flex;
 		justify-content: space-between;
 		background-color: var(--panel-background-color);
-		padding: 1.2vw 2vw 1.2vw 6vw;
-		height: 2.4vw;
-		min-height: 30px;
+		padding: var(--units-1_2vw) var(--units-2vw) var(--units-1_2vw) var(--units-6vw);
+		height: var(--units-5vw);
+		min-height: 38.5px;
 
 		box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
 		-webkit-box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
@@ -69,8 +70,11 @@
 	}
 
 	.corner.right{
-		padding: 0.4vw;
-		margin-right: 10vw;
+		width: var(--units-9vw);
+	}
+
+	.corner.left{
+		width: 40vw;
 	}
 
 	.corner img {
@@ -90,11 +94,19 @@
 
 	.rocketswap{
 		line-height: 0.8;
-		padding: 0.15vw;
+		padding: var(--units-015vw);
 	}
 
 	img.logo_medium{
 		height: 136%;
 	}
-
+	
+	@media (max-width: 768px) {
+        header{
+			font-size: var(--font-size-fixed-768);
+        }
+		.corner.left{
+			width: 307.594px;
+		}
+    }
 </style>

@@ -28,15 +28,15 @@
 
 <style>
     img.token-logo{
-        width: 2.5vw;
-        margin-right: 2vw;
+        width: var(--units-2_5vw);
+        margin-right: var(--units-2vw);
     }
     img.verified{
-        width: 1.5vw;
-        margin-left: 1vw;
+        width: var(--units-1_5vw);
+        margin-left: var(--units-1vw);
     }
     span{
         color: var(--font-primary-color-dark);
-        margin-left: 1vw;
+        margin-left: var(--units-1vw);
     }
 </style>

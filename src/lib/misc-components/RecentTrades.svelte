@@ -61,50 +61,50 @@
 
 <button tab-id=0 class:primary-color={active_tab === "0"} class="text white" on:click={change_tab}>Your Trades</button>
 <button tab-id=1 class:primary-color={active_tab === "1"} class="text white" on:click={change_tab}>All Trades</button>
-
-<table>
-    <thead>
-        <tr>
-            <th>Token</th>
-            <th>Amount</th>
-            <th>Type</th>
-            <th>Trade Price</th>
-            <th>Trade Value in TAU</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        {#each mock_recent_trades_filtered as recent_trade}
-            <tr>
-                <td><TokenName token_name={recent_trade.token_details.token_name} token_symbol={recent_trade.token_details.token_symbol} is_verified={recent_trade.token_details.verified} /></td>
-                <td>{recent_trade.amount}</td>
-                <td>{recent_trade.type}</td>
-                <td>{recent_trade.trade_price}</td>
-                <td>{recent_trade.trade_TAU_value}</td>
-                <td>{recent_trade.date}</td>
-            </tr>
-        {/each}
-    </tbody>
-</table>
-
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Trade Price</th>
+                    <th>Trade Value in TAU</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {#each mock_recent_trades_filtered as recent_trade}
+                    <tr>
+                        <td><TokenName token_name={recent_trade.token_details.token_name} token_symbol={recent_trade.token_details.token_symbol} is_verified={recent_trade.token_details.verified} /></td>
+                        <td>{recent_trade.amount}</td>
+                        <td>{recent_trade.type}</td>
+                        <td>{recent_trade.trade_price}</td>
+                        <td>{recent_trade.trade_TAU_value}</td>
+                        <td>{recent_trade.date}</td>
+                    </tr>
+                {/each}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <style>
     h2{
-        margin-bottom: 0.6vw;
+        margin-bottom: var(--units-06vw);
     }
     .recent-trades{
-        padding-top: 2vw;
+        padding-top: var(--units-2vw);
     }
     td{
-        padding-top: 1.2vw;
-        padding-bottom: 1.2vw;
+        padding-top: var(--units-1_2vw);
+        padding-bottom: var(--units-1_2vw);
     }
     button{
-        margin-right: 2vw;
+        margin-right: var(--units-2vw);
     }
     table{
-        margin-top: 0.6vw;
+        margin-top: var(--units-06vw);
     }
 
 </style>

@@ -49,8 +49,9 @@
         left: 0;
         z-index: 99;
         width: 5.2vw;
-        min-width: 60px;
-        height: 93vh;
+        min-width: 40px;
+
+        height: 100vh;
         background-color: var(--panel-background-color);
         padding: 7vw 0vw 0vw;
 
@@ -64,18 +65,36 @@
         box-sizing: border-box;
         padding: 0;
     }
+
+    ul:first-child{
+        margin-top: 0;
+    }
+
     li{
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         color: var(--primary-gradient);
-        margin: 1vw 0;
+        margin: 2vw 0;
+        overflow-wrap: normal;
     }
 
     li img{
-        width: 38%;
+        width: 32%;
         margin-bottom: 0.3vw;
     }
-    
+
+    @media (max-width: 768px) {
+        nav{
+            padding-top:  53.76px;
+            font-size: var(--font-size-fixed-768);
+        }
+        li img{
+            margin-bottom: 2.307px;
+        }
+        li {
+            margin: 15.38px 0;
+        }
+    }
 </style>
