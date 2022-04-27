@@ -1,45 +1,22 @@
 <script>
-    import icon_house from './icon-house.svg'
-    import icon_swap from './icon-swap.svg'
-    import icon_fuel from './icon-fuel.svg'
-    import icon_pool from './icon-pool.svg'
-    import icon_farm from './icon-farm.svg'
-    import icon_help from './icon-help.svg'
-    import icon_connect_wallet from './icon-connect-wallet.svg'
+    import { page } from '$app/stores';
+
+    import menu_icon_map from '$lib/config/menu-icons.js'
+    import menu_items from '$lib/config/menu-items.json'
+
+    $: current_route = $page.url.pathname
 </script>
 
-<nav id="left-menu" class="flex col align-center">
+<nav id="left-menu" class="desktop flex col align-center">
     <ul>
-        <li class="text-gradient-primary">
-            <img src={icon_house} alt="Home"/>
-            Home
-        </li>
-        <li>
-            <img src={icon_swap} alt="Home"/>
-            Swap
-        </li>
-        <li>
-            <img src={icon_fuel} alt="Home"/>
-            Fuel
-        </li>
-        <li>
-            <img src={icon_pool} alt="Home"/>
-            Pool
-        </li>
-        <li>
-            <img src={icon_farm} alt="Home"/>
-            Farm
-        </li>
-        <li>
-            <img src={icon_help} alt="Home"/>
-            Help
-        </li>
-        <li>
-            <img src={icon_connect_wallet} alt="Home"/>
-            Connect Wallet
-        </li>
+        {#each menu_items as menu_item}
+            <li class="text-gradient-primary"
+                class:text-gradient-primary={current_route.startsWith(menu_item.path)}>
+                <img src={menu_icon_map[menu_item.logo]} alt="{menu_item.name}"/>
+                {menu_item.name}
+            </li>
+        {/each}
     </ul>
-    
 </nav>
 
 <style>
@@ -96,12 +73,6 @@
         }
         li {
             margin: 15.38px 0;
-        }
-    }
-
-    @media (max-width: 480px) {
-        nav{
-            display: none;
         }
     }
 </style>

@@ -3,7 +3,7 @@
 
     const cards = [
         {
-            title: "$2.2 Million Trade Volume"
+            title: "$2.2M Total Traded Volume"
         },
         {
             title: "10.2M Total Trades"

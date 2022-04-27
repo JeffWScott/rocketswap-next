@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Home",
+        "logo": "icon_house",
+        "path" : "/"
+    },
+    {
+        "name": "Swap",
+        "logo": "icon_swap",
+        "path" : "/swap"
+    },
+    {
+        "name": "Fuel",
+        "logo": "icon_fuel",
+        "path" : "/fuel"
+    },
+    {
+        "name": "Pool",
+        "logo": "icon_pool",
+        "path" : "/pool"
+    },
+    {
+        "name": "Farm",
+        "logo": "icon_farm",
+        "path" : "/pool"
+    },
+    {
+        "name": "Help",
+        "logo": "icon_help",
+        "path" : "/help"
+    },
+    {
+        "name": "Connect Wallet",
+        "logo": "icon_connect_wallet",
+        "path": null
+    }
+]

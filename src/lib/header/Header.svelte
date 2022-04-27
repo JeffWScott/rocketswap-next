@@ -1,18 +1,22 @@
 <script>
-	import { page } from '$app/stores';
 	import logo_rocket from '$lib/svg/logo-rocket.svg';
 	import logo_rocketswap from '$lib/svg/logo-rocketswap.svg';
 	import logo_twitter from '$lib/svg/logo-twitter.svg';
 	import logo_medium from '$lib/svg/logo-medium.svg';
 	import logo_telegram from '$lib/svg/logo-telegram.svg';
+	import menu_burger from '$lib/header/menu-burger.svg';
+
+	// Utils
+	import { toggle_menu } from '$lib/mobile-menu/menu-functions'
+
 </script>
 
 <header class="flex">
 	<div class="corner left flex row">
-		<a href="https://rocketswap.exchange/" class="max-content">
+		<a href="https://rocketswap.exchange/" class="desktop max-content">
 			<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
 		</a>
-		<div class="flex row max-content">
+		<div class="desktop flex row max-content">
 			<div class="ml-1 rocketswap">
 				<a href="https://rocketswap.exchange/">
 					<img src={logo_rocketswap} alt="Rocketswap" />
@@ -23,13 +27,22 @@
 			<span class="inline-flex align-center ml-1 weight-300">
 				Powered by <a href="www.lamden.io" class="link-primary">Lamden</a>
 			</span>
-			
 		</div>
-
+		<div class="mobile flex col grow">
+			<a href="https://rocketswap.exchange/" class="rocketswap">
+				<img src={logo_rocketswap} alt="Rocketswap" />
+			</a>
+			<span class="inline-flex align-center ml-1 weight-300">
+				Powered by <a href="www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
+				TAU: $0.066 | RSWP: $0.016
+			</span>
+		</div>
 	</div>
 
-	<div class="corner right flex row align-center">
-		<!-- TODO put something else here? github link? -->
+	<div class="corner right flex row align-center mobile">
+		<img src={menu_burger} alt="menu" on:click={toggle_menu}/>
+	</div>
+	<div class="desktop corner right flex row align-center ">
 		<a href="https://twitter.com/RSwapOfficial" class="ml-1">
 			<img src={logo_telegram} alt="Telegram" />
 		</a>
@@ -107,6 +120,34 @@
         }
 		.corner.left{
 			width: 307.594px;
+		}
+    }
+
+	@media (max-width: 480px) {
+        header{
+			padding: 7vw 5vw;
+			height: unset;
+        }
+		
+		.corner a{
+			width: unset;
+			height: unset;
+		}
+		.corner.right{
+			width: 13vw;
+		}
+		.rocketswap{
+			width: 50vw;
+		}
+		.corner img{
+			height: unset;
+		}
+		.corner.left{
+			width: 100%;
+			font-size: var(--units-1vw);
+		}
+		.mobile .rocketswap{
+			width: 55vw;
 		}
     }
 </style>

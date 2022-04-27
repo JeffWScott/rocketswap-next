@@ -83,7 +83,7 @@
         if (show_unverified_filter){
             null
         }
-        console.log(return_list)
+
         return return_list
     }
 </script>
@@ -259,7 +259,7 @@
     }
 
     input{
-        width: inherit;
+        width: 100%;
         font-size: var(--font-size-1_2);
         background: var(--panel-background-color);
         color: var(--font-primary-color);
