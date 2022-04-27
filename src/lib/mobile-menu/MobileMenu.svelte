@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { page, navigating } from '$app/stores';
 
     import menu_icon_map from '$lib/config/menu-icons.js'
@@ -14,8 +16,6 @@
     // Utils
     import { close_menu } from '$lib/mobile-menu/menu-functions'
 
-    $: current_route = $page.url.pathname
-
     navigating.subscribe(close_menu)
 
 </script>
@@ -24,10 +24,17 @@
     <div class:open={$menu_open} class="menu">
         <ul>
             {#each menu_items as menu_item}
-                <li class:text-gradient-primary={current_route == menu_item.path}
-                >
+                <li class:text-gradient-primary={$page.url.pathname == menu_item.path}>
                     <a href="{menu_item.path}" class="flex row align-center" >
-                        <img src={menu_icon_map[menu_item.logo]} alt="{menu_item.name}"/>
+                        {#if $page.url.pathname == menu_item.path}
+                            <img src={menu_icon_map[menu_item.logo.concat('_color')]} 
+                                 alt="{menu_item.name}"
+                            />
+                        {:else}
+                            <img src={menu_icon_map[menu_item.logo]} 
+                                alt="{menu_item.name}"
+                            />
+                        {/if}
                         {menu_item.name}
                     </a>
                 </li>
@@ -88,7 +95,8 @@
     li{
         display: flex;
         color: var(--primary-gradient);
-        margin: 3vh 0;
+        padding: 1.5vh 0;
+        width: 100%;
     }
     li > a > img{
         margin-right: 5vw;

@@ -1,7 +1,7 @@
 [
     {
         "name": "Home",
-        "logo": "icon_house",
+        "logo": "icon_home",
         "path" : "/"
     },
     {
@@ -22,7 +22,7 @@
     {
         "name": "Farm",
         "logo": "icon_farm",
-        "path" : "/pool"
+        "path" : "/farm"
     },
     {
         "name": "Help",

@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import { enhance } from '$lib/form';
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
