@@ -11,7 +11,6 @@
     import logo_twitter from '$lib/svg/logo-twitter.svg';
 	import logo_medium from '$lib/svg/logo-medium.svg';
 	import logo_telegram from '$lib/svg/logo-telegram.svg';
-    import icon_connect_wallet from '$lib/svg/menu/icon-connect-wallet.svg'
 
     // Store
 	import { menu_open } from '$lib/js/stores/app-stores'

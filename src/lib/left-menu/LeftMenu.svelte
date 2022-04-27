@@ -1,7 +1,12 @@
 <script>
     import { page } from '$app/stores';
 
+    // Components
+    import ConnectButton from '$lib/misc-components/ConnectButton.svelte'
+
+    // Icons
     import menu_icon_map from '$lib/config/menu-icons.js'
+
     import menu_items from '$lib/config/menu-items.json'
 
     $: current_route = $page.url.pathname
@@ -10,12 +15,23 @@
 <nav id="left-menu" class="desktop flex col align-center">
     <ul>
         {#each menu_items as menu_item}
-            <li class="text-gradient-primary"
-                class:text-gradient-primary={current_route.startsWith(menu_item.path)}>
-                <img src={menu_icon_map[menu_item.logo]} alt="{menu_item.name}"/>
-                {menu_item.name}
+            <li class:active={current_route == menu_item.path}>
+                <a href="{menu_item.path}" class="flex col align-center">
+                    {#if $page.url.pathname == menu_item.path}
+                    <img src={menu_icon_map[menu_item.logo.concat('_color')]} 
+                         alt="{menu_item.name}"
+                    />
+                {:else}
+                    <img src={menu_icon_map[menu_item.logo]} 
+                        alt="{menu_item.name}"
+                    />
+                {/if}
+                    {menu_item.name}
+                </a>
             </li>
         {/each}
+        
+        <ConnectButton />
     </ul>
 </nav>
 
@@ -30,7 +46,7 @@
 
         height: 100vh;
         background-color: var(--panel-background-color);
-        padding: 7vw 0vw 0vw;
+        padding: 8.4vw 0vw 0vw;
 
         box-shadow: var(--panel-box-shadow);
         -webkit-box-shadow: var(--panel-box-shadow);
@@ -47,19 +63,36 @@
         margin-top: 0;
     }
 
-    li{
+    a{
         text-align: center;
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        color: var(--primary-gradient);
-        margin: 2vw 0;
+        color: var(--font-primary-color);
+        padding: 0.8vw 0;
+        margin: 0.3vw 0;
         overflow-wrap: normal;
     }
 
-    li img{
-        width: 32%;
+    li:hover:not(.active){
+        background-color: var(--panel-background-highlight);
+
+    }
+
+    a img{
+        width: 38%;
         margin-bottom: 0.3vw;
+    }
+
+    .active{
+        cursor: unset;
+    }
+
+    .active > a{
+        cursor: unset;
+        background: var(--primary-gradient);
+        background-clip: text;
+        background: var(--primary-gradient-webkit);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     @media (max-width: 768px) {
@@ -68,7 +101,7 @@
             font-size: var(--font-size-fixed-768);
             font-size: var(--units-09vw);
         }
-        li img{
+        a img{
             margin-bottom: 2.307px;
         }
         li {
