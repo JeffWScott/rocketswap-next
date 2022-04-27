@@ -10,7 +10,6 @@ import icon_farm from '$lib/svg/menu/icon-farm.svg'
 import icon_farm_color from '$lib/svg/menu/icon-farm-color.svg'
 import icon_help from '$lib/svg/menu/icon-help.svg'
 import icon_help_color from '$lib/svg/menu/icon-help-color.svg'
-import icon_connect_wallet from '$lib/svg/menu/icon-connect-wallet.svg'
 
 export default {
     icon_home, icon_home_color,
@@ -18,6 +17,5 @@ export default {
     icon_fuel, icon_fuel_color,
     icon_pool, icon_pool_color,
     icon_farm, icon_farm_color,
-    icon_help, icon_help_color,
-    icon_connect_wallet
+    icon_help, icon_help_color
 }

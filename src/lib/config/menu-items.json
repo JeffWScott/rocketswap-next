@@ -28,10 +28,5 @@
         "name": "Help",
         "logo": "icon_help",
         "path" : "/help"
-    },
-    {
-        "name": "Connect Wallet",
-        "logo": "icon_connect_wallet",
-        "path": null
     }
 ]

@@ -177,6 +177,9 @@ table, th {
 	border-bottom: 1px solid var(--table-divider-color);
 
 }
+button{
+	border: unset;
+}
 
 button.text{
 	background-color: transparent;

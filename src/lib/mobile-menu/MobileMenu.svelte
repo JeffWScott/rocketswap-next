@@ -1,14 +1,17 @@
 <script>
-// @ts-nocheck
-
     import { page, navigating } from '$app/stores';
 
-    import menu_icon_map from '$lib/config/menu-icons.js'
     import menu_items from '$lib/config/menu-items.json'
 
+    // Components
+    import ConnectButton from '$lib/misc-components/ConnectButton.svelte'
+
+    // Icons
+    import menu_icon_map from '$lib/config/menu-icons.js'
     import logo_twitter from '$lib/svg/logo-twitter.svg';
 	import logo_medium from '$lib/svg/logo-medium.svg';
 	import logo_telegram from '$lib/svg/logo-telegram.svg';
+    import icon_connect_wallet from '$lib/svg/menu/icon-connect-wallet.svg'
 
     // Store
 	import { menu_open } from '$lib/js/stores/app-stores'
@@ -39,6 +42,8 @@
                     </a>
                 </li>
             {/each}
+
+            <ConnectButton />
         </ul>
         <div class="socials flex align-center space-between">
             <a href="https://twitter.com/RSwapOfficial" >
@@ -61,7 +66,7 @@
         display: none;
         z-index: 9;
         background-color: var(--panel-background-color);
-        padding: 27vw 5vw 0;
+        padding: 30vw 2.5vw 0;
         width: 100vw;
         height: 100vh;
         box-sizing: border-box;
@@ -95,8 +100,14 @@
     li{
         display: flex;
         color: var(--primary-gradient);
-        padding: 1.5vh 0;
+    }
+    li > a{
+        padding: 1.5vh 2.5vw;
         width: 100%;
+    }
+    li:hover > a{
+        text-decoration: underline;
+        background-color: var(--panel-background-highlight);
     }
     li > a > img{
         margin-right: 5vw;
