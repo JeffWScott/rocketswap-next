@@ -2,10 +2,13 @@
     // Icons
     import icon_connect_wallet from '$lib/svg/menu/icon-connect-wallet.svg'
 
+    // Utils
+    import { close_menu } from '$lib/mobile-menu/menu-functions'
+
 </script>
 
 <li>
-    <button class="flex row align-center" >
+    <button class="flex row align-center" on:click={close_menu}>
         <img src={icon_connect_wallet} alt="Connect Wallet" />
         Connect Wallet
     </button>
