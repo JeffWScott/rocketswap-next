@@ -245,6 +245,7 @@
     }
 
     .token-search{
+        z-index: 2;
         position: relative;
         margin-bottom: var(--units-1vw);
         min-width: 175px;

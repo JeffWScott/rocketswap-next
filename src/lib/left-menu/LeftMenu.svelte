@@ -32,9 +32,9 @@
         background-color: var(--panel-background-color);
         padding: 7vw 0vw 0vw;
 
-        box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
-        -webkit-box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
-        -moz-box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
+        box-shadow: var(--panel-box-shadow);
+        -webkit-box-shadow: var(--panel-box-shadow);
+        -moz-box-shadow: var(--panel-box-shadow);
     }
 
     ul{

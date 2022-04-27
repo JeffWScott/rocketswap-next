@@ -58,10 +58,12 @@
 	--green-color: #24ffbd;
 
 	--background-color: #0E1621;
+
 	--panel-background-color: #1B2734;
 	--panel-background-highlight: #27384a;
-	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 55%);
-	--panel-box-shadow-shallow: 0 var(--units-01vw) var(--units-01vw) 0 rgb(0 0 0 / 55%);
+	--panel-box-shadow-high: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 40%);
+	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 20%);
+	--panel-box-shadow-shallow: 0 var(--units-01vw) var(--units-1vw) 0 rgb(0 0 0 / 20%);
 
 	--font-primary-color: #eaeaea;
 	--font-primary-color-dark: #908e8e;

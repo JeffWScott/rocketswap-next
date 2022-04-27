@@ -10,6 +10,7 @@
 
 <style>
     .highlight{
+        z-index: 0;
         text-align: center;
         box-sizing: border-box;
         width: 32%;

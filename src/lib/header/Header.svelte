@@ -70,9 +70,9 @@
 		height: var(--units-5vw);
 		min-height: 38.5px;
 
-		box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
-		-webkit-box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
-		-moz-box-shadow: -1px 3px 26px 15px rgba(0,0,0,0.31);
+        box-shadow: var(--panel-box-shadow-high);
+        -webkit-box-shadow: var(--panel-box-shadow-high);
+        -moz-box-shadow: var(--panel-box-shadow-high);
 	}
 
 	.corner a {

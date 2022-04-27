@@ -27,7 +27,7 @@
 -->
 <style>
 	main {
-		padding: 10vh 5vw 15vw 10vw;
+		padding: 7vmax 5vw 15vw 10vw;
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
