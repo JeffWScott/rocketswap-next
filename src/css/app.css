@@ -43,6 +43,7 @@
 	--units-6vw: 6vw;
 	--units-8vw: 8vw;
 	--units-9vw: 9vw;
+	--units-35vw: 34vw;
 
 	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
 	--primary-gradient-webkit: -webkit-linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
@@ -128,6 +129,9 @@ a:hover{
 
 .text-primary-color{
 	color: var(--primary-color);
+}
+.text-primary-color-dark{
+	color: var(--font-primary-color-dark);
 }
 
 .text-red{
@@ -246,6 +250,12 @@ button:active{
 	margin-left: var(--units-1vw);
 }
 
+.panel{
+	box-sizing: border-box;
+	border-radius: var(--units-1vw);
+	background-color: var(--panel-background-color);
+}
+
 
 @media (max-width: 768px) {
 	:root{
@@ -283,6 +293,7 @@ button:active{
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
 		--units-8vw: calc(var(--unit-base-1vw) * 8);
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
+		--units-34vw: calc(var(--unit-base-1vw) * 34);
 	}
 	body {
 		overflow-x: hidden;

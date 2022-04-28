@@ -3,7 +3,7 @@
     export let card_data;
 </script>
 
-<div class="highlight flex col align-center">
+<div class="highlight panel flex col align-center">
     <img src="{temp_chart}" alt="temp_chart" />
     <h3>{card_data.title}</h3>
 </div>
@@ -14,8 +14,6 @@
         text-align: center;
         box-sizing: border-box;
         width: 32%;
-        border-radius: var(--units-1vw);
-        background-color: var(--panel-background-color);
         padding: var(--units-1vw);
         box-shadow: var(--panel-box-shadow-shallow);
     }

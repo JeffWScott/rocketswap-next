@@ -12,41 +12,13 @@
         show_low_volume_filter,
         show_unverified_filter} from '$lib/js/stores/filter-stores'
 
-    // MOCK IMAGES
+    // MOCK DATA
     import temp_chart from '$lib/mock_images/temp_chart.svg'
+    import mock_token_details from '$lib/mock_data/token_info.json'
 
     let top_token_filter_open = false
     let search_text = ""
 
-    const mock_token_details = [
-        {
-            token_name: "Rocketswap",
-            token_symbol: "RSWP",
-            verified: true,
-            price: "0.29446243",
-            daily_price_change: "-6.04%",
-            daily_trade_volume: "82,191,88499",
-            liquidity: "7697691.75116"
-        },
-        {
-            token_name: "Wrapped Ethereum",
-            token_symbol: "WETH",
-            verified: true,
-            price: "24198.63315276",
-            daily_price_change: "+4.38",
-            daily_trade_volume: "228,911.42455",
-            liquidity: "5,273,724.58225"
-        },
-        {
-            token_name: "Lamden USD",
-            token_symbol: "LUSD",
-            verified: true,
-            price: "5.56118638",
-            daily_price_change: "+1.87",
-            daily_trade_volume: "328,739.80419",
-            liquidity: "3,296,091.61889"
-        }
-    ]
 
     let mock_token_details_filtered = apply_filters()
 
