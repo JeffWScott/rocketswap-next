@@ -2,9 +2,9 @@
     import swap_chart from '$lib/mock_images/swap_chart.svg'
 </script>
 
-<div class="swap-chart">
+<div class="flex col swap-chart">
     <h2>Price Chart</h2>
-    <div class="panel flex col space-between">
+    <div class="panel flex col grow-1 space-between">
         <p class="date-range">November 1 - December 15</p>
         <img src={swap_chart} alt="swap chart" />
         <div class="text-primary-color-dark">
@@ -23,8 +23,7 @@
         width: 49%;
     }
     div.panel{
-        height: var(--units-34vw);
-        padding: var(--units-1_1vw);
+        padding: var(--units-1vw) var(--units-1_5vw) var(--units-2vw);
     }
     img{
         width: 90%;
@@ -44,5 +43,11 @@
     p.token-price{
         font-size: var(--units-1_3vw);
         font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+        .swap-chart{
+            width: 100%;
+        }
     }
 </style>

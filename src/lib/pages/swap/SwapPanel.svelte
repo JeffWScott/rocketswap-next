@@ -1,6 +1,8 @@
 <script>
     // Componets
     import TokenDisplay from '$lib/pages/swap/TokenDisplay.svelte'
+    import SwapDetails from '$lib/pages/swap/SwapDetails.svelte';
+    import InputNumber from '$lib/inputs/InputNumber.svelte';
 
     // Images
     import icon_change_arrows from '$lib/svg/change-arrows.svg'
@@ -11,10 +13,10 @@
 
 <div class="swap-panel">
     <h2>Swap</h2>
-    <div class="panel flex col">
+    <div class="panel flex col space-between">
         From 
-        <div class="flex row align-center space-between">
-            <div class="token-display">
+        <div class="flex row space-between">
+            <div class="token-info-box">
                 <TokenDisplay 
                     token_name={from.token_name}
                     token_logo={from.token_logo} 
@@ -22,16 +24,16 @@
                 />
                 <span>Price 0.1510419 TAU per LUSD</span>
             </div>
-            <div class="flex col">
-                <input class="number_input" />
+            <div class="input-box flex col">
+                <InputNumber />
                 <span>Balance: 100 TAU</span>
             </div>
 
         </div>
-        <img src={icon_change_arrows} alt="change tokens">
+        <img class="swap-arrow" src={icon_change_arrows} alt="change tokens">
         To 
-        <div class="flex row align-center space-between">
-            <div class="token-display">
+        <div class="flex row space-between">
+            <div class="token-info-box">
                 <TokenDisplay 
                     token_name={to.token_name}
                     token_logo={to.token_logo} 
@@ -39,15 +41,22 @@
                 />
                 <span>Price 0.1510419 LUSD per TAU</span>
             </div>
-            <div class="flex col">
-                <input class="number_input" />
+            <div class="input-box flex col">
+                <InputNumber />
                 <span class="flex row space-between">
                     Balance: 100 LUSD
                     <a href="/pools" >Add Liquidity</a>
                 </span>
-                
             </div>
+
         </div>
+        <SwapDetails />
+        <button class="outlined primary white"> 
+            <div>
+                CONNECT WALLET
+            </div>
+        </button>
+
     </div>
 </div>
 
@@ -56,15 +65,13 @@
         width: 49%;
     }
     div.panel{
+        color: var(--font-primary-color-dark);
         height: var(--units-34vw);
-        padding: var(--units-1_1vw);
+        padding: var(--units-1vw) var(--units-1_5vw) var(--units-2vw);
     }
     img{
         align-self: center;
         width: var(--units-2_5vw);
-    }
-    input{
-        margin-bottom: var(--units-08vw);
     }
     span{
         color: var(--font-primary-color-dark);
@@ -72,5 +79,27 @@
     a{
         color: var(--primary-color);
         text-decoration: underline;
+    }
+    .token-info-box{
+        width: 40%;
+    }
+    .input-box{
+        width: 55%;
+        margin-left: var(--units-2vw);
+    }
+    .input-box > span{
+        margin-top: var(--units-08vw);
+    }
+    .swap-arrow{
+        margin: var(--units-1_5vw) 0 var(--units-1vw);
+    }
+    button{
+        margin-top: var(--units-1vw);
+    }
+
+    @media (max-width: 480px) {
+        .swap-panel{
+            width: 100%;
+        }
     }
 </style>

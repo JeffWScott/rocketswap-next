@@ -27,6 +27,7 @@
         "liquidity": "3,296,091.61889"
     },
     {
+        "base_token": true,
         "token_name": "Lamden",
         "token_symbol": "TAU",
         "verified": true,

@@ -19,6 +19,7 @@
 	--units-025vw: 0.25vw;
 	--units-03vw: 0.3vw;
 	--units-04vw: 0.4vw;
+	--units-045vw: 0.45vw;
 	--units-05vw: 0.5vw;
 	--units-06vw: 0.6vw;
 	--units-065vw: 0.65vw;
@@ -36,6 +37,7 @@
 	--units-1_6vw: 1.6vw;
 	--units-1_7vw: 1.7vw;
 	--units-2vw: 2vw;
+	--units-2_2vw: 2.2vw;
 	--units-2_5vw: 2.5vw;
 	--units-3vw: 3vw;
 	--units-4_2vw: 4.2vw;
@@ -43,6 +45,7 @@
 	--units-6vw: 6vw;
 	--units-8vw: 8vw;
 	--units-9vw: 9vw;
+	--units-15vw: 15vw;
 	--units-35vw: 34vw;
 
 	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
@@ -62,6 +65,7 @@
 
 	--panel-background-color: #1B2734;
 	--panel-background-highlight: #27384a;
+	--panel-box-shadow-higher: 0px var(--units-07vw) var(--units-08vw) 0 rgba(0, 0, 0, 30%);
 	--panel-box-shadow-high: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 40%);
 	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 20%);
 	--panel-box-shadow-shallow: 0 var(--units-01vw) var(--units-1vw) 0 rgb(0 0 0 / 20%);
@@ -85,7 +89,7 @@ body {
 	color: var(--font-primary-color);
 	font-style: normal;
 	font-weight: 200;
-	font-size: var(--font-size-5);
+	font-size: var(--units-08vw);
 
 	-webkit-overflow-scrolling: touch;
 }
@@ -220,13 +224,18 @@ button.outlined{
 
 button.outlined > div{
 	border-radius: var(--units-065vw);
-    background-color: var(--panel-background-color);
+    background: var(--panel-background-color);
     padding: var(--units-07vw) var(--units-4_2vw);
 	cursor: pointer;
 }
 
 button.outlined > div:hover{
 	background-color: var(--panel-background-highlight);
+}
+
+button.outlined.primary > div{
+	background: var(--secondary-gradient);
+	background: var(--secondary-gradient-webkit);
 }
 
 button:active{
@@ -269,6 +278,7 @@ button:active{
 		--units-025vw: calc(var(--unit-base-1vw) * 0.25);
 		--units-03vw: calc(var(--unit-base-1vw) * 0.3);
 		--units-04vw: calc(var(--unit-base-1vw) * 0.4);
+		--units-045vw: calc(var(--unit-base-1vw) * 0.45);
 		--units-05vw: calc(var(--unit-base-1vw) * 0.5);
 		--units-06vw: calc(var(--unit-base-1vw) * 0.6);
 		--units-065vw: calc(var(--unit-base-1vw) * 0.65);
@@ -286,6 +296,7 @@ button:active{
 		--units-1_6vw: calc(var(--unit-base-1vw) * 1.6);
 		--units-1_7vw: calc(var(--unit-base-1vw) * 1.7);
 		--units-2vw: calc(var(--unit-base-1vw) * 2);
+		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2);
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5);
 		--units-3vw: calc(var(--unit-base-1vw) * 3);
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2);
@@ -293,6 +304,7 @@ button:active{
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
 		--units-8vw: calc(var(--unit-base-1vw) * 8);
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
+		--units-15vw: calc(var(--unit-base-1vw) * 15);
 		--units-34vw: calc(var(--unit-base-1vw) * 34);
 	}
 	body {

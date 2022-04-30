@@ -94,11 +94,11 @@ input.primary_input{
     border: none;
     box-shadow: var(--panel-box-shadow);
 }
-input.number_input{
+input.number-input{
     background-color: var(--panel-background-color);
     border: 1px solid var(--font-primary-color-dark);
     border-radius: var(--units-06vw);
-    padding: var(--units-05vw);
+    padding: var(--units-06vw) var(--units-3vw) var(--units-06vw) var(--units-06vw);
     font-size: var(--units-1_5vw);
     color: var(--font-primary-color);
 }
