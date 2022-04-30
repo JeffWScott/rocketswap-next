@@ -85,7 +85,6 @@
     }
     .input-box{
         width: 55%;
-        margin-left: var(--units-2vw);
     }
     .input-box > span{
         margin-top: var(--units-08vw);

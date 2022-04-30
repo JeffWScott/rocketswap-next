@@ -7,6 +7,9 @@
     div{
         position: relative;
     }
+    input{
+        width: 100%;
+    }
     button{
         color: var(--primary-color);
         font-size: var(--units-08vw);

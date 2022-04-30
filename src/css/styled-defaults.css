@@ -101,6 +101,7 @@ input.number-input{
     padding: var(--units-06vw) var(--units-3vw) var(--units-06vw) var(--units-06vw);
     font-size: var(--units-1_5vw);
     color: var(--font-primary-color);
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
