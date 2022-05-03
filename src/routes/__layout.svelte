@@ -41,7 +41,7 @@
 
 	@media (max-width: 480px) {
 		main {
-			padding: 36vw 5vw 15vw;
+			padding: 30vw 5vw 15vw;
 		}
     }
 </style>

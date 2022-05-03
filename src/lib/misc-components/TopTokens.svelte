@@ -230,6 +230,9 @@
         top: 25%;
         right: var(--units-1_4vw);
     }
+    table{
+        margin-top: 4vw;
+    }
 
     input{
         width: 100%;
@@ -246,6 +249,7 @@
         .multiselect{
             width: 100%;
             margin-right: 0;
+            margin-bottom: 2vw;
         }
         .token-search{
             width: 100%;
@@ -253,6 +257,9 @@
         }
         input{
             width: 100%;
+        }
+        img.chart{
+            width: 15vw;
         }
     }
 </style>

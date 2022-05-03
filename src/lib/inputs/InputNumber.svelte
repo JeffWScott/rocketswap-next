@@ -1,5 +1,5 @@
 <div >
-    <input class="number-input"  />
+    <input class="number-input"  placeholder="0"/>
     <button class="text">max</button>
 </div>
 
@@ -17,7 +17,10 @@
         position: absolute;
         top: 50%;
         transform: translate(-150%, -50%)
-
-
+    }
+    @media (max-width: 480px) {
+        button{
+            font-size: 3vw;
+        }
     }
 </style>

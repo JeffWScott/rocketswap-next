@@ -19,8 +19,8 @@
 
 <div class="flex row align-center">
     <img src={logo_map[token_symbol]} alt="token logo" class="token-logo" />
-    {token_name} 
-    <span>{token_symbol} </span>
+    <span class="name">{token_name} </span>
+    <span class="symbol">{token_symbol} </span>
     {#if is_verified}
         <img src={verified_token} alt="verified token" class="verified" />
     {/if}
@@ -35,8 +35,21 @@
         width: var(--units-1_5vw);
         margin-left: var(--units-1vw);
     }
-    span{
+    span.name{
+        white-space: nowrap;
+    }
+    span.symbol{
         color: var(--font-primary-color-dark);
         margin-left: var(--units-1vw);
+
+    }
+    @media (max-width: 480px) {
+        img.token-logo{
+            width: 8vw;
+            margin-right: 6vw;
+        }
+        img.verified{
+            width: 4vw;
+        }
     }
 </style>

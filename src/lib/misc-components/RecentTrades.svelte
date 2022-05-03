@@ -96,16 +96,16 @@
     .recent-trades{
         padding-top: var(--units-2vw);
     }
-    td{
-        padding-top: var(--units-1_2vw);
-        padding-bottom: var(--units-1_2vw);
-    }
     button{
         margin-right: var(--units-2vw);
     }
     table{
         margin-top: var(--units-06vw);
     }
-
+    @media (max-width: 480px) {
+        table{
+            margin-top: 4vw;
+        }
+    }
 </style>
 

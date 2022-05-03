@@ -26,7 +26,7 @@
             </div>
             <div class="input-box flex col">
                 <InputNumber />
-                <span>Balance: 100 TAU</span>
+                <span class="balance">Balance: 100 TAU</span>
             </div>
 
         </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="input-box flex col">
                 <InputNumber />
-                <span class="flex row space-between">
+                <span class="balance flex row space-between">
                     Balance: 100 LUSD
                     <a href="/pools" >Add Liquidity</a>
                 </span>
@@ -68,6 +68,7 @@
         color: var(--font-primary-color-dark);
         height: var(--units-34vw);
         padding: var(--units-1vw) var(--units-1_5vw) var(--units-2vw);
+        box-sizing: border-box;
     }
     img{
         align-self: center;
@@ -83,10 +84,14 @@
     .token-info-box{
         width: 40%;
     }
+    .token-info-box > span{
+        display: block;
+        margin-top: var(--units-08vw);
+    }
     .input-box{
         width: 55%;
     }
-    .input-box > span{
+    .input-box > span.balance{
         margin-top: var(--units-08vw);
     }
     .swap-arrow{
@@ -99,6 +104,32 @@
     @media (max-width: 480px) {
         .swap-panel{
             width: 100%;
+            font-size: 2.5vw;
+        }
+        div.panel{
+            height: unset;
+            color: var(--font-primary-color-dark);
+            padding: 4vw 4vw 6vw;
+        }
+        .token-info-box{
+            width: 55%;
+        }
+        .token-info-box > span{
+            margin-top: 3vw;
+        }
+        .input-box{
+            width: 40%;
+        }
+        .input-box > span.balance{
+            flex-direction: column;
+            margin-top: 3vw;
+        }
+        .swap-arrow{
+            margin: var(--units-1_5vw) 0 var(--units-1vw) 28vw;
+            width: 8vw;
+        }
+        button{
+            margin-top: 4vw;
         }
     }
 </style>

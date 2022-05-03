@@ -171,10 +171,12 @@ table{
 
 th{
     padding: var(--units-05vw) 0 var(--units-1_2vw) var(--units-2vw);
+	white-space: nowrap;
 }
 
 td{
     padding: var(--units-05vw) 0 var(--units-05vw) var(--units-2vw);
+	white-space: nowrap;
 }
 
 table, th, td {
@@ -320,12 +322,23 @@ button:active{
 
 @media (max-width: 480px) {
 	h2{
-		font-size: var(--units-2vw);
+		font-size: 5vw;
+		font-weight: 400;
 	}
 	h3{
 		font-size: var(--units-2vw);
 	}
-
+	table{
+		font-size: 3.6vw;
+		padding: 0 1vw 5vw;
+	}
+	th{
+		padding: 4vw 0 4vw 6vw;
+	}
+	
+	td{
+		padding: 2vw 0 2vw 6vw;
+	}
 	.mobile{
 		display: block!important;
 	}
@@ -334,5 +347,18 @@ button:active{
 	}
 	.desktop{
 		display: none!important;
+	}
+
+	button.outlined{
+		font-size: 4.5vw;
+		padding: 0.5vw;
+	}
+
+	button.outlined > div{
+		padding: 2.5vw 0;
+	}
+
+	button.text{
+		font-size: 3.8vw;
 	}
 }

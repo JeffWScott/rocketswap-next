@@ -104,6 +104,11 @@ input.number-input{
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 480px) {
+    input.number-input{
+        border-radius: 2vw;
+        padding: 2.45vw 10.5vw 2.45vw 2.5vw;
+        font-size: 5vw;
+        font-weight: 300;
+    }
 }
