@@ -5,20 +5,27 @@
     import token_logo_RSWP from '$lib/mock_images/token_logos/RSWP.svg'
     import token_logo_WETH from '$lib/mock_images/token_logos/WETH.svg'
     import token_logo_LUSD from '$lib/mock_images/token_logos/LUSD.svg'
+    import token_logo_JEFF from '$lib/mock_images/token_logos/JEFF.svg'
+    import token_logo_TAU from '$lib/mock_images/token_logos/TAU.svg'
 
     export let token_name
     export let token_symbol
-    export let is_verified
+    export let is_verified = false
+    export let show_logo = true
 
     const logo_map = {
         'RSWP': token_logo_RSWP,
         'WETH': token_logo_WETH,
-        'LUSD': token_logo_LUSD
+        'LUSD': token_logo_LUSD,
+        'JEFF': token_logo_JEFF,
+        'TAU': token_logo_TAU
     }
 </script>
 
 <div class="flex row align-center">
-    <img src={logo_map[token_symbol]} alt="token logo" class="token-logo" />
+    {#if show_logo}
+        <img src={logo_map[token_symbol]} alt="token logo" class="token-logo" />
+    {/if}
     <span class="name">{token_name} </span>
     <span class="symbol">{token_symbol} </span>
     {#if is_verified}

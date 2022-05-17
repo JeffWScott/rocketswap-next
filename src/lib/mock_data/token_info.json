@@ -27,6 +27,15 @@
         "liquidity": "3,296,091.61889"
     },
     {
+        "token_name": "Jeff Coin",
+        "token_symbol": "JEFF",
+        "verified": true,
+        "price": "15.12345678",
+        "daily_price_change": "+10.12",
+        "daily_trade_volume": "589,789.80419",
+        "liquidity": "15,489,089.51157"
+    },
+    {
         "base_token": true,
         "token_name": "Lamden",
         "token_symbol": "TAU",

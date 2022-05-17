@@ -11,9 +11,13 @@
 
 	--unit-base-1vw: 7.69px;
 
-	--units-011vw: 0.11vw;
+	--units-005vw: 0.05vw;
+	--units-008vw: 0.08vw;
+	--units-009vw: 0.09vw;
 	--units-01vw: 0.1vw;
+	--units-011vw: 0.11vw;
 	--units-015vw: 0.15vw;
+	--units-016vw: 0.16vw;
 	--units-02vw: 0.2vw;
 	--units-0208vw: 0.208vw;
 	--units-025vw: 0.25vw;
@@ -28,18 +32,24 @@
 	--units-09vw: 0.9vw;
 	--units-1vw: 1vw;
 	--units-1_1vw: 1.1vw;
+	--units-1_14vw: 1.14vw;
 	--units-1_15vw: 1.15vw;
+	--units-1_16vw: 1.16vw;
 	--units-1_1625vw: 1.1625vw;
 	--units-1_2vw: 1.2vw;
+	--units-1_25vw: 1.25vw;
 	--units-1_3vw: 1.3vw;
 	--units-1_4vw: 1.4vw;
 	--units-1_5vw: 1.5vw;
 	--units-1_6vw: 1.6vw;
 	--units-1_7vw: 1.7vw;
+	--units-1_8vw: 1.8vw;
+	--units-1_9vw: 1.9vw;
 	--units-2vw: 2vw;
 	--units-2_2vw: 2.2vw;
 	--units-2_5vw: 2.5vw;
 	--units-3vw: 3vw;
+	--units-3_6vw: 3.6vw;
 	--units-4_2vw: 4.2vw;
 	--units-5vw: 5vw;
 	--units-6vw: 6vw;
@@ -111,7 +121,7 @@ select, button{
 
 h2{
 	font-weight: 300;
-	font-size: var(--units-1_6vw);	
+	font-size: var(--units-1_5vw);	
 }
 
 h3{
@@ -161,7 +171,8 @@ a:hover{
 table{
 	background-color: var(--panel-background-color);
 	width: 100%;
-	font-size: var(--font-size-1_2);
+	font-weight:200;
+	font-size: var(--units-1_16vw);
 	border-spacing: 0;
 	border-radius: var(--units-1vw);
     padding: var(--units-07vw) 0 var(--units-2_5vw);
@@ -219,25 +230,31 @@ button.primary-color{
 button.outlined{
 	border: none;
 	border-radius: var(--units-07vw);
-    font-size: var(--font-size-1_2);
-	padding: var(--units-015vw) var(--units-02vw);
+	font-weight: 500;
+    font-size: var(--units-1_14vw);
+	padding: var(--units-016vw);
 	background: var(--primary-gradient);
 }
 
 button.outlined > div{
 	border-radius: var(--units-065vw);
     background: var(--panel-background-color);
-    padding: var(--units-07vw) var(--units-4_2vw);
+    padding: var(--units-06vw) var(--units-3_6vw);
 	cursor: pointer;
 }
 
 button.outlined > div:hover{
 	background-color: var(--panel-background-highlight);
+	filter: brightness(110%)
 }
 
 button.outlined.primary > div{
 	background: var(--secondary-gradient);
 	background: var(--secondary-gradient-webkit);
+}
+
+button.skinny > div{
+	padding: var(--units-005vw) var(--units-1_8vw);
 }
 
 button:active{
@@ -272,9 +289,13 @@ button:active{
 	:root{
 		--font-size-1_2: 10.584px;
 
-		--units-011vw: calc(var(--unit-base-1vw) * 0.11);
+		--units-005vw: calc(var(--unit-base-1vw) * 0.05);
+		--units-008vw: calc(var(--unit-base-1vw) * 0.08);
+		--units-009vw: calc(var(--unit-base-1vw) * 0.09);
 		--units-01vw: calc(var(--unit-base-1vw) * 0.1);
+		--units-011vw: calc(var(--unit-base-1vw) * 0.11);
 		--units-015vw: calc(var(--unit-base-1vw) * 0.15);
+		--units-016vw: calc(var(--unit-base-1vw) * 0.16);
 		--units-02vw: calc(var(--unit-base-1vw) * 0.2);
 		--units-0208vw: calc(var(--unit-base-1vw) * 0.208);
 		--units-025vw: calc(var(--unit-base-1vw) * 0.25);
@@ -289,18 +310,24 @@ button:active{
 		--units-09vw: calc(var(--unit-base-1vw) * 0.9);
 		--units-1vw: calc(var(--unit-base-1vw) * 1);
 		--units-1_1vw: calc(var(--unit-base-1vw) * 1.1);
+		--units-1_14vw: calc(var(--unit-base-1vw) * 1.14);
 		--units-1_15vw: calc(var(--unit-base-1vw) * 1.15);
+		--units-1_16vw: calc(var(--unit-base-1vw) * 1.16);
 		--units-1_1625vw: calc(var(--unit-base-1vw) * 1.1625);
 		--units-1_2vw: calc(var(--unit-base-1vw) * 1.2);
+		--units-1_25vw: calc(var(--unit-base-1vw) * 1.25);
 		--units-1_3vw: calc(var(--unit-base-1vw) * 1.3);
 		--units-1_4vw: calc(var(--unit-base-1vw) * 1.4);
 		--units-1_5vw: calc(var(--unit-base-1vw) * 1.5);
 		--units-1_6vw: calc(var(--unit-base-1vw) * 1.6);
 		--units-1_7vw: calc(var(--unit-base-1vw) * 1.7);
+		--units-1_8vw: calc(var(--unit-base-1vw) * 1.8);
+		--units-1_9vw: calc(var(--unit-base-1vw) * 1.9);
 		--units-2vw: calc(var(--unit-base-1vw) * 2);
 		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2);
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5);
 		--units-3vw: calc(var(--unit-base-1vw) * 3);
+		--units-3_6vw: calc(var(--unit-base-1vw) * 3.6);
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2);
 		--units-5vw: calc(var(--unit-base-1vw) * 5);
 		--units-6vw: calc(var(--unit-base-1vw) * 6);

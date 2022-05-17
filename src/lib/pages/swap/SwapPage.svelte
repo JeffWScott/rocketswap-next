@@ -5,7 +5,7 @@
     import RecentTrades from "$lib/misc-components/RecentTrades.svelte";
 
     // Mock Data
-    import mock_tokens from '$lib/mock_data/mock-tokens'
+    import mock_tokens from '$lib/mock_data/mock_tokens'
 
     let from = mock_tokens["TAU"]
     let to = mock_tokens["LUSD"]

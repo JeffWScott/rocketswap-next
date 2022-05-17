@@ -1,0 +1,35 @@
+[
+    {
+        "staked_token": "JEFF",
+        "base_token": "TAU",
+        "liquidity": "5%",
+        "staked": "541.16426104",
+        "staked_tau": "10.00",
+        "liquidity_points": "8.00",
+        "staked_in_farm": "4.00"
+    },
+    {
+        "staked_token": "WETH",
+        "base_token": "TAU",
+        "liquidity": "15%",
+        "staked": "12.4",
+        "staked_tau": "1.12",
+        "liquidity_points": "22.00" 
+    },
+    {
+        "staked_token": "LUSD",
+        "base_token": "TAU",
+        "liquidity": "0.07%",
+        "staked": "12,211,950.40",
+        "staked_tau": "911.12",
+        "liquidity_points": "7.00" 
+    },
+    {
+        "staked_token": "RSWP",
+        "base_token": "TAU",
+        "liquidity": "50%",
+        "staked": "89,992.10",
+        "staked_tau": "1,190.12",
+        "liquidity_points": "59.00" 
+    }
+]

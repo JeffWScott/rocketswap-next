@@ -37,9 +37,6 @@
     }
     
     function change_tab(e){
-        console.log(active_tab)
-        console.log(e.target.getAttribute('tab-id'))
-        console.log(e.target.getAttribute('tab-id') === active_tab)
         if (e.target.getAttribute('tab-id') === active_tab) return
 
         if (active_tab === "0"){

@@ -1,1 +1,6 @@
-<h2>POOL</h2>
+<script>
+    import PoolsPage from '$lib/pages/pools/PoolsPage.svelte'
+
+</script>
+
+<PoolsPage />
