@@ -28,6 +28,7 @@
 	--units-06vw: 0.6vw;
 	--units-065vw: 0.65vw;
 	--units-07vw:0.7vw;
+	--units-072vw:0.72vw;
 	--units-08vw: 0.8vw;
 	--units-09vw: 0.9vw;
 	--units-1vw: 1vw;
@@ -49,9 +50,13 @@
 	--units-2_2vw: 2.2vw;
 	--units-2_5vw: 2.5vw;
 	--units-3vw: 3vw;
+	--units-3_2vw: 3.2vw;
 	--units-3_6vw: 3.6vw;
+	--units-4vw: 4vw;
 	--units-4_2vw: 4.2vw;
+	--units-4_5vw: 4.5vw;
 	--units-5vw: 5vw;
+	--units-5_5vw: 5.5vw;
 	--units-6vw: 6vw;
 	--units-8vw: 8vw;
 	--units-9vw: 9vw;
@@ -174,7 +179,7 @@ table{
 	font-weight:200;
 	font-size: var(--units-1_16vw);
 	border-spacing: 0;
-	border-radius: var(--units-1vw);
+	border-radius: var(--units-07vw);
     padding: var(--units-07vw) 0 var(--units-2_5vw);
 	box-shadow: var(--panel-box-shadow);
 
@@ -306,6 +311,7 @@ button:active{
 		--units-06vw: calc(var(--unit-base-1vw) * 0.6);
 		--units-065vw: calc(var(--unit-base-1vw) * 0.65);
 		--units-07vw:calc(var(--unit-base-1vw) * 0.7);
+		--units-072vw:calc(var(--unit-base-1vw) * 0.72);
 		--units-08vw: calc(var(--unit-base-1vw) * 0.8);
 		--units-09vw: calc(var(--unit-base-1vw) * 0.9);
 		--units-1vw: calc(var(--unit-base-1vw) * 1);
@@ -327,9 +333,13 @@ button:active{
 		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2);
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5);
 		--units-3vw: calc(var(--unit-base-1vw) * 3);
+		--units-3_2vw: calc(var(--unit-base-1vw) * 3.2);
 		--units-3_6vw: calc(var(--unit-base-1vw) * 3.6);
+		--units-4vw: calc(var(--unit-base-1vw) * 4);
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2);
+		--units-4_5vw: calc(var(--unit-base-1vw) * 4.5);
 		--units-5vw: calc(var(--unit-base-1vw) * 5);
+		--units-5_5vw: calc(var(--unit-base-1vw) * 5.5);
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
 		--units-8vw: calc(var(--unit-base-1vw) * 8);
 		--units-9vw: calc(var(--unit-base-1vw) * 9);

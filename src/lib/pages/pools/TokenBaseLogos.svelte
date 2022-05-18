@@ -1,6 +1,4 @@
 <script>
-    import token_logos from "$lib/mock_data/token_logos";
-
     export let token
     export let base
 
@@ -9,13 +7,17 @@
 
 </script>
 
-<div class="flex row align-center">
+<div class="flex row align-center space-between">
     <img src={token_logo} alt="token" />
     <img src={base_logo} alt="base" />
 </div>
 
 <style>
-    div > img:last-child{
-        margin-left: var(--units-05vw);
+    div{
+        width: var(--units-4_5vw);
+        margin-right: var(--units-2vw);
+    }
+    img{
+        max-width: var(--units-2vw);
     }
 </style>

@@ -63,9 +63,9 @@
 }
 
 select{
-    padding: var(--units-1vw) var(--units-2vw);
+    padding: var(--units-06vw) var(--units-1_5vw);
     border: 1px solid var(--panel-background-color);
-    border-radius: var(--units-1vw);
+    border-radius: var(--units-05vw);
     font-size: var(--font-size-1_2);
     font-weight: 200;
 

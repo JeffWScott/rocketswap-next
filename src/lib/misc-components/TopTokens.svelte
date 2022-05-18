@@ -1,10 +1,8 @@
 <script>
-    // Images
-    import icon_filter_settings from '$lib/svg/filter-settings.svg'
-    import icon_search from '$lib/svg/search.svg'
-
     // Components
     import TokenName from '$lib/misc-components/TokenName.svelte'
+    import FilterSearch from '$lib/misc-components/FilterSearch.svelte';
+    import FilterCheckbox from '$lib/misc-components/FilterCheckbox.svelte';
     
     //Stores
     import {
@@ -16,26 +14,22 @@
     import temp_chart from '$lib/mock_images/temp_chart.svg'
     import mock_token_details from '$lib/mock_data/token_info.json'
 
-    let top_token_filter_open = false
-    let search_text = ""
-
-
     let mock_token_details_filtered = apply_filters()
+
+    const filter_list = [
+        'Show Low Liquidity',
+        'Show Low Volume',
+        'Show Unverified Tokens'
+    ]
 
     const is_negative = (str_value) => str_value.includes("-")
 
-    function toggle_top_token_filter(){
-        if (top_token_filter_open) top_token_filter_open = false
-        else{
-            top_token_filter_open = true
-        }
+    function handle_search(e){
+        const search_text = e.detail
+        mock_token_details_filtered = apply_filters(search_text)
     }
 
-    function handle_search(){
-        mock_token_details_filtered = apply_filters()
-    }
-
-    function apply_filters(){
+    function apply_filters(search_text = ""){
         let return_list = mock_token_details
 
         if (search_text.length > 0){
@@ -63,40 +57,8 @@
 <div class="top-token">
     <h2>Top Tokens</h2>
     <div class="flex row align-center wrap">
-        <div class="multiselect">
-            <div class="selectBox" on:click={toggle_top_token_filter}>
-                <select class:open={top_token_filter_open}>
-                    <option>Filter</option>
-                </select>
-                <div class="flex flex-align-center overSelect">
-                    <img src={icon_filter_settings} alt="filter settings" class="settings-icon"/>
-                </div>
-                
-            </div>
-            <div id="checkboxes" class:open={top_token_filter_open}>
-                <label class="flex row chk-container align-center" class:checked={$show_low_liquidity_filter} id="chk-showLowLiquidity">
-                    <input type="checkbox" bind:checked={$show_low_liquidity_filter} on:change={(e) => show_low_liquidity_filter.set(e.target.checked)}>
-                    <span class="chk-checkmark chk-small"></span>
-                    Show Low Liquidity
-                </label>
-                <label class="flex row chk-container align-center" class:checked={$show_low_volume_filter} id="chk-showLowVolume">
-                    <input type="checkbox" bind:checked={$show_low_volume_filter} on:change={(e) => show_low_volume_filter.set(e.target.checked)}>
-                    <span class="chk-checkmark chk-small"></span>
-                    Show Low Volume
-                </label>
-                <label class="flex row chk-container align-center" class:checked={$show_unverified_filter} id="chk-showNotVerified">
-                    <input type="checkbox" bind:checked={$show_unverified_filter} on:change={(e) => show_unverified_filter.set(e.target.checked)}>
-                    <span class="chk-checkmark chk-small"></span>
-                    Show Unverified Tokens
-                </label>
-                <button class="outlined white close-button" on:click={toggle_top_token_filter}><div>Close</div></button>
-            </div>
-        </div>
-        <div class="token-search">
-            <input class="primary_input" placeholder="Search" on:change={handle_search} bind:value={search_text}>
-            <img class="search-icon" src={icon_search} alt="search" />
-        </div>
-        
+        <FilterCheckbox {filter_list} />
+        <FilterSearch on:change={handle_search} />
     </div>
     <div class="table-wrapper">
         <table>
@@ -142,122 +104,11 @@
         width: 6vw;
     }
 
-    label{
-        margin-top: var(--units-05vw);
-        margin-bottom: var(--units-05vw);
-        padding-left: var(--units-2vw);
-    }
-
-    select.open{
-        border-radius: var(--units-1vw) var(--units-1vw) 0 0;
-    }
-
-    .selectBox {
-        position: relative;
-    }
-
-    .selectBox:hover > select {
-        cursor: pointer;
-    }
-
-    .selectBox select {
-        width: 100%;
-        background: var(--panel-background-color);
-        color: var(--font-primary-color);
-    }
-
-    .overSelect {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-    }
-
-    .multiselect {
-        z-index: 2;
-        position: relative;
-        width: 20vw;
-        min-width: 175px;
-        margin-bottom: var(--units-1vw);
-        margin-right: var(--units-1vw);
-        font-size: var(--font-size-1_2);
-        box-shadow: var(--panel-box-shadow);
-    }
-
-    #checkboxes {
-        z-index: -1;
-        display: none;
-        position: absolute;
-        background: var(--panel-background-color);
-        border-radius: 0 0 var(--units-1vw) var(--units-1vw);
-        border-top: 1px;
-        width: 100%;
-        box-sizing: border-box;
-        padding-bottom: var(--units-2vw);
-        box-shadow: var(--panel-box-shadow);
-    }
-
-    #checkboxes.open{
-        display: block;
-    }
-
-    #checkboxes label:hover {
-        background-color: var(--panel-background-highlight);
-    }
-    button{
-        display: block;
-        margin: var(--units-1_5vw) auto 0;
-    }
-    .settings-icon{
-        width: 2.3vw;
-        min-width: 17.6797px;
-        cursor: pointer;
-        margin: 0 var(--units-1_2vw) 0 auto;
-    }
-
-    .token-search{
-        z-index: 2;
-        position: relative;
-        margin-bottom: var(--units-1vw);
-        min-width: 175px;
-    }
-
-    .search-icon{
-        cursor: pointer;
-        position: absolute;
-        width: var(--units-2vw);
-        top: 25%;
-        right: var(--units-1_4vw);
-    }
     table{
         margin-top: 4vw;
     }
 
-    input{
-        width: 100%;
-        font-size: var(--font-size-1_2);
-        background: var(--panel-background-color);
-        color: var(--font-primary-color);
-        padding: var(--units-1_1625vw) var(--units-2vw);
-        border: 1px solid var(--panel-background-color);
-        border-radius: var(--units-1vw);
-        box-sizing: border-box;
-    }
-
     @media (max-width: 480px) {
-        .multiselect{
-            width: 100%;
-            margin-right: 0;
-            margin-bottom: 2vw;
-        }
-        .token-search{
-            width: 100%;
-
-        }
-        input{
-            width: 100%;
-        }
         img.chart{
             width: 15vw;
         }
