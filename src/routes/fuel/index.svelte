@@ -1,1 +1,6 @@
-<h2>FUEL</h2>
+<script>
+    import FuelPage from '$lib/pages/fuel/FuelPage.svelte'
+
+</script>
+
+<FuelPage />

@@ -47,9 +47,11 @@
 	--units-1_8vw: 1.8vw;
 	--units-1_9vw: 1.9vw;
 	--units-2vw: 2vw;
+	--units-2_1vw: 2.1vw;
 	--units-2_2vw: 2.2vw;
 	--units-2_5vw: 2.5vw;
 	--units-3vw: 3vw;
+	--units-3_1vw: 3.1vw;
 	--units-3_2vw: 3.2vw;
 	--units-3_6vw: 3.6vw;
 	--units-4vw: 4vw;
@@ -60,7 +62,9 @@
 	--units-6vw: 6vw;
 	--units-8vw: 8vw;
 	--units-9vw: 9vw;
+	--units-11_5vw: 11.5vw;
 	--units-15vw: 15vw;
+	--units-35vw: 22vw;
 	--units-35vw: 34vw;
 
 	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
@@ -70,6 +74,7 @@
 
 	--pure-white: #ffffff;
 	--primary-color: #24FFBD;
+	--primary-color-dim: #18ab7f;
 	--secondary-color: #A128FD;
 	--tertiary-color: #edf0f8;
 	--accent-color: #ff3e00;
@@ -330,9 +335,11 @@ button:active{
 		--units-1_8vw: calc(var(--unit-base-1vw) * 1.8);
 		--units-1_9vw: calc(var(--unit-base-1vw) * 1.9);
 		--units-2vw: calc(var(--unit-base-1vw) * 2);
+		--units-2_1vw: calc(var(--unit-base-1vw) * 2.1);
 		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2);
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5);
 		--units-3vw: calc(var(--unit-base-1vw) * 3);
+		--units-3_1vw: calc(var(--unit-base-1vw) * 3.1);
 		--units-3_2vw: calc(var(--unit-base-1vw) * 3.2);
 		--units-3_6vw: calc(var(--unit-base-1vw) * 3.6);
 		--units-4vw: calc(var(--unit-base-1vw) * 4);
@@ -343,7 +350,9 @@ button:active{
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
 		--units-8vw: calc(var(--unit-base-1vw) * 8);
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
+		--units-11_5vw: calc(var(--unit-base-1vw) * 11.5);
 		--units-15vw: calc(var(--unit-base-1vw) * 15);
+		--units-22vw: calc(var(--unit-base-1vw) * 22);
 		--units-34vw: calc(var(--unit-base-1vw) * 34);
 	}
 	body {

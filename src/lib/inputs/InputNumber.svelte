@@ -6,6 +6,7 @@
 <style>
     div{
         position: relative;
+        width: 100%;
     }
     input{
         width: 100%;

@@ -104,11 +104,99 @@ input.number-input{
     box-sizing: border-box;
 }
 
+/* The switch - the box around the slider */
+.switch{
+    display: flex;
+    align-items: center;
+    font-size: var(--units-1_2vw);
+    font-weight: 300;
+}
+
+.switch > label {
+    position: relative;
+    display: inline-block;
+    width: var(--units-4vw);
+    height: var(--units-2vw);
+    margin-left: var(--units-1vw);
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch  > label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--units-2vw);
+    width: var(--units-2vw);
+    left: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch > label > input:checked + .slider {
+    background-color: var(--primary-color-dim);
+  }
+  
+  .switch > label > input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color-dim);
+  }
+  
+  .switch > label > input:checked + .slider:before {
+    -webkit-transform: translateX(var(--units-2vw));
+    -ms-transform: translateX(var(--units-2vw));
+    transform: translateX(var(--units-2vw));
+    background-color: var(--primary-color);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
 @media (max-width: 480px) {
     input.number-input{
         border-radius: 2vw;
         padding: 2.45vw 10.5vw 2.45vw 2.5vw;
         font-size: 5vw;
         font-weight: 300;
+    }
+    .switch{
+        font-size: var(--units-2_5vw);
+    }
+    .switch > label {
+        width: var(--units-8vw);
+        height: var(--units-4vw);
+        margin-left: var(--units-2vw);
+    }
+    .switch > label > input:checked + .slider:before {
+        -webkit-transform: translateX(var(--units-4vw));
+        -ms-transform: translateX(var(--units-4vw));
+        transform: translateX(var(--units-4vw));
+    }
+    .slider:before {
+        height: var(--units-4vw);
+        width: var(--units-4vw);
     }
 }
