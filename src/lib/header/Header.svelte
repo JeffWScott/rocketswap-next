@@ -25,7 +25,7 @@
 			</div>
 
 			<span class="inline-flex align-center ml-1 weight-300">
-				Powered by <a href="www.lamden.io" class="link-primary">Lamden</a>
+				Powered by <a href="https://www.lamden.io" class="link-primary">Lamden</a>
 			</span>
 		</div>
 		<div class="mobile flex col grow">
@@ -33,7 +33,7 @@
 				<img src={logo_rocketswap} alt="Rocketswap" />
 			</a>
 			<span class="inline-flex align-center ml-1 weight-300">
-				Powered by <a href="www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
+				Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
 				TAU: $0.066 | RSWP: $0.016
 			</span>
 		</div>
