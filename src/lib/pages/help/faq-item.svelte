@@ -16,38 +16,6 @@
 
 </script>
 
-<style>
-    .container{
-        padding: var(--units-1vw);
-        margin-bottom: var(--units-1vw);
-    }
-    p{
-        margin: 0;
-        width: 100%;
-        font-size: var(--units-1_2vw);
-    }
-    button{
-        width: var(--units-2_5vw);
-    }
-    button > img {
-        width: 100%;
-    }
-
-    @media (max-width: 480px) {
-        .container{
-            padding: var(--units-1_5vw);
-            margin-bottom: var(--units-1_5vw);
-        }
-        button{
-            width: var(--units-4vw);
-            height: var(--units-4vw);
-        }
-        p{
-            font-size: var(--units-2vw); 
-        }
-    }
-</style>
-
 <div class="panel container flex col">
     <div class="flex row align-center">
         <p>{faqItem.q}</p>
@@ -66,3 +34,23 @@
         </div>
     {/if}
 </div>
+
+
+<style>
+    .container{
+        padding: var(--units-1vw);
+        margin-bottom: var(--units-1vw);
+    }
+    p{
+        margin: 0;
+        width: 100%;
+        font-size: var(--units-1_2vw);
+    }
+    button{
+        width: var(--units-2_5vw);
+    }
+    button > img {
+        width: 100%;
+    }
+
+</style>

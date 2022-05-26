@@ -107,6 +107,7 @@
     @media (max-width: 480px) {
         .multiselect{
             width: 100%;
+            min-width: unset;
             margin-right: 0;
         }
 

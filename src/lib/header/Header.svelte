@@ -32,7 +32,7 @@
 			<a href="https://rocketswap.exchange/" class="rocketswap">
 				<img src={logo_rocketswap} alt="Rocketswap" />
 			</a>
-			<span class="inline-flex align-center ml-1 weight-300">
+			<span class="subtitle inline-flex align-center ml-1 weight-300">
 				Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
 				TAU: $0.066 | RSWP: $0.016
 			</span>
@@ -128,6 +128,9 @@
 			padding: 7vw 5vw;
 			height: unset;
         }
+		.subtitle{
+			font-size: 3vw;
+		}
 		
 		.corner a{
 			width: unset;

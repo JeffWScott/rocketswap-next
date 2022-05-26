@@ -66,8 +66,11 @@
 <div class="heading flex row align-center">
     <h2>Your Pools</h2>
     <img class="verified_help" src="{icon_verified_token_help}" alt="verified token help"> 
-    <button class="outlined primary white skinny"><div>Add Liquidity</div></button>
-    <button class="outlined white skinny"><div>Create Liquidity</div></button>
+</div>
+
+<div class="buttons">
+    <button class="outlined primary white"><div>Add Liquidity</div></button>
+    <button class="outlined white"><div>Create Liquidity</div></button>
 </div>
 
 <div class="filters flex align-center">
@@ -84,7 +87,6 @@
                 <th>Staked Tokens</th>
                 <th>Staked TAU</th>
                 <th>Liquidity Points</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -92,6 +94,14 @@
                 <tr>
                     <td >
                         <div class="flex row align-center">
+                            <img 
+                                class="dropdown-arrow"
+                                class:open={open_pools[pool_key(mock_pool.staked_token, mock_pool.base_token)]}
+                                src="{dropdown_arrow_down}" 
+                                alt="expand" 
+                                pool_key={pool_key(mock_pool.staked_token, mock_pool.base_token)} 
+                                on:click={open_pool}
+                            />
                             <TokenBaseLogos token={mock_pool.staked_token} base={mock_pool.base_token} />
                             <TokenName 
                                 token_name={mock_pool.staked_token.token_name}
@@ -110,15 +120,7 @@
                             <span class="text-primary-color">/ {mock_pool.staked_in_farm} LP in Farms</span> 
                         {/if}
                     </td>
-                    <td>
-                        <img 
-                            class="dropdown-arrow"
-                            class:open={open_pools[pool_key(mock_pool.staked_token, mock_pool.base_token)]}
-                            src="{dropdown_arrow_down}" 
-                            alt="expand" 
-                            pool_key={pool_key(mock_pool.staked_token, mock_pool.base_token)} 
-                            on:click={open_pool}/>
-                    </td>
+
                 </tr>
                 {#if open_pools[pool_key(mock_pool.staked_token, mock_pool.base_token)]}
                     <tr>
@@ -126,7 +128,7 @@
                             class="open" 
                             colspan="100" 
                             in:slide={{duration: 500, easing: quintOut}}>
-                            <div class="buttons flex row align-center justify-center">
+                            <div class="staking-buttons flex">
                                 <button class="outlined white"><div>
                                     Remove
                                 </div></button>
@@ -146,29 +148,27 @@
     div.filters{
         flex-direction: row;
     }
+    .buttons{
+        width: 100%;
+        margin-bottom: var(--units-3vw);
+    }
+    .buttons > button:first-child{
+        margin-right: var(--units-1vw);
+    }
     .heading{
         margin-bottom: var(--units-1vw);
     }
-    button.skinny{
-        margin-left: var(--units-1vw);
-    }
+
     img.verified_help{
         margin-left: var(--units-1vw);
     }
     img.dropdown-arrow{
         margin-right: var(--units-1vw);
         animation: 5s;
+        width: var(--units-1_5vw);
     }
     img.dropdown-arrow.open{
         transform: rotateX(180deg);
-    }
-    div.buttons{
-        width: fit-content;
-        margin: 0 auto;
-        padding: 0 0 var(--units-1vw) ;
-    }
-    div.buttons > button:last-child{
-        margin-left: var(--units-2vw);
     }
 
     table{
@@ -188,9 +188,35 @@
         border-top: unset;
     }
 
+    .staking-buttons{
+        flex-direction: row;
+    }
+    .staking-buttons > button:first-child {
+            margin-right: var(--units-1vw);
+    }
+
     @media (max-width: 480px) {
         div.filters{
             flex-direction: column;
+        }
+        .buttons > button {
+            width: 100%;
+        }
+        .buttons > button > div {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .buttons > button:first-child {
+            margin-bottom: var(--units-1vw);
+        }
+        .staking-buttons{
+            flex-direction: column;
+        }
+        .staking-buttons > button{
+            width: 75vw;
+        }
+        .staking-buttons > button:first-child{
+            margin-bottom: 3vw;
         }
     }
 

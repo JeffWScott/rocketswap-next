@@ -62,6 +62,7 @@
     @media (max-width: 480px) {
         .token-search{
             width: 100%;
+            min-width: unset;
         }
         input{
             width: 100%;

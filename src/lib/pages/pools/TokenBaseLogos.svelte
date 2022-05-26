@@ -20,4 +20,9 @@
     img{
         max-width: var(--units-2vw);
     }
+    @media (max-width: 480px) {
+        div{
+            display: none;
+        }
+    }
 </style>
