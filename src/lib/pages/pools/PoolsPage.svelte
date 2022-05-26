@@ -70,7 +70,7 @@
     <button class="outlined white skinny"><div>Create Liquidity</div></button>
 </div>
 
-<div class="flex row align-center">
+<div class="filters flex align-center">
     <FilterCheckbox {filter_list} />
     <FilterSearch on:change={handle_search} />
 </div>
@@ -143,6 +143,9 @@
 </div>
 
 <style>
+    div.filters{
+        flex-direction: row;
+    }
     .heading{
         margin-bottom: var(--units-1vw);
     }
@@ -176,13 +179,19 @@
     }
 
     td{
-        border-top: 1px solid var(--table-divider-color);
+        border-top: var(--units-01vw) solid var(--table-divider-color);
         padding-top: var(--units-1_5vw);
         padding-bottom: var(--units-1_5vw);
     }
 
     td.open{
         border-top: unset;
+    }
+
+    @media (max-width: 480px) {
+        div.filters{
+            flex-direction: column;
+        }
     }
 
 </style>

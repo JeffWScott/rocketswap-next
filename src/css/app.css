@@ -3,11 +3,6 @@
 :root {
 	font-family: 'Poppins', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		
-	--font-size-5: 0.85vw;
-	--font-size-1_2: 1.2vw;
-	
-	--font-size-fixed-768: 6.5365px;
 
 	--unit-base-1vw: 7.69px;
 
@@ -57,6 +52,7 @@
 	--units-4vw: 4vw;
 	--units-4_2vw: 4.2vw;
 	--units-4_5vw: 4.5vw;
+	--units-4_6vw: 4.6vw;
 	--units-5vw: 5vw;
 	--units-5_5vw: 5.5vw;
 	--units-6vw: 6vw;
@@ -64,6 +60,7 @@
 	--units-9vw: 9vw;
 	--units-11_5vw: 11.5vw;
 	--units-15vw: 15vw;
+	--units-19vw: 19vw;
 	--units-35vw: 22vw;
 	--units-35vw: 34vw;
 
@@ -351,6 +348,7 @@ button:active{
 		--units-4vw: calc(var(--unit-base-1vw) * 4);
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2);
 		--units-4_5vw: calc(var(--unit-base-1vw) * 4.5);
+		--units-4_6vw: calc(var(--unit-base-1vw) * 4.6);
 		--units-5vw: calc(var(--unit-base-1vw) * 5);
 		--units-5_5vw: calc(var(--unit-base-1vw) * 5.5);
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
@@ -358,6 +356,7 @@ button:active{
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
 		--units-11_5vw: calc(var(--unit-base-1vw) * 11.5);
 		--units-15vw: calc(var(--unit-base-1vw) * 15);
+		--units-19vw: calc(var(--unit-base-1vw) * 19);
 		--units-22vw: calc(var(--unit-base-1vw) * 22);
 		--units-34vw: calc(var(--unit-base-1vw) * 34);
 	}
@@ -373,23 +372,83 @@ button:active{
 }
 
 @media (max-width: 480px) {
+	:root{
+		--mobile-multiplier: 2;
+		--units-005vw: calc(var(--unit-base-1vw) * 0.05 * var(--mobile-multiplier));
+		--units-008vw: calc(var(--unit-base-1vw) * 0.08 * var(--mobile-multiplier));
+		--units-009vw: calc(var(--unit-base-1vw) * 0.09 * var(--mobile-multiplier));
+		--units-01vw: calc(var(--unit-base-1vw) * 0.1 * var(--mobile-multiplier));
+		--units-011vw: calc(var(--unit-base-1vw) * 0.11 * var(--mobile-multiplier));
+		--units-015vw: calc(var(--unit-base-1vw) * 0.15 * var(--mobile-multiplier));
+		--units-016vw: calc(var(--unit-base-1vw) * 0.16 * var(--mobile-multiplier));
+		--units-02vw: calc(var(--unit-base-1vw) * 0.2 * var(--mobile-multiplier));
+		--units-0208vw: calc(var(--unit-base-1vw) * 0.208 * var(--mobile-multiplier));
+		--units-025vw: calc(var(--unit-base-1vw) * 0.25 * var(--mobile-multiplier));
+		--units-03vw: calc(var(--unit-base-1vw) * 0.3 * var(--mobile-multiplier));
+		--units-04vw: calc(var(--unit-base-1vw) * 0.4 * var(--mobile-multiplier));
+		--units-045vw: calc(var(--unit-base-1vw) * 0.45 * var(--mobile-multiplier));
+		--units-05vw: calc(var(--unit-base-1vw) * 0.5 * var(--mobile-multiplier));
+		--units-06vw: calc(var(--unit-base-1vw) * 0.6 * var(--mobile-multiplier));
+		--units-065vw: calc(var(--unit-base-1vw) * 0.65 * var(--mobile-multiplier));
+		--units-07vw:calc(var(--unit-base-1vw) * 0.7 * var(--mobile-multiplier));
+		--units-072vw:calc(var(--unit-base-1vw) * 0.72 * var(--mobile-multiplier));
+		--units-08vw: calc(var(--unit-base-1vw) * 0.8 * var(--mobile-multiplier));
+		--units-09vw: calc(var(--unit-base-1vw) * 0.9 * var(--mobile-multiplier));
+		--units-1vw: calc(var(--unit-base-1vw) * 1 * var(--mobile-multiplier));
+		--units-1_1vw: calc(var(--unit-base-1vw) * 1.1 * var(--mobile-multiplier));
+		--units-1_14vw: calc(var(--unit-base-1vw) * 1.14 * var(--mobile-multiplier));
+		--units-1_15vw: calc(var(--unit-base-1vw) * 1.15 * var(--mobile-multiplier));
+		--units-1_16vw: calc(var(--unit-base-1vw) * 1.16 * var(--mobile-multiplier));
+		--units-1_1625vw: calc(var(--unit-base-1vw) * 1.1625 * var(--mobile-multiplier));
+		--units-1_2vw: calc(var(--unit-base-1vw) * 1.2 * var(--mobile-multiplier));
+		--units-1_25vw: calc(var(--unit-base-1vw) * 1.25 * var(--mobile-multiplier));
+		--units-1_3vw: calc(var(--unit-base-1vw) * 1.3 * var(--mobile-multiplier));
+		--units-1_4vw: calc(var(--unit-base-1vw) * 1.4 * var(--mobile-multiplier));
+		--units-1_5vw: calc(var(--unit-base-1vw) * 1.5 * var(--mobile-multiplier));
+		--units-1_6vw: calc(var(--unit-base-1vw) * 1.6 * var(--mobile-multiplier));
+		--units-1_7vw: calc(var(--unit-base-1vw) * 1.7 * var(--mobile-multiplier));
+		--units-1_8vw: calc(var(--unit-base-1vw) * 1.8 * var(--mobile-multiplier));
+		--units-1_9vw: calc(var(--unit-base-1vw) * 1.9 * var(--mobile-multiplier));
+		--units-2vw: calc(var(--unit-base-1vw) * 2 * var(--mobile-multiplier));
+		--units-2_1vw: calc(var(--unit-base-1vw) * 2.1 * var(--mobile-multiplier));
+		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2 * var(--mobile-multiplier));
+		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5 * var(--mobile-multiplier));
+		--units-3vw: calc(var(--unit-base-1vw) * 3 * var(--mobile-multiplier));
+		--units-3_1vw: calc(var(--unit-base-1vw) * 3.1 * var(--mobile-multiplier));
+		--units-3_2vw: calc(var(--unit-base-1vw) * 3.2 * var(--mobile-multiplier));
+		--units-3_6vw: calc(var(--unit-base-1vw) * 3.6 * var(--mobile-multiplier));
+		--units-4vw: calc(var(--unit-base-1vw) * 4 * var(--mobile-multiplier));
+		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2 * var(--mobile-multiplier));
+		--units-4_5vw: calc(var(--unit-base-1vw) * 4.5 * var(--mobile-multiplier));
+		--units-4_6vw: calc(var(--unit-base-1vw) * 4.6 * var(--mobile-multiplier));
+		--units-5vw: calc(var(--unit-base-1vw) * 5 * var(--mobile-multiplier));
+		--units-5_5vw: calc(var(--unit-base-1vw) * 5.5 * var(--mobile-multiplier));
+		--units-6vw: calc(var(--unit-base-1vw) * 6 * var(--mobile-multiplier));
+		--units-8vw: calc(var(--unit-base-1vw) * 8 * var(--mobile-multiplier));
+		--units-9vw: calc(var(--unit-base-1vw) * 9 * var(--mobile-multiplier));
+		--units-11_5vw: calc(var(--unit-base-1vw) * 11.5 * var(--mobile-multiplier));
+		--units-15vw: calc(var(--unit-base-1vw) * 15 * var(--mobile-multiplier));
+		--units-19vw: calc(var(--unit-base-1vw) * 19 * var(--mobile-multiplier));
+		--units-22vw: calc(var(--unit-base-1vw) * 22 * var(--mobile-multiplier));
+		--units-34vw: calc(var(--unit-base-1vw) * 34 * var(--mobile-multiplier));
+	}
 	h2{
-		font-size: 5vw;
+		/*font-size: 5vw;*/
 		font-weight: 400;
 	}
 	h3{
-		font-size: var(--units-2vw);
+		/*font-size: var(--units-2vw);*/
 	}
 	table{
-		font-size: 3.6vw;
-		padding: 0 1vw 5vw;
+		/*font-size: 3.6vw;*/
+		/*padding: 0 1vw 5vw;*/
 	}
 	th{
-		padding: 4vw 0 4vw 6vw;
+		/*padding: 4vw 0 4vw 6vw;*/
 	}
 	
 	td{
-		padding: 2vw 0 2vw 6vw;
+		/*padding: 2vw 0 2vw 6vw;*/
 	}
 	.mobile{
 		display: block!important;
@@ -402,15 +461,15 @@ button:active{
 	}
 
 	button.outlined{
-		font-size: 4.5vw;
-		padding: 0.5vw;
+		/*font-size: 4.5vw;*/
+		/*padding: 0.5vw;*/
 	}
 
 	button.outlined > div{
-		padding: 2.5vw 0;
+		/*padding: 2.5vw 0;*/
 	}
 
 	button.text{
-		font-size: 3.8vw;
+		/*font-size: 3.8vw;*/
 	}
 }

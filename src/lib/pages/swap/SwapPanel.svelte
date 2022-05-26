@@ -104,32 +104,22 @@
     @media (max-width: 480px) {
         .swap-panel{
             width: 100%;
-            font-size: 2.5vw;
         }
         div.panel{
             height: unset;
             color: var(--font-primary-color-dark);
-            padding: 4vw 4vw 6vw;
         }
         .token-info-box{
             width: 55%;
-        }
-        .token-info-box > span{
-            margin-top: 3vw;
         }
         .input-box{
             width: 40%;
         }
         .input-box > span.balance{
             flex-direction: column;
-            margin-top: 3vw;
         }
         .swap-arrow{
             margin: var(--units-1_5vw) 0 var(--units-1vw) 28vw;
-            width: 8vw;
-        }
-        button{
-            margin-top: 4vw;
         }
     }
 </style>

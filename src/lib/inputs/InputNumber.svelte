@@ -13,15 +13,10 @@
     }
     button{
         color: var(--primary-color);
-        font-size: var(--units-08vw);
+        font-size: var(--units-09vw);
         font-weight: 200;
         position: absolute;
         top: 50%;
         transform: translate(-150%, -50%)
-    }
-    @media (max-width: 480px) {
-        button{
-            font-size: 3vw;
-        }
     }
 </style>

@@ -27,6 +27,7 @@
         border: 1px solid var(--panel-background-color);
         border-radius: var(--units-05vw);
         box-sizing: border-box;
+        font-size: var(--units-1_2vw);
     }
 
     input::-webkit-input-placeholder {
@@ -46,7 +47,7 @@
         z-index: 2;
         position: relative;
         margin-bottom: var(--units-1vw);
-        min-width: 175px;
+        min-width: var(--units-19vw);
     }
 
     .search-icon{

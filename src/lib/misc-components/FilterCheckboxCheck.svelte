@@ -19,9 +19,11 @@
         margin-top: var(--units-05vw);
         margin-bottom: var(--units-05vw);
         padding-left: var(--units-2vw);
+        font-size: var(--units-1_1vw);
     }
 
     label:hover {
         background-color: var(--panel-background-highlight);
     }
+
 </style>

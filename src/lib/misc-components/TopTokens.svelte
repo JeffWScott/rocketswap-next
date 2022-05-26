@@ -104,10 +104,6 @@
         width: 6vw;
     }
 
-    table{
-        margin-top: 4vw;
-    }
-
     @media (max-width: 480px) {
         img.chart{
             width: 15vw;

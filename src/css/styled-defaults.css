@@ -13,8 +13,8 @@
     position: absolute;
 }
 
-.chk-container>span {
-    margin-right: 1vw;
+.chk-container > span {
+    margin-right: var(--units-1vw);
 }
 
 .chk-checkmark {
@@ -64,7 +64,7 @@
 
 select{
     padding: var(--units-06vw) var(--units-1_5vw);
-    border: 1px solid var(--panel-background-color);
+    border: var(--units-01vw) solid var(--panel-background-color);
     border-radius: var(--units-05vw);
     font-size: var(--font-size-1_2);
     font-weight: 200;
@@ -168,7 +168,7 @@ input.number-input{
   
   /* Rounded sliders */
   .slider.round {
-    border-radius: 34px;
+    border-radius: var(--units-1vw);
   }
   
   .slider.round:before {
@@ -176,27 +176,5 @@ input.number-input{
   }
 
 @media (max-width: 480px) {
-    input.number-input{
-        border-radius: 2vw;
-        padding: 2.45vw 10.5vw 2.45vw 2.5vw;
-        font-size: 5vw;
-        font-weight: 300;
-    }
-    .switch{
-        font-size: var(--units-2_5vw);
-    }
-    .switch > label {
-        width: var(--units-8vw);
-        height: var(--units-4vw);
-        margin-left: var(--units-2vw);
-    }
-    .switch > label > input:checked + .slider:before {
-        -webkit-transform: translateX(var(--units-4vw));
-        -ms-transform: translateX(var(--units-4vw));
-        transform: translateX(var(--units-4vw));
-    }
-    .slider:before {
-        height: var(--units-4vw);
-        width: var(--units-4vw);
-    }
+   
 }

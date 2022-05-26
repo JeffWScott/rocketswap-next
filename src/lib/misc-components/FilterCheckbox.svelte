@@ -55,6 +55,7 @@
         width: 100%;
         background: var(--panel-background-color);
         color: var(--font-primary-color);
+        font-size: var(--units-1_2vw);
     }
 
     .overSelect {
@@ -66,13 +67,12 @@
     }
 
     .multiselect {
-        z-index: 2;
+        z-index: 3;
         position: relative;
-        width: 20vw;
-        min-width: 175px;
+        width: var(--units-19vw);
+        min-width: var(--units-19vw);
         margin-bottom: var(--units-1vw);
         margin-right: var(--units-1vw);
-        font-size: var(--font-size-1_2);
         box-shadow: var(--panel-box-shadow);
     }
 
@@ -98,7 +98,7 @@
         margin: var(--units-1_5vw) auto 0;
     }
     .settings-icon{
-        width: 2.3vw;
+        width: var(--units-2_5vw);
         min-width: 17.6797px;
         cursor: pointer;
         margin: 0 var(--units-1_2vw) 0 auto;
@@ -108,7 +108,7 @@
         .multiselect{
             width: 100%;
             margin-right: 0;
-            margin-bottom: 2vw;
         }
+
     }
 </style>

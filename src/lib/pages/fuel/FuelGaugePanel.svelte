@@ -69,21 +69,13 @@
             width: 100%;
         }
         div.controls{
-            padding: var(--units-2vw) var(--units-4vw);
             text-align: center;
         }
         p{
-            font-size: var(--units-2_2vw);
             margin: 0;
-        }
-        .buttons{
-            margin: var(--units-3vw) 0;
         }
         button{
            width: 49%;
-        }
-        span{
-            font-size: var(--units-2vw);
         }
     }
     

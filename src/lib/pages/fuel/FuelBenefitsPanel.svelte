@@ -60,19 +60,7 @@
     @media (max-width: 480px) {
         div.panel{
             width: 100%;
-            margin-bottom: var(--units-4vw);
-        }
-        div.benefit-item{
-            font-size: var(--units-2vw);
-            margin-bottom: var(--units-4vw);
-        }
-        div.benefit-item > span{
-            font-size: var(--units-6vw);
-            margin-right: var(--units-2vw);
-        }
-        button{
-            margin-top: var(--units-4vw);
+            margin-bottom: var(--units-2vw);
         }
     }
-
 </style>
