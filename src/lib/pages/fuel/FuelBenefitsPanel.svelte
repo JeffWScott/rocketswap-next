@@ -62,5 +62,11 @@
             width: 100%;
             margin-bottom: var(--units-2vw);
         }
+
+        div.benefit-item{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 </style>

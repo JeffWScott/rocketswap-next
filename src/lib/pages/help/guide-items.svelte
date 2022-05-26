@@ -29,13 +29,20 @@
 
 <style>
 	div{
+		flex-direction: row;
 		justify-content: space-between;
         width: 100%;
 	}
 
+	@media (max-width: 480px) {
+        div{
+			flex-direction: column;
+		}
+	}
+
 </style>
 
-<div class="flex row">
+<div class="flex">
 	{#each guideItems as guideItem}
 		<GuideItem {guideItem} />
 	{/each}

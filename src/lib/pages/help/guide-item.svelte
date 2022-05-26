@@ -23,4 +23,13 @@
         margin: var(--units-07vw) 0;
         font-size: var(--units-1_1vw);
     }
+    @media (max-width: 480px) {
+        a{
+			width: 100%;
+            margin-bottom: var(--units-1vw);
+		}
+        a:last-child{
+            margin-bottom: 0;
+        }
+	}
 </style>
