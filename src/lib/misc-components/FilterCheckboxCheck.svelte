@@ -1,14 +1,14 @@
 <script>
     export let filter
     export let filter_name
+    export let single = false
 
     function handle_change(e){
-        console.log(e.target.checked)
         filter.set(e.target.checked)
     }
 </script>
 
-<label class="flex row chk-container align-center" class:checked={$filter} id={filter_name}>
+<label class="flex row chk-container align-center" class:checked={$filter} {single} id={filter_name}>
     <input type="checkbox" bind:checked={$filter} on:change={handle_change}>
     <span class="chk-checkmark chk-small"></span>
     {filter_name}
@@ -20,6 +20,11 @@
         margin-bottom: var(--units-05vw);
         padding-left: var(--units-2vw);
         font-size: var(--units-1_1vw);
+    }
+
+    label[single]{
+        margin: 0 var(--units-1vw) var(--units-1vw) 0;
+        padding-left: 0;
     }
 
     label:hover {

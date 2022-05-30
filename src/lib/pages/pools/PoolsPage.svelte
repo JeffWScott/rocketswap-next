@@ -3,42 +3,28 @@
 	import { quintOut } from 'svelte/easing';
 
     // Components
-    import TokenBaseLogos from '$lib/pages/pools/TokenBaseLogos.svelte';
+    import TokenBaseLogos from '$lib/misc-components/TokenBaseLogos.svelte';
     import TokenName from '$lib/misc-components/TokenName.svelte';
     import FilterSearch from '$lib//misc-components/FilterSearch.svelte';
     import FilterCheckbox from '$lib/misc-components/FilterCheckbox.svelte';
     
-
     // Images
     import icon_verified_token_help from '$lib/svg/verified_token_help.svg'
     import dropdown_arrow_down from '$lib/svg/dropdown-arrow-down.svg'
     
+    // Utils
+    import { component_key, component_state } from '$lib/js/misc-utils';
+
+    // Stores
+    import { pools_open } from '$lib/js/stores/component-state-stores';
+
     // Mock Data
     import mock_pools from '$lib/mock_data/mock_pools.js'
 
-    $: open_pools = {}
-
     let filter_list = []
+    let component_state_handler = component_state(pools_open)
 
     let mock_pools_filtered = apply_filters("")
-    
-
-    function open_pool(e){
-        const key = e.target.getAttribute('pool_key')
-
-        if (open_pools[key]){
-            open_pools[key] = false
-        }else{
-            open_pools[key] = true
-        }
-    }
-
-    function toggle_pools_filter(){
-        if (pools_filter_open) pools_filter_open = false
-        else{
-            pools_filter_open = true
-        }
-    }
 
     function handle_search(e){
         const search_text = e.detail
@@ -59,11 +45,9 @@
 
         return return_list
     }
-
-    const pool_key = (staked_token, base_token) => `${staked_token.token_symbol}:${base_token.token_symbol}` 
 </script>
 
-<div class="heading flex row align-center">
+<div class="page-heading flex row align-center">
     <h2>Your Pools</h2>
     <img class="verified_help" src="{icon_verified_token_help}" alt="verified token help"> 
 </div>
@@ -96,11 +80,11 @@
                         <div class="flex row align-center">
                             <img 
                                 class="dropdown-arrow"
-                                class:open={open_pools[pool_key(mock_pool.staked_token, mock_pool.base_token)]}
+                                class:open={$pools_open[component_key(mock_pool.staked_token, mock_pool.base_token)]}
                                 src="{dropdown_arrow_down}" 
                                 alt="expand" 
-                                pool_key={pool_key(mock_pool.staked_token, mock_pool.base_token)} 
-                                on:click={open_pool}
+                                key={component_key(mock_pool.staked_token, mock_pool.base_token)} 
+                                on:click={component_state_handler}
                             />
                             <TokenBaseLogos token={mock_pool.staked_token} base={mock_pool.base_token} />
                             <TokenName 
@@ -122,7 +106,7 @@
                     </td>
 
                 </tr>
-                {#if open_pools[pool_key(mock_pool.staked_token, mock_pool.base_token)]}
+                {#if $pools_open[component_key(mock_pool.staked_token, mock_pool.base_token)]}
                     <tr>
                         <td 
                             class="open" 
@@ -155,13 +139,7 @@
     .buttons > button:first-child{
         margin-right: var(--units-1vw);
     }
-    .heading{
-        margin-bottom: var(--units-1vw);
-    }
 
-    img.verified_help{
-        margin-left: var(--units-1vw);
-    }
     img.dropdown-arrow{
         margin-right: var(--units-1vw);
         animation: 5s;

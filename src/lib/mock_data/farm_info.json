@@ -1,0 +1,34 @@
+[
+    {
+        "staked_token": "JEFF",
+        "base_token": "TAU",
+        "apy": "28%",
+        "staked": "541.16426104",
+        "earned_tau": "10.00",
+        "ends": "June 16, 2022"
+    },
+    {
+        "staked_token": "RSWP",
+        "base_token": "TAU",
+        "apy": "10%",
+        "staked": "12.4",
+        "earned_tau": "1.12",
+        "ends": "July 8, 2022" 
+    },
+    {
+        "staked_token": "LUSD",
+        "base_token": "TAU",
+        "apy": "125%",
+        "staked": "12,211,950.40",
+        "earned_tau": "911.12",
+        "ends": "August 1, 2022" 
+    },
+    {
+        "staked_token": "WETH",
+        "base_token": "TAU",
+        "apy": "16%",
+        "staked": "89,992.10",
+        "earned_tau": "1,190.12",
+        "ends": "November 25, 2022" 
+    }
+]
