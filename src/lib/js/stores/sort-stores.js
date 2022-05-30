@@ -1,3 +1,3 @@
-import { writable } from 'svelte-local-storage-store'
+import { writable } from 'svelte/store'
 
-export const get_sorter = (sorter_name) => writable(sorter_name, {})
+export const get_sorter = (starting_value) => writable(starting_value || {})

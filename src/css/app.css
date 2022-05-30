@@ -326,7 +326,7 @@ img.sort-arrow{
 	width: var(--units-1vw);
 	transform: rotateX(180deg);
 }
-img.sort-arrow[flip="true"]{
+img.sort-arrow.flip{
 	transform: rotateX(0deg);
 }
 

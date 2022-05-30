@@ -7,6 +7,7 @@
     import TokenName from '$lib/misc-components/TokenName.svelte';
     import FilterSearch from '$lib//misc-components/FilterSearch.svelte';
     import FilterCheckbox from '$lib/misc-components/FilterCheckbox.svelte';
+    import SetSort from '$lib/misc-components/SetSort.svelte';
     
     // Images
     import icon_verified_token_help from '$lib/svg/verified_token_help.svg'
@@ -17,22 +18,33 @@
 
     // Stores
     import { pools_open } from '$lib/js/stores/component-state-stores';
+    import { get_sorter } from '$lib/js/stores/sort-stores';
 
     // Mock Data
     import mock_pools from '$lib/mock_data/mock_pools.js'
 
+    let sort_store = get_sorter({staked_tau: false})
+
     let filter_list = []
+    let search_text = ""
     let component_state_handler = component_state(pools_open)
 
-    let mock_pools_filtered = apply_filters("")
+    let mock_pools_filtered = process_filters()
+
+    sort_store.subscribe(apply_filters)
 
     function handle_search(e){
-        const search_text = e.detail
-        mock_pools_filtered = apply_filters(search_text)
+        search_text = e.detail
+        apply_filters()
     }
 
-    function apply_filters(search_text){
+    function apply_filters(){
+        mock_pools_filtered = process_filters()
+    }
+
+    function process_filters(){
         let return_list = mock_pools
+        let sort_store_value = $sort_store
 
         if (search_text.length > 0){
 
@@ -41,6 +53,19 @@
                 f.staked_token.token_symbol.toLowerCase().includes(search_text.toLowerCase())
             })
 
+        }
+
+        if (Object.keys(sort_store_value).length > 0){
+            let sort_name = Object.keys(sort_store_value)[0]
+            let sort_value = sort_store_value[sort_name]
+
+            console.log({sort_name, sort_value})
+
+            if (sort_value){
+                return_list.sort((a, b) => a[sort_name] > b[sort_name] ? 1 : -1)
+            }else{
+                return_list.sort((a, b) => a[sort_name] < b[sort_name] ? 1 : -1)
+            }
         }
 
         return return_list
@@ -66,11 +91,11 @@
     <table>
         <thead>
             <tr>
-                <th>Pool Details</th>
-                <th>Liquidity</th>
-                <th>Staked Tokens</th>
-                <th>Staked TAU</th>
-                <th>Liquidity Points</th>
+                <th>Pool Details <SetSort {sort_store} sort_name={"token_name"}/></th>
+                <th>Liquidity <SetSort {sort_store} sort_name={"liquidity"}/></th>
+                <th>Staked Tokens <SetSort {sort_store} sort_name={"staked"}/></th>
+                <th>Staked TAU <SetSort {sort_store} sort_name={"staked_tau"}/></th>
+                <th>Liquidity Points <SetSort {sort_store} sort_name={"liquidity_points"}/></th>
             </tr>
         </thead>
         <tbody>

@@ -3,46 +3,54 @@
         "token_name": "Rocketswap",
         "token_symbol": "RSWP",
         "verified": true,
-        "price": "0.29446243",
-        "daily_price_change": "-6.04%",
-        "daily_trade_volume": "82,191,88499",
-        "liquidity": "7697691.75116"
+        "price": 0.29446243,
+        "daily_price_change": -6.04,
+        "daily_trade_volume": 8219188499,
+        "liquidity": 7697691.75116
     },
     {
         "token_name": "Wrapped Ethereum",
         "token_symbol": "WETH",
         "verified": true,
-        "price": "24198.63315276",
-        "daily_price_change": "+4.38",
-        "daily_trade_volume": "228,911.42455",
-        "liquidity": "5,273,724.58225"
+        "price": 24198.63315276,
+        "daily_price_change": 4.38,
+        "daily_trade_volume": 228911.42455,
+        "liquidity": 950.58225
     },
     {
         "token_name": "Lamden USD",
         "token_symbol": "LUSD",
         "verified": true,
-        "price": "5.56118638",
-        "daily_price_change": "+1.87",
-        "daily_trade_volume": "328,739.80419",
-        "liquidity": "3,296,091.61889"
+        "price": 5.56118638,
+        "daily_price_change": 1.87,
+        "daily_trade_volume": 328739.80419,
+        "liquidity": 3296091.61889
     },
     {
         "token_name": "Jeff Coin",
         "token_symbol": "JEFF",
         "verified": true,
-        "price": "15.12345678",
-        "daily_price_change": "+10.12",
-        "daily_trade_volume": "589,789.80419",
-        "liquidity": "15,489,089.51157"
+        "price": 15.12345678,
+        "daily_price_change": 10.12,
+        "daily_trade_volume": 382.80419,
+        "liquidity": 15489089.51157
     },
     {
         "base_token": true,
         "token_name": "Lamden",
         "token_symbol": "TAU",
         "verified": true,
-        "price": "5.56118638",
-        "daily_price_change": "+1.87",
-        "daily_trade_volume": "328,739.80419",
-        "liquidity": "3,296,091.61889"
+        "price": 5.56118638,
+        "daily_price_change": 1.87,
+        "daily_trade_volume": 328739.80419,
+        "liquidity": 3296091.61889
+    },
+    {
+        "token_name": "Nebula",
+        "token_symbol": "NEB",
+        "price": 1.1611564,
+        "daily_price_change": -5.89,
+        "daily_trade_volume": 56919815.64845,
+        "liquidity": 60948914.6541
     }
 ]

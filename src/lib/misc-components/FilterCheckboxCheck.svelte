@@ -1,10 +1,15 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     export let filter
     export let filter_name
     export let single = false
 
+    const dispatch = createEventDispatcher()
+
     function handle_change(e){
         filter.set(e.target.checked)
+        dispatch('changed', {filter_name: e.target.checked})
     }
 </script>
 

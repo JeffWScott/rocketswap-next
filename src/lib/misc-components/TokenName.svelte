@@ -7,6 +7,7 @@
     import token_logo_LUSD from '$lib/mock_images/token_logos/LUSD.svg'
     import token_logo_JEFF from '$lib/mock_images/token_logos/JEFF.svg'
     import token_logo_TAU from '$lib/mock_images/token_logos/TAU.svg'
+    import token_logo_NEB from '$lib/mock_images/token_logos/NEB.svg'
 
     export let token_name
     export let token_symbol
@@ -18,7 +19,8 @@
         'WETH': token_logo_WETH,
         'LUSD': token_logo_LUSD,
         'JEFF': token_logo_JEFF,
-        'TAU': token_logo_TAU
+        'TAU': token_logo_TAU,
+        'NEB': token_logo_NEB
     }
 </script>
 

@@ -5,17 +5,19 @@
     export let sort_store
     export let sort_name
 
-    $: flip = !sort_store ? false : $sort_store[sort_name] === undefined ? false : $sort_store[sort_name]
+    $: flip = $sort_store[sort_name] || false
 
-    function handle_click(e){
-        console.log({e, sort_store: $sort_store, sort_name, flip})
-        sort_store.set({[sort_name]: true})
+    function handle_click(){
+        const { [sort_name]: sort_value } = $sort_store
+
+        if (!sort_value) sort_store.set({[sort_name]: true})
+        else sort_store.set({[sort_name]: false})
     }
     
 </script>
 
-<button class="icon">
-    <img class="sort-arrow" src={dropdown_arrow_down} alt="sort-arrow" flip={flip} on:click={handle_click}/>
+<button class="icon" on:click={handle_click}>
+    <img src={dropdown_arrow_down} alt="sort-arrow" class="sort-arrow" class:flip={flip} />
 </button>
 
 <style>

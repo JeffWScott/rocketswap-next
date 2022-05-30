@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     // Components
     import FilterCheckboxCheck from './FilterCheckboxCheck.svelte';
 
@@ -10,6 +12,8 @@
 
     export let filter_list = []
 
+    const dispatch = createEventDispatcher()
+
     let filters = get_filters(filter_list)
 
     let open = false
@@ -17,6 +21,10 @@
     function toggle_open(){
         if (open) open = false
         else open = true
+    }
+
+    function handle_changed (e) {
+        dispatch('changed', e.detail)
     }
 
 </script>
@@ -32,7 +40,7 @@
     </div>
     <div id="checkboxes" class:open={open}>
         {#each filters as filter, index}
-            <FilterCheckboxCheck filter_name={filter_list[index]} {filter} />
+            <FilterCheckboxCheck filter_name={filter_list[index]} {filter} on:changed={handle_changed}/>
         {/each}
         <button class="outlined white close-button" on:click={toggle_open}><div>Close</div></button>
     </div>
