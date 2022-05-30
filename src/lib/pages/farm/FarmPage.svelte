@@ -161,4 +161,24 @@
     .staking-buttons > button:last-child {
         margin-right: 0;
     }
+
+    @media (max-width: 480px) {
+        div.filters{
+            align-items: unset;
+            justify-content: start;
+            flex-direction: column;
+        }
+        .input-box{
+            width: 75vw;
+        }
+        .staking-buttons{
+            flex-direction: column;
+        }
+        .staking-buttons > button{
+            width: 75vw;
+        }
+        .staking-buttons > button{
+            margin-bottom: 3vw;
+        }
+    }
 </style>
