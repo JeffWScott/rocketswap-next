@@ -16,7 +16,7 @@
 
     let mock_token_details_filtered = apply_filters()
 
-    const get_filters = [
+    const filter_list = [
         'Show Low Liquidity',
         'Show Low Volume',
         'Show Unverified Tokens'
