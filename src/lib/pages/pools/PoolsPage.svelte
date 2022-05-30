@@ -139,16 +139,6 @@
     .buttons > button:first-child{
         margin-right: var(--units-1vw);
     }
-
-    img.dropdown-arrow{
-        margin-right: var(--units-1vw);
-        animation: 5s;
-        width: var(--units-1_5vw);
-    }
-    img.dropdown-arrow.open{
-        transform: rotateX(180deg);
-    }
-
     table{
         padding-bottom: unset;
     }

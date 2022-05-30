@@ -22,7 +22,7 @@
         font-size: var(--units-1_1vw);
     }
 
-    label[single]{
+    label[single="true"]{
         margin: 0 var(--units-1vw) var(--units-1vw) 0;
         padding-left: 0;
     }

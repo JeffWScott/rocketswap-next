@@ -3,18 +3,17 @@
     import TokenName from '$lib/misc-components/TokenName.svelte'
     import FilterSearch from '$lib/misc-components/FilterSearch.svelte';
     import FilterCheckbox from '$lib/misc-components/FilterCheckbox.svelte';
-    
-    //Stores
-    import {
-        show_low_liquidity_filter,
-        show_low_volume_filter,
-        show_unverified_filter} from '$lib/js/stores/filter-stores'
+    import SetSort from '$lib/misc-components/SetSort.svelte';
+
+    // Stores
+    import { get_sorter } from '$lib/js/stores/sort-stores.js';
 
     // MOCK DATA
     import temp_chart from '$lib/mock_images/temp_chart.svg'
     import mock_token_details from '$lib/mock_data/token_info.json'
 
     let mock_token_details_filtered = apply_filters()
+    let sort_store = get_sorter("sort_top_tokens")
 
     const filter_list = [
         'Show Low Liquidity',
@@ -40,15 +39,6 @@
             })
 
         }
-        if (show_low_volume_filter){
-            null
-        }
-        if (show_low_liquidity_filter){
-            null
-        }
-        if (show_unverified_filter){
-            null
-        }
 
         return return_list
     }
@@ -65,12 +55,12 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Price TAU</th>
-                    <th>24hr %</th>
-                    <th>Volume (24hrs)</th>
-                    <th>Liquidity</th>
-                    <th>Last 7 Days</th>
+                    <th>Name <SetSort {sort_store} sort_name={"token_name"} /></th>
+                    <th>Price TAU <SetSort {sort_store} sort_name={"price"} /></th>
+                    <th>24hr % <SetSort {sort_store} sort_name={"daily_price_change"} /></th>
+                    <th>Volume (24hrs) <SetSort {sort_store} sort_name={"daily_trade_volume"} /></th>
+                    <th>Liquidity <SetSort {sort_store} sort_name={"liquidity"} /></th>
+                    <th>Last 7 Days </th>
                 </tr>
             </thead>
             <tbody>

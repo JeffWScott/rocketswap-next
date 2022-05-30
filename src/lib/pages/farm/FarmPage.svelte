@@ -35,8 +35,8 @@
 </div>
 
 <div class="filters">
-    <FilterCheckboxCheck filter={get_filter("Staked by me")} filter_name={"Staked by me"}/>
-    <FilterCheckboxCheck filter={get_filter("Show closed")} filter_name={"Show closed"}/>
+    <FilterCheckboxCheck filter={get_filter("Staked by me")} filter_name={"Staked by me"} single />
+    <FilterCheckboxCheck filter={get_filter("Show closed")} filter_name={"Show closed"} single /> 
     <FilterCheckbox />
     <FilterSearch />
 </div>
@@ -118,14 +118,7 @@
         justify-content: end;
         width: 100%;
     }
-    img.dropdown-arrow{
-        margin-right: var(--units-1vw);
-        animation: 5s;
-        width: var(--units-1_5vw);
-    }
-    img.dropdown-arrow.open{
-        transform: rotateX(180deg);
-    }
+
     table{
         padding-bottom: unset;
     }
