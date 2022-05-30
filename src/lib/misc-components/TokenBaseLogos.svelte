@@ -18,7 +18,7 @@
         margin-right: var(--units-2vw);
     }
     img{
-        max-width: var(--units-2vw);
+        width: 44%;
     }
     @media (max-width: 480px) {
         div{
