@@ -14,7 +14,7 @@
     import dropdown_arrow_down from '$lib/svg/dropdown-arrow-down.svg'
     
     // Utils
-    import { component_key, component_state } from '$lib/js/misc-utils';
+    import { component_key, component_state, key_string_value } from '$lib/js/misc-utils';
 
     // Stores
     import { pools_open } from '$lib/js/stores/component-state-stores';
@@ -62,9 +62,9 @@
             console.log({sort_name, sort_value})
 
             if (sort_value){
-                return_list.sort((a, b) => a[sort_name] > b[sort_name] ? 1 : -1)
+                return_list.sort((a, b) => key_string_value(a, sort_name) > key_string_value(b, sort_name) ? 1 : -1)
             }else{
-                return_list.sort((a, b) => a[sort_name] < b[sort_name] ? 1 : -1)
+                return_list.sort((a, b) => key_string_value(a, sort_name) < key_string_value(b, sort_name) ? 1 : -1)
             }
         }
 
@@ -77,21 +77,23 @@
     <img class="verified_help" src="{icon_verified_token_help}" alt="verified token help"> 
 </div>
 
-<div class="buttons">
-    <button class="outlined primary white"><div>Add Liquidity</div></button>
-    <button class="outlined white"><div>Create Liquidity</div></button>
+<div class="flex row align-center">
+    <div class="buttons">
+        <button class="outlined primary white"><div>Add Liquidity</div></button>
+        <button class="outlined white"><div>Create Liquidity</div></button>
+    </div>
+    <div class="filters flex align-center grow-1">
+        <FilterCheckbox {filter_list} />
+        <FilterSearch on:change={handle_search} />
+    </div>
 </div>
 
-<div class="filters flex align-center">
-    <FilterCheckbox {filter_list} />
-    <FilterSearch on:change={handle_search} />
-</div>
 
 <div class="table-wrapper">
     <table>
         <thead>
             <tr>
-                <th>Pool Details <SetSort {sort_store} sort_name={"token_name"}/></th>
+                <th>Pool Details <SetSort {sort_store} sort_name={"staked_token.token_name"}/></th>
                 <th>Liquidity <SetSort {sort_store} sort_name={"liquidity"}/></th>
                 <th>Staked Tokens <SetSort {sort_store} sort_name={"staked"}/></th>
                 <th>Staked TAU <SetSort {sort_store} sort_name={"staked_tau"}/></th>
@@ -113,14 +115,11 @@
                             />
                             <TokenBaseLogos token={mock_pool.staked_token} base={mock_pool.base_token} />
                             <TokenName 
-                                token_name={mock_pool.staked_token.token_name}
-                                token_symbol={mock_pool.staked_token.token_symbol}
-                                is_verified={mock_pool.staked_token.verified}
-                                show_logo={false}/>
+                                token_info={mock_pool.staked_token} show_logo={false} />
                         </div>
 
                     </td>
-                    <td>{mock_pool.liquidity}</td>
+                    <td>{mock_pool.liquidity}%</td>
                     <td>{mock_pool.staked}</td>
                     <td>{mock_pool.staked_tau}</td>
                     <td>
@@ -156,10 +155,10 @@
 <style>
     div.filters{
         flex-direction: row;
+        justify-content: flex-end;
     }
     .buttons{
-        width: 100%;
-        margin-bottom: var(--units-3vw);
+        margin-bottom: var(--units-1vw);
     }
     .buttons > button:first-child{
         margin-right: var(--units-1vw);

@@ -9,9 +9,7 @@
     import token_logo_TAU from '$lib/mock_images/token_logos/TAU.svg'
     import token_logo_NEB from '$lib/mock_images/token_logos/NEB.svg'
 
-    export let token_name
-    export let token_symbol
-    export let is_verified = false
+    export let token_info
     export let show_logo = true
 
     const logo_map = {
@@ -26,11 +24,11 @@
 
 <div class="flex row align-center">
     {#if show_logo}
-        <img src={logo_map[token_symbol]} alt="token logo" class="token-logo" />
+        <img src={logo_map[token_info.token_symbol]} alt="token logo" class="token-logo" />
     {/if}
-    <span class="name">{token_name} </span>
-    <span class="symbol">{token_symbol} </span>
-    {#if is_verified}
+    <a href="{`/swap/${token_info.contract_name}`}" class="name">{token_info.token_name} </a>
+    <span class="symbol">{token_info.token_symbol} </span>
+    {#if token_info.is_verified}
         <img src={verified_token} alt="verified token" class="verified" />
     {/if}
 </div>

@@ -2,6 +2,7 @@
     {
         "token_name": "Rocketswap",
         "token_symbol": "RSWP",
+        "contract_name": "con_rswp_lst001",
         "verified": true,
         "price": 0.29446243,
         "daily_price_change": -6.04,
@@ -11,6 +12,7 @@
     {
         "token_name": "Wrapped Ethereum",
         "token_symbol": "WETH",
+        "contract_name": "con_weth_lst001",
         "verified": true,
         "price": 24198.63315276,
         "daily_price_change": 4.38,
@@ -20,6 +22,7 @@
     {
         "token_name": "Lamden USD",
         "token_symbol": "LUSD",
+        "contract_name": "con_lusd_lst001",
         "verified": true,
         "price": 5.56118638,
         "daily_price_change": 1.87,
@@ -29,6 +32,7 @@
     {
         "token_name": "Jeff Coin",
         "token_symbol": "JEFF",
+        "contract_name": "con_jeff_lst001",
         "verified": true,
         "price": 15.12345678,
         "daily_price_change": 10.12,
@@ -39,6 +43,7 @@
         "base_token": true,
         "token_name": "Lamden",
         "token_symbol": "TAU",
+        "contract_name": "currency",
         "verified": true,
         "price": 5.56118638,
         "daily_price_change": 1.87,
@@ -48,6 +53,7 @@
     {
         "token_name": "Nebula",
         "token_symbol": "NEB",
+        "contract_name": "con_neb_lst001",
         "price": 1.1611564,
         "daily_price_change": -5.89,
         "daily_trade_volume": 56919815.64845,

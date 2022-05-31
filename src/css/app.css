@@ -312,6 +312,7 @@ button:active{
 
 .page-heading > img.verified_help{
 	margin-left: var(--units-1vw);
+	width: var(--units-1_6vw);
 }
 
 img.dropdown-arrow{

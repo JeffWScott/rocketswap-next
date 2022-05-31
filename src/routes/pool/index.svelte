@@ -3,4 +3,8 @@
 
 </script>
 
+<svelte:head>
+	<title>Rocketswap Pools</title>
+</svelte:head>
+
 <PoolsPage />

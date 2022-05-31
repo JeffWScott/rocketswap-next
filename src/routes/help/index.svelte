@@ -3,4 +3,8 @@
 
 </script>
 
+<svelte:head>
+	<title>Rocketswap Help</title>
+</svelte:head>
+
 <HelpPage />

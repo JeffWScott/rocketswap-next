@@ -1,0 +1,18 @@
+[
+    {
+        "token_symbol": "RSWP",
+        "amount": 148791,
+        "type": "Buy",
+        "trade_price": 82191.88499,
+        "trade_TAU_value": 7697691.75116,
+        "date": 1642177865000
+    },
+    {
+        "token_symbol": "WETH",
+        "amount": 2,
+        "type": "Sell",
+        "trade_price": 228911.42455,
+        "trade_TAU_value": 5273724.58225,
+        "date": 1642275065000
+    }
+]

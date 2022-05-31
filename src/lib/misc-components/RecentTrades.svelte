@@ -1,4 +1,5 @@
 <script>
+    // Components
     import TokenName from '$lib/misc-components/TokenName.svelte'
 
     let active_tab = "0"
@@ -47,8 +48,6 @@
             mock_recent_trades_filtered = apply_filter()
             
         }
-
-        
     }
 </script>
 
@@ -73,7 +72,7 @@
             <tbody>
                 {#each mock_recent_trades_filtered as recent_trade}
                     <tr>
-                        <td><TokenName token_name={recent_trade.token_details.token_name} token_symbol={recent_trade.token_details.token_symbol} is_verified={recent_trade.token_details.verified} /></td>
+                        <td><TokenName token_info={recent_trade.token_details} /></td>
                         <td>{recent_trade.amount}</td>
                         <td>{recent_trade.type}</td>
                         <td>{recent_trade.trade_price}</td>

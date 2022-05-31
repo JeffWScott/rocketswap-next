@@ -13,9 +13,9 @@ for (let token of farm_info){
     staked_token.token_logo = token_logos[token.staked_token]
     token.staked_token = staked_token
     
-    let base_token = get_token(token.base_token)
-    base_token.token_logo = token_logos[token.base_token]
-    token.base_token = base_token
+    let earned_token = get_token(token.earned_token)
+    earned_token.token_logo = token_logos[token.earned_token]
+    token.earned_token = earned_token
     
     mock_farms.push(token)
 }

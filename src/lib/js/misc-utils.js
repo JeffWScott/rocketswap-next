@@ -6,7 +6,6 @@ export function component_key(staked_token, base_token){
 
 export const component_state = (state_store) => {
     function toggle(e){
-        console.log(e)
         const store_value = get(state_store)
         const key = e.target.getAttribute('key')
     
@@ -19,4 +18,8 @@ export const component_state = (state_store) => {
     }
 
     return toggle
+}
+
+export function key_string_value(obj, key_string){
+    return key_string.split('.').reduce((p, c) => p && p[c] || null, obj)
 }

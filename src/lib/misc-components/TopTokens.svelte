@@ -106,7 +106,7 @@
                         <tr>
                             <td>{index + 1}</td>
                             <td>
-                                <TokenName token_name={token_details.token_name} token_symbol={token_details.token_symbol} is_verified={token_details.verified} />
+                                <TokenName token_info={token_details} />
                             </td>
                             <td>{token_details.price}</td>
                             <td class:text-red={is_negative(token_details.daily_price_change)} class:text-green={!is_negative(token_details.daily_price_change)}>{token_details.daily_price_change}%</td>
