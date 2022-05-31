@@ -1,25 +1,24 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
-	import LeftMenu from '$lib/left-menu/LeftMenu.svelte';
-	import MobileMenu from '$lib/mobile-menu/MobileMenu.svelte';
-
 	import '../css/app.css';
 	import '../css/flex.css';
 	import '../css/layout.css';
 	import '../css/styled-defaults.css';
 
-	// Stores
-	import { menu_open } from '$lib/js/stores/app-stores'
+	// Components
+	import Header from '$lib/header/Header.svelte';
+	import LeftMenu from '$lib/left-menu/LeftMenu.svelte';
+	import MobileMenu from '$lib/mobile-menu/MobileMenu.svelte';
+	import Modal from '$lib/modals/Modal.svelte';
 
 </script>
 
 <Header />
 <LeftMenu />
 <MobileMenu />
-
-
+<Modal />
 
 <main>
+
 	<slot />
 </main>
 <!--

@@ -2,13 +2,19 @@
     // Image
     import dropdown_arrow_down from '$lib/svg/dropdown-arrow-down.svg'
 
+    // Stores
+    import { handle_moble_open } from '$lib/js/event_handlers'
+
     export let token_name
     export let token_logo
     export let token_symbol
 
+    function handle_click(){
+        handle_moble_open("TokenSelect")
+    }
 </script>
 
-<button class="token-display panel flex row align-center space-between">
+<button class="token-display panel flex row align-center space-between" on:click={handle_click}>
     <div class="flex row align-center">
         <img class="token-logo" src={token_logo} alt={token_name} />
         {token_symbol}

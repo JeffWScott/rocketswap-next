@@ -88,6 +88,8 @@
 	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 20%);
 	--panel-box-shadow-shallow: 0 var(--units-01vw) var(--units-1vw) 0 rgb(0 0 0 / 20%);
 
+	--modal-bg-overlay: #0e16215d;
+
 	--font-primary-color: #eaeaea;
 	--font-primary-color-dark: #908e8e;
 
@@ -100,7 +102,7 @@
 
 body {
 	overflow-y: scroll;
-
+	width: 100vw;
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--background-color);
@@ -331,6 +333,14 @@ img.sort-arrow.flip{
 	transform: rotateX(0deg);
 }
 
+div.modal{
+	z-index: 102;
+	box-sizing: border-box;
+	width: 50vw;
+	height: 50vh;
+	background-color: var(--panel-background-color);
+}
+
 @media (max-width: 768px) {
 	:root{
 		--font-size-1_2: 10.584px;
@@ -403,7 +413,15 @@ img.sort-arrow.flip{
 	.table-wrapper{
 		overflow-x: scroll;
 	}
+
+	div.modal{
+		transform: translateY(5%);
+		width: 90vw;
+		height: 90vh;
+	}
 }
+
+
 
 @media (max-width: 480px) {
 	:root{
