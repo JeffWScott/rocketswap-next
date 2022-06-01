@@ -46,7 +46,6 @@
     }
 
     function process_filters(){
-        console.log("running process_filters")
         let return_list = mock_farms
         let sort_store_value = $sort_store
 

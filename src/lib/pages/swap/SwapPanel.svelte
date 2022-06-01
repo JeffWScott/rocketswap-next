@@ -4,11 +4,11 @@
     import SwapDetails from '$lib/pages/swap/SwapDetails.svelte';
     import InputNumber from '$lib/inputs/InputNumber.svelte';
 
+    //Stores
+    import { swap_from, swap_to, swap_token_spots, swap_type } from '$lib/js/stores/swap-stores'
+
     // Images
     import icon_change_arrows from '$lib/svg/change-arrows.svg'
-
-    export let from
-    export let to
 </script>
 
 <div class="swap-panel">
@@ -17,11 +17,7 @@
         From 
         <div class="flex row space-between">
             <div class="token-info-box">
-                <TokenDisplay 
-                    token_name={from.token_name}
-                    token_logo={from.token_logo} 
-                    token_symbol={from.token_symbol}
-                />
+                <TokenDisplay token_info={$swap_from} position="from" />
                 <span>Price 0.1510419 TAU per LUSD</span>
             </div>
             <div class="input-box flex col">
@@ -30,15 +26,17 @@
             </div>
 
         </div>
-        <img class="swap-arrow" src={icon_change_arrows} alt="change tokens">
+
+        <div class="swap-arrow flex justify-center">
+            <button class="icon" on:click={swap_token_spots}>
+                <img src={icon_change_arrows} alt="change tokens">
+            </button>
+        </div>
+        
         To 
         <div class="flex row space-between">
             <div class="token-info-box">
-                <TokenDisplay 
-                    token_name={to.token_name}
-                    token_logo={to.token_logo} 
-                    token_symbol={to.token_symbol} 
-                />
+                <TokenDisplay token_info={$swap_to} position="to" />
                 <span>Price 0.1510419 LUSD per TAU</span>
             </div>
             <div class="input-box flex col">
@@ -95,10 +93,19 @@
         margin-top: var(--units-08vw);
     }
     .swap-arrow{
-        margin: var(--units-1_5vw) 0 var(--units-1vw);
+        margin-top: var(--units-1vw);
     }
     button{
         margin-top: var(--units-1vw);
+    }
+    button.icon{
+        margin: 0 auto;
+        padding: var(--units-1vw) var(--units-1_4vw);
+        border-radius: 100%;
+    }
+    button.icon:hover{
+        background-color: var(--panel-background-highlight);
+        
     }
 
     @media (max-width: 480px) {

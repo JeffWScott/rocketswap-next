@@ -58,12 +58,15 @@
 	--units-6vw: 6vw;
 	--units-8vw: 8vw;
 	--units-9vw: 9vw;
+	--units-10vw: 10vw;
+	--units-11vw: 11vw;
 	--units-11_5vw: 11.5vw;
 	--units-15vw: 15vw;
 	--units-17_2vw: 17.2vw;
 	--units-19vw: 19vw;
-	--units-35vw: 22vw;
-	--units-35vw: 34vw;
+	--units-22vw: 22vw;
+	--units-29vw: 29vw;
+	--units-34vw: 34vw;
 
 	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
 	--primary-gradient-webkit: -webkit-linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
@@ -83,6 +86,8 @@
 
 	--panel-background-color: #1B2734;
 	--panel-background-highlight: #27384a;
+	--panel-background-highlighter: #908e8e;
+
 	--panel-box-shadow-higher: 0px var(--units-07vw) var(--units-08vw) 0 rgba(0, 0, 0, 30%);
 	--panel-box-shadow-high: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 40%);
 	--panel-box-shadow: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 20%);
@@ -222,6 +227,19 @@ button{
 	border: unset;
 }
 
+button.void{
+	background-color: transparent;
+	border: none;
+	border-radius: var(--units-05vw);
+	padding: var(--units-1vw);
+	color: var(--font-primary-color)
+}
+
+button.void:hover{
+	background-color: var(--panel-background-highlight);
+	filter: brightness(110%)
+}
+
 button.icon{
 	background-color: transparent;
 	border: none;
@@ -333,13 +351,7 @@ img.sort-arrow.flip{
 	transform: rotateX(0deg);
 }
 
-div.modal{
-	z-index: 102;
-	box-sizing: border-box;
-	width: 50vw;
-	height: 50vh;
-	background-color: var(--panel-background-color);
-}
+
 
 @media (max-width: 768px) {
 	:root{
@@ -397,11 +409,14 @@ div.modal{
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
 		--units-8vw: calc(var(--unit-base-1vw) * 8);
 		--units-9vw: calc(var(--unit-base-1vw) * 9);
+		--units-10vw: calc(var(--unit-base-1vw) * 10);
+		--units-11vw: calc(var(--unit-base-1vw) * 11);
 		--units-11_5vw: calc(var(--unit-base-1vw) * 11.5);
 		--units-15vw: calc(var(--unit-base-1vw) * 15);
 		--units-17_2vw: calc(var(--unit-base-1vw) * 17);
 		--units-19vw: calc(var(--unit-base-1vw) * 19);
 		--units-22vw: calc(var(--unit-base-1vw) * 22);
+		--units-29vw: calc(var(--unit-base-1vw) * 29);
 		--units-34vw: calc(var(--unit-base-1vw) * 34);
 	}
 	body {
@@ -412,12 +427,6 @@ div.modal{
 	}
 	.table-wrapper{
 		overflow-x: scroll;
-	}
-
-	div.modal{
-		transform: translateY(5%);
-		width: 90vw;
-		height: 90vh;
 	}
 }
 
@@ -478,11 +487,14 @@ div.modal{
 		--units-6vw: calc(var(--unit-base-1vw) * 6 * var(--mobile-multiplier));
 		--units-8vw: calc(var(--unit-base-1vw) * 8 * var(--mobile-multiplier));
 		--units-9vw: calc(var(--unit-base-1vw) * 9 * var(--mobile-multiplier));
+		--units-10vw: calc(var(--unit-base-1vw) * 10 * var(--mobile-multiplier));
+		--units-11vw: calc(var(--unit-base-1vw) * 11 * var(--mobile-multiplier));
 		--units-11_5vw: calc(var(--unit-base-1vw) * 11.5 * var(--mobile-multiplier));
 		--units-15vw: calc(var(--unit-base-1vw) * 15 * var(--mobile-multiplier));
 		--units-17_2vw: calc(var(--unit-base-1vw) * 17.2 * var(--mobile-multiplier));
 		--units-19vw: calc(var(--unit-base-1vw) * 19 * var(--mobile-multiplier));
 		--units-22vw: calc(var(--unit-base-1vw) * 22 * var(--mobile-multiplier));
+		--units-29vw: calc(var(--unit-base-1vw) * 29 * var(--mobile-multiplier));
 		--units-34vw: calc(var(--unit-base-1vw) * 34 * var(--mobile-multiplier));
 	}
 	h2{

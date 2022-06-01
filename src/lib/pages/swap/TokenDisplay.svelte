@@ -3,23 +3,39 @@
     import dropdown_arrow_down from '$lib/svg/dropdown-arrow-down.svg'
 
     // Stores
-    import { handle_moble_open } from '$lib/js/event_handlers'
+    import { handle_modal_open } from '$lib/js/event_handlers'
 
-    export let token_name
-    export let token_logo
-    export let token_symbol
+    // Utils
+    import { set_from_token_callback, set_to_token_callback } from '$lib/pages/swap/swap-page-utils.js'
 
-    function handle_click(){
-        handle_moble_open("TokenSelect")
+    export let token_info
+    export let position
+
+    $: is_currency_token = token_info && token_info.contract_name === "currency" 
+
+    function handle_click(e){
+        if (is_currency_token) return
+
+        handle_modal_open({
+            modal_name: "TokenSelect",
+            callback: position === "from" ? set_from_token_callback : set_to_token_callback
+        })
     }
 </script>
 
-<button class="token-display panel flex row align-center space-between" on:click={handle_click}>
-    <div class="flex row align-center">
-        <img class="token-logo" src={token_logo} alt={token_name} />
-        {token_symbol}
-    </div>
-    <img class="arrow" src={dropdown_arrow_down} alt={"arrow"}  />
+<button class="token-display panel flex row align-center space-between" class:no-token={!token_info} on:click={handle_click}>
+        <div class="flex row align-center" >
+            {#if !token_info}
+                Select Token
+            {:else}
+                <img class="token-logo" src={token_info.token_logo} alt={token_info.token_name} />
+                {token_info.token_symbol}
+            {/if}
+        </div>
+        {#if !is_currency_token}
+            <img class="arrow" src={dropdown_arrow_down} alt={"arrow"}  />
+        {/if}
+
 </button>
 
 <style>
@@ -31,6 +47,10 @@
         color: var(--font-primary);
         font-weight: 200;
         cursor: pointer;
+    }
+    .token-display.no-token{
+        padding: var(--units-06vw) var(--units-1_5vw) var(--units-06vw) var(--units-1vw);
+        color: var(--font-primary-color);
     }
     .token-display:hover{
         background-color: var(--panel-background-highlight);

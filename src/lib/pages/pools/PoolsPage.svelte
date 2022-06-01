@@ -59,8 +59,6 @@
             let sort_name = Object.keys(sort_store_value)[0]
             let sort_value = sort_store_value[sort_name]
 
-            console.log({sort_name, sort_value})
-
             if (sort_value){
                 return_list.sort((a, b) => key_string_value(a, sort_name) > key_string_value(b, sort_name) ? 1 : -1)
             }else{

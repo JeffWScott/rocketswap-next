@@ -58,18 +58,13 @@
             return_list = return_list.filter(f => f.liquidity > 1000)
         }
         if (!get_filter_value("Show Low Volume")){
-            return_list = return_list.filter(f => {
-                console.log({f, daily_trade_volume: f.daily_trade_volume, filter: f.daily_trade_volume > 500})
-                return f.daily_trade_volume > 500
-            })
+            return_list = return_list.filter(f => f.daily_trade_volume > 500)
         }
 
         if (Object.keys(sort_store_value).length > 0){
             let sort_name = Object.keys(sort_store_value)[0]
             let sort_value = sort_store_value[sort_name]
-
-            console.log({sort_name, sort_value})
-
+            
             if (sort_value){
                 return_list.sort((a, b) => a[sort_name] > b[sort_name] ? 1 : -1)
             }else{

@@ -4,6 +4,9 @@
     // Images
     import icon_search from '$lib/svg/search.svg'
 
+    export let placeholder = "Search"
+    export let outlined = false
+
     const dispatchEvent = createEventDispatcher()
 
     function dispatch(e){
@@ -12,9 +15,9 @@
 
 </script>
 
-<div class="token-search">
-    <input class="primary_input" placeholder="Search" on:change={dispatch}>
-    <img class="search-icon" src={icon_search} alt="search" />
+<div class="token-search" class:outlined={outlined} >
+    <input class="primary_input" {placeholder} on:change={dispatch}>
+    <img class="search-icon" src={icon_search} alt="search" class:outlined={outlined} />
 </div>
 
 <style>
@@ -28,6 +31,15 @@
         border-radius: var(--units-05vw);
         box-sizing: border-box;
         font-size: var(--units-1_2vw);
+    }
+
+    .token-search.outlined > input{
+        border: var(--units-01vw) solid var(--panel-background-highlighter);
+        border-radius: var(--units-08vw);
+        text-align: center;
+        color: var(--panel-background-highlighter);
+        font-size: var(--units-1_5vw);
+        font-weight: 400;
     }
 
     input::-webkit-input-placeholder {
@@ -48,6 +60,13 @@
         position: relative;
         margin-bottom: var(--units-1vw);
         min-width: var(--units-19vw);
+    }
+    .token-search.outlined{
+        min-width: var(--units-29vw);
+    }
+
+    .token-search.outlined > img {
+        display: none;
     }
 
     .search-icon{

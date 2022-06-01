@@ -1,10 +1,15 @@
 <script>
+    import { fade, fly } from 'svelte/transition';
+
     //Components
     import TokenSelect from '$lib/modals/TokenSelect.svelte';
 
+    // Images
+    import close_x from '$lib/svg/close-x.svg'
+
     // Stores
     import { modal_open_store } from '$lib/js/stores/app-stores'
-    import { handle_moble_close } from '$lib/js/event_handlers'
+    import { handle_modal_close } from '$lib/js/event_handlers'
 
     modal_open_store.subscribe(setup_document_for_modal)
 
@@ -13,9 +18,9 @@
     }
 
     function setup_document_for_modal(open_modal_store_value){
-        console.log(typeof(document))
+
         if (typeof(document) === 'undefined') return
-        console.log(open_modal_store_value)
+
         if(open_modal_store_value){
             document.body.style.position = 'fixed';
             document.body.style.top = `-${window.scrollY}px`;
@@ -29,10 +34,19 @@
 
 </script>
 
-<div class="modal-overlay" class:open={$modal_open_store} on:click={handle_moble_close}>
+<div class="modal-overlay" class:open={$modal_open_store} on:click={handle_modal_close}>
     <div class="modal-wrapper flex">
         {#if $modal_open_store}
-            <svelte:component this={modal_map[$modal_open_store]} />
+            <div class="modal" 
+                 on:click|stopPropagation={()=>null} 
+                 in:fly="{{ y: -50, duration: 500 }}">
+
+                <button class="icon close" on:click={handle_modal_close}>
+                    <img src={close_x} alt="close" />
+                </button>
+                
+                <svelte:component this={modal_map[$modal_open_store]} />
+            </div>
         {/if}
     </div>
 </div>
@@ -58,6 +72,36 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+        padding-top: 10vmin;
+        padding-bottom: 20vmin;
     }
+    .modal{
+        position: relative;
+        z-index: 102;
+        box-sizing: border-box;
+        padding: var(--units-3vw);
+        width: 55vw;
+        height: 100%;
+        background-color: var(--panel-background-color);
+        border-radius: var(--units-07vw);
+        overflow: hidden; 
+        filter: drop-shadow(0 var(--units-1vw) var(--units-3vw) rgba(0, 0, 0, 0.4));
+    }
+    .modal > button{
+        position: absolute;
+        top: var(--units-3vw);
+        right: var(--units-3vw);
+    }
+    
+
+    @media (max-width: 480px) {
+       .modal{
+            transform: translateY(5%);
+            width: 90vw;
+            height: 90vh;
+        }
+    }
+
+
 </style>
 
