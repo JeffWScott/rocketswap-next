@@ -117,7 +117,7 @@
         margin-right: 2vw;
     }
     .filters{
-        width: 92%;
+        width: 66%;
     }
 
     .token{
@@ -135,16 +135,12 @@
         width: var(--units-2vw);
     }
 
-    @media (max-width: 768px) {
-        .token-list{
-            width: var(--units-45vw);
-            font-size: var(--units-1vw);
-        }
-    }
-
     @media (max-width: 480px) {
         .token-list{
             width: 100%;
+        }
+        .filters{
+            width: 92%;
         }
     }
 </style>
