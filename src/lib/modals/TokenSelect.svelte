@@ -136,6 +136,9 @@
     }
 
     @media (max-width: 480px) {
+        .switch{
+            margin-top: var(--units-2vw);
+        }
         .token-list{
             width: 100%;
             font-size: var(--units-09vw);

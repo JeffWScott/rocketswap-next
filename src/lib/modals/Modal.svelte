@@ -108,7 +108,7 @@
         }
         .modal-wrapper{
             padding-top: 32vw;
-            padding-bottom: 50vmin;
+            padding-bottom: 25vmin;
         }
     }
 
