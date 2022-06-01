@@ -75,7 +75,7 @@
     <img class="verified_help" src="{icon_verified_token_help}" alt="verified token help"> 
 </div>
 
-<div class="flex row align-center">
+<div class="buttons-filters flex row align-center">
     <div class="buttons">
         <button class="outlined primary white"><div>Add Liquidity</div></button>
         <button class="outlined white"><div>Create Liquidity</div></button>
@@ -188,6 +188,14 @@
     @media (max-width: 480px) {
         div.filters{
             flex-direction: column;
+            width: 100%;
+        }
+        .buttons-filters{
+            width: 100%;
+            flex-direction: column;
+        }
+        .buttons{
+            width: 100%;
         }
         .buttons > button {
             width: 100%;
