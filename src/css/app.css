@@ -434,7 +434,7 @@ img.sort-arrow.flip{
 
 @media (max-width: 480px) {
 	:root{
-		--mobile-multiplier: 2;
+		--mobile-multiplier: 1.7;
 		--units-005vw: calc(var(--unit-base-1vw) * 0.05 * var(--mobile-multiplier));
 		--units-008vw: calc(var(--unit-base-1vw) * 0.08 * var(--mobile-multiplier));
 		--units-009vw: calc(var(--unit-base-1vw) * 0.09 * var(--mobile-multiplier));
