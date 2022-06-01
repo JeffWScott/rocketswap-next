@@ -37,7 +37,7 @@
 <div class="modal-overlay" class:open={$modal_open_store} on:click={handle_modal_close}>
     <div class="modal-wrapper flex">
         {#if $modal_open_store}
-            <div class="modal" 
+            <div class="modal flex col" 
                  on:click|stopPropagation={()=>null} 
                  in:fly="{{ y: -50, duration: 500 }}">
 

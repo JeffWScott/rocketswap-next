@@ -60,7 +60,7 @@
 
 </script>
 
-<div class="flex col align-center height-inherit">
+<div class="modal-content flex col align-center">
     <h2>Select Token</h2>
     <div class="switch">
         Show Unverified Tokens
@@ -101,7 +101,6 @@
     .token-list{
         width: 70%;
         box-sizing: border-box;
-        height: 100%;
         font-size: var(--units-1_2vw);
         font-weight: 300;
         overflow-y: auto;

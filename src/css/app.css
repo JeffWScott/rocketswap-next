@@ -357,6 +357,10 @@ img.sort-arrow.flip{
 	transform: rotateX(0deg);
 }
 
+.modal-content{
+	height: 100%;
+}
+
 
 
 @media (max-width: 768px) {
