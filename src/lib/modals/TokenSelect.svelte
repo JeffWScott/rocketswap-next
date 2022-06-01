@@ -138,6 +138,7 @@
     @media (max-width: 480px) {
         .token-list{
             width: 100%;
+            font-size: var(--units-09vw);
         }
         .filters{
             width: 92%;
