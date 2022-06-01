@@ -175,6 +175,23 @@ input.number-input{
     border-radius: 50%;
   }
 
+  .fancy-scrollbar {
+    /* Foreground, Background */
+    scrollbar-color: var(--primary-color) var(--panel-background-color);
+  }
+  .fancy-scrollbar::-webkit-scrollbar {
+    width: var(--units-08vw); /* Mostly for vertical scrollbars */
+    height: var(--units-08vw); /* Mostly for horizontal scrollbars */
+  }
+  .fancy-scrollbar::-webkit-scrollbar-thumb { /* Foreground */
+    background: var(--primary-color);
+    border-radius: 1vw;
+  }
+  .fancy-scrollbar::-webkit-scrollbar-track { /* Background */
+    background: var(--panel-background-color);
+    border-radius: 1vw;
+  }
+
 @media (max-width: 480px) {
    
 }

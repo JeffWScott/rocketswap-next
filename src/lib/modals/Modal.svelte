@@ -71,6 +71,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         height: 100%;
         padding-top: 10vmin;
         padding-bottom: 20vmin;
@@ -92,13 +93,22 @@
         top: var(--units-3vw);
         right: var(--units-3vw);
     }
+    .modal > button > img{
+        width: var(--units-1_9vw);
+    }
     
 
     @media (max-width: 480px) {
        .modal{
-            transform: translateY(5%);
+           flex-grow: 1;
+            transform: unset;
             width: 90vw;
-            height: 90vh;
+            height: unset;
+            padding: 4vw;
+        }
+        .modal-wrapper{
+            padding-top: 32vw;
+            padding-bottom: 6vmin;
         }
     }
 

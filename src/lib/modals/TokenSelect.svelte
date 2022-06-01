@@ -46,7 +46,7 @@
             })
         }
 
-        return return_list
+        return [...return_list, ...return_list] 
     }
 
     function handle_select_token(e){
@@ -60,48 +60,67 @@
 
 </script>
 
-<h2>Select Token</h2>
-<div class="flex col align-center">
+<div class="flex col align-center height-inherit">
+    <h2>Select Token</h2>
     <div class="switch">
         Show Unverified Tokens
-       <label>
-           <input type="checkbox" bind:checked={$show_unverified_tokens_store}/>
-           <span class="slider round"></span>
-         </label>
-   </div>
-   <FilterSearch placeholder="Search for Token" outlined on:change={handle_search}/>
-   <div class="token-list">
-       {#each mock_tokens_list as token}
-            <button class="void token flex row align-center" on:click={handle_select_token} contract_name="{token.contract_name}">
-                <span class="token-details" on:click={handle_select_token} contract_name="{token.contract_name}" >
-                    <img src={token.token_logo} alt="{token.token_symbol}" />
-                    {token.token_name}
-                </span>
-                {$user_balances[token.contract_name] ? $user_balances[token.contract_name] : 0}
-            </button>
-       {/each}
-       {#if mock_tokens_list.length === 0}
-            <p>No tokens match search criteria.</p>
-       {/if}
-   </div>
+        <label>
+            <input type="checkbox" bind:checked={$show_unverified_tokens_store}/>
+            <span class="slider round"></span>
+            </label>
+    </div>
+    <div class="filters">
+        <FilterSearch placeholder="Search for Token" outlined on:change={handle_search}/>
+    </div>
+    <div class="token-list grow-1 fancy-scrollbar">
+        {#each mock_tokens_list as token}
+                <button class="void token flex row align-center" on:click={handle_select_token} contract_name="{token.contract_name}">
+                    <span class="token-details" on:click={handle_select_token} contract_name="{token.contract_name}" >
+                        <img src={token.token_logo} alt="{token.token_symbol}" />
+                        {token.token_name}
+                    </span>
+                    {$user_balances[token.contract_name] ? $user_balances[token.contract_name] : 0}
+                </button>
+        {/each}
+        {#if mock_tokens_list.length === 0}
+                <p>No tokens match search criteria.</p>
+        {/if}
+    </div>
 </div>
 
 
+
 <style>
+    h2{
+        align-self: flex-start;
+    }
     .switch{
         margin-bottom: var(--units-2vw);
     }
 
     .token-list{
-        width: var(--units-29vw);
+        width: 70%;
         box-sizing: border-box;
         height: 100%;
-        font-size: var(--units-1_1vw);
+        font-size: var(--units-1_2vw);
         font-weight: 300;
+        overflow-y: auto;
+        padding-right: var(--units-05vw);
     }
     .token-list > p{
         text-align: center;
     }
+    .token-list > button {
+        font-size: inherit;
+
+    }
+    .token-list > button > span {
+        margin-right: 2vw;
+    }
+    .filters{
+        width: 92%;
+    }
+
     .token{
         width: 100%;
     }
@@ -109,9 +128,24 @@
         display: inline-flex;
         flex-grow: 1;
         align-items: center;
+        text-align: left;
+        word-break: break-word;
     }
     .token-details > img {
         margin-right: var(--units-2vw);
         width: var(--units-2vw);
+    }
+
+    @media (max-width: 768px) {
+        .token-list{
+            width: var(--units-45vw);
+            font-size: var(--units-1vw);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .token-list{
+            width: 100%;
+        }
     }
 </style>

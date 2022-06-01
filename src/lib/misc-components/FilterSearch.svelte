@@ -62,7 +62,7 @@
         min-width: var(--units-19vw);
     }
     .token-search.outlined{
-        min-width: var(--units-29vw);
+        min-width: unset;
     }
 
     .token-search.outlined > img {
