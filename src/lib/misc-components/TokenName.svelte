@@ -1,5 +1,9 @@
 <script>
+    // Images
     import verified_token from '$lib/svg/verified_token.svg'
+
+    // Utils
+    import { handle_show_verified_token_info } from '$lib/js/event_handlers';
 
     // Mock imports
     import token_logo_RSWP from '$lib/mock_images/token_logos/RSWP.svg'
@@ -28,8 +32,8 @@
     {/if}
     <a href="{`/swap/${token_info.contract_name}`}" class="name">{token_info.token_name} </a>
     <span class="symbol">{token_info.token_symbol} </span>
-    {#if token_info.is_verified}
-        <img src={verified_token} alt="verified token" class="verified" />
+    {#if token_info.verified}
+        <img src={verified_token} alt="verified token" class="verified" on:click={handle_show_verified_token_info} />
     {/if}
 </div>
 
@@ -41,6 +45,7 @@
     img.verified{
         width: var(--units-1_5vw);
         margin-left: var(--units-1vw);
+        cursor: pointer;
     }
     span.name{
         white-space: nowrap;

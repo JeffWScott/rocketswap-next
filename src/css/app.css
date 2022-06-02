@@ -107,6 +107,14 @@
     --checkbox-bg: transparent;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 body {
 	overflow-y: scroll;
 	width: 100vw;
@@ -339,6 +347,7 @@ button:active{
 .page-heading > img.verified_help{
 	margin-left: var(--units-1vw);
 	width: var(--units-1_6vw);
+	cursor: pointer;
 }
 
 img.dropdown-arrow{
@@ -361,7 +370,17 @@ img.sort-arrow.flip{
 	height: 100%;
 }
 
-
+.modal-content > h2{
+	align-self: flex-start;
+	margin-bottom: var(--units-2vw);
+}
+.modal-content > img.hero{
+	width: var(--units-8vw);
+}
+.modal-content > .text-box{
+	font-size: var(--units-1_2vw);
+    width: 100%;
+}
 
 @media (max-width: 768px) {
 	:root{
@@ -524,5 +543,11 @@ img.sort-arrow.flip{
 	}
 	.desktop{
 		display: none!important;
+	}
+	.modal-content > img.hero{
+		width: 9vh;
+	}
+	.modal-content > .text-box{
+		font-size: 2vh;
 	}
 }

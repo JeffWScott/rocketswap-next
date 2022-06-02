@@ -72,7 +72,9 @@
 
 <div class="page-heading flex row align-center">
     <h2>Your Pools</h2>
-    <img class="verified_help" src="{icon_verified_token_help}" alt="verified token help"> 
+    <img class="verified_help" 
+         src="{icon_verified_token_help}" 
+         alt="verified token help" /> 
 </div>
 
 <div class="buttons-filters flex row align-center">
@@ -85,7 +87,6 @@
         <FilterSearch on:change={handle_search} />
     </div>
 </div>
-
 
 <div class="table-wrapper">
     <table>

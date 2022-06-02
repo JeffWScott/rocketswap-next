@@ -3,6 +3,7 @@
 
     //Components
     import TokenSelect from '$lib/modals/TokenSelect.svelte';
+    import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
 
     // Images
     import close_x from '$lib/svg/close-x.svg'
@@ -14,7 +15,8 @@
     modal_open_store.subscribe(setup_document_for_modal)
 
     const modal_map = {
-        TokenSelect
+        TokenSelect,
+        VerifiedTokens
     }
 
     function setup_document_for_modal(open_modal_store_value){
@@ -82,7 +84,7 @@
         box-sizing: border-box;
         padding: var(--units-3vw);
         width: 55vw;
-        height: 100%;
+
         background-color: var(--panel-background-color);
         border-radius: var(--units-07vw);
         overflow: hidden; 
