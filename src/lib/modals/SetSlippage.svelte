@@ -16,12 +16,10 @@
     }
 
     function handle_slippage_input(e){
-        console.log(e)
         slippage_percent = e.detail
     }
 
     function handle_slippage_set(e){
-        console.log(e)
         slippage_percent = e.target.getAttribute("percent")
     }
     
@@ -42,14 +40,14 @@
             </li>
         </ul>
     </div>
-    <div class="slippage-inputs flex row align-center">
+    <div class="slippage-inputs flex align-center wrap">
         <button class="outlined white" percent="{0.1}" on:click={handle_slippage_set}><div percent="{0.1}">0.1%</div></button>
         <button class="outlined white" percent="{0.4}" on:click={handle_slippage_set}><div percent="{0.4}">0.5%</div></button>
         <button class="outlined white" percent="{1}" on:click={handle_slippage_set}><div percent="{1}" >1%</div></button>
-        <div class="search"><FilterSearch outlined placeholder="%" on:change={handle_slippage_input} /></div>
+        <div class="search"><FilterSearch outlined smaller placeholder="Input %" on:change={handle_slippage_input} /></div>
         
     </div>
-    <div class="buttons">
+    <div class="buttons flex wrap">
         <button class="outlined white" on:click={handle_modal_close}><div>Close</div></button>
         <button class="outlined primary white" on:click={handle_set_slippage}><div>Accept {slippage_percent}%</div></button>
     </div>
@@ -74,5 +72,44 @@
     }
     .buttons > button:first-child{
         margin-right: var(--units-1vw);
+    }
+    @media (max-width: 480px) {
+        .slippage-inputs{
+            width: 100%;
+            justify-content: space-between;
+        }
+        .slippage-inputs > button{
+            width: 30%;
+            margin-bottom: var(--units-1vw);
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .slippage-inputs > button > div{
+            padding-left: var(--units-1vw);
+            padding-right: var(--units-1vw);
+        }
+        .slippage-inputs > button:first-child{
+            margin-left: 0;
+        }
+        div.search{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .buttons{
+            width: 100%;
+        }
+        .buttons > button{
+            margin: 0;
+            margin-bottom: var(--units-1vw);
+            width: 100%;
+        }
+        .buttons > button:last-child{
+            margin: 0;
+        }
+        .buttons > button:first-child{
+            margin-top: var(--units-2vw);
+            margin-right: 0;
+        }
     }
 </style>

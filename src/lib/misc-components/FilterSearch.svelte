@@ -6,6 +6,7 @@
 
     export let placeholder = "Search"
     export let outlined = false
+    export let smaller = false
 
     const dispatchEvent = createEventDispatcher()
 
@@ -15,7 +16,7 @@
 
 </script>
 
-<div class="token-search" class:outlined={outlined} >
+<div class="token-search" class:outlined={outlined} class:smaller={smaller}>
     <input class="primary_input" {placeholder} on:change={dispatch}>
     <img class="search-icon" src={icon_search} alt="search" class:outlined={outlined} />
 </div>
@@ -40,6 +41,10 @@
         color: var(--panel-background-highlighter);
         font-size: var(--units-1_5vw);
         font-weight: 400;
+    }
+
+    .token-search.outlined.smaller > input{
+        font-size: var(--units-1_2vw);
     }
 
     input::-webkit-input-placeholder {

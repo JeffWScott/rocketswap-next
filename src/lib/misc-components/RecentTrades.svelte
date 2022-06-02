@@ -57,7 +57,7 @@
 
 <button tab-id=0 class:primary-color={active_tab === "0"} class="text white" on:click={change_tab}>Your Trades</button>
 <button tab-id=1 class:primary-color={active_tab === "1"} class="text white" on:click={change_tab}>All Trades</button>
-    <div class="table-wrapper">
+    <div class="table-wrapper  fancy-scrollbar">
         <table>
             <thead>
                 <tr>

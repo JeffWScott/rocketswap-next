@@ -82,7 +82,7 @@
         <FilterCheckbox {filter_list} on:changed={apply_filters}/>
         <FilterSearch on:change={handle_search} />
     </div>
-    <div class="table-wrapper">
+    <div class="table-wrapper fancy-scrollbar">
         <table>
             <thead>
                 <tr>

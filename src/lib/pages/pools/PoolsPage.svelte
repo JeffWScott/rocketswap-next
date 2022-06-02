@@ -88,7 +88,7 @@
     </div>
 </div>
 
-<div class="table-wrapper">
+<div class="table-wrapper  fancy-scrollbar">
     <table>
         <thead>
             <tr>
