@@ -8,7 +8,7 @@
 
     <div class="benefit-item">
         <span>25%</span>
-        discount on Rocketswap fees when paying in RSWP. You still have to pay network fees.
+        discount on Rocketswap fees when paying in RSWP instead of TAU. You still have to pay network fees in TAU.
     </div>
 
     <div class="benefit-item">

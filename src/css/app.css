@@ -229,6 +229,14 @@ td{
 	white-space: nowrap;
 }
 
+tr > td:last-child {
+	padding-right: var(--units-1vw);
+}
+
+tr > th:last-child {
+	padding-right: var(--units-1vw);
+}
+
 table, th, td {
 	text-align: left;
 }
