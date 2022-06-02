@@ -49,7 +49,7 @@
 
         </div>
         <SwapDetails />
-        <button class="outlined primary white"> 
+        <button class="connect outlined primary white"> 
             <div>
                 CONNECT WALLET
             </div>
@@ -107,6 +107,14 @@
         background-color: var(--panel-background-highlight);
         
     }
+    button.connect{
+        width: 50%;
+        margin: var(--units-1vw) auto 0;
+    }
+    button.connect > div{
+        padding-left: var(--units-1vw);
+        padding-right: var(--units-1vw);
+    }
 
     @media (max-width: 480px) {
         .swap-panel{
@@ -127,6 +135,9 @@
         }
         .swap-arrow{
             margin: var(--units-1_5vw) 0 var(--units-1vw) 28vw;
+        }
+        button.connect{
+            width: 100%;
         }
     }
 </style>

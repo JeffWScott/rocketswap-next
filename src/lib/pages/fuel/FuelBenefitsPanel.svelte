@@ -1,5 +1,6 @@
 <script>
-
+    // Utils
+    import { handle_goto_rswp_buy } from '$lib/js/event_handlers'
 </script>
 
 <div class="panel flex col center">
@@ -24,7 +25,7 @@
     </div>
 
 
-    <button class="outlined white"><div>Buy RSWP</div></button>
+    <button class="outlined white" on:click={handle_goto_rswp_buy}><div>Buy RSWP</div></button>
 </div>
 
 

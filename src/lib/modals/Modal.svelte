@@ -4,6 +4,7 @@
     //Components
     import TokenSelect from '$lib/modals/TokenSelect.svelte';
     import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
+    import SetSlippage from '$lib/modals/SetSlippage.svelte';
 
     // Images
     import close_x from '$lib/svg/close-x.svg'
@@ -16,7 +17,8 @@
 
     const modal_map = {
         TokenSelect,
-        VerifiedTokens
+        VerifiedTokens,
+        SetSlippage
     }
 
     function setup_document_for_modal(open_modal_store_value){
