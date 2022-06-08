@@ -4,7 +4,7 @@
     import menu_items from '$lib/config/menu-items.json'
 
     // Components
-    import ConnectButton from '$lib/misc-components/ConnectButton.svelte'
+    import ConnectButton from '$lib/left-menu/ConnectButton.svelte'
 
     // Icons
     import menu_icon_map from '$lib/config/menu-icons.js'
@@ -65,7 +65,7 @@
         display: none;
         z-index: 9;
         background-color: var(--panel-background-color);
-        padding: 30vw 2.5vw 0;
+        padding: 25vh 2.5vw 0;
         width: 100vw;
         height: 100vh;
         box-sizing: border-box;
@@ -79,16 +79,16 @@
         box-sizing: border-box;
     }
     .socials > a > img{
-        width: 12vw;
+        width: 7vh;
     }
     .socials > a > img.logo_medium{
-        width: 14vw;
+        width: 8vh;
     }
     ul{
         width: 100%;
         box-sizing: border-box;
         padding: 0;
-        font-size: 4vw;
+        font-size: 2.5vh;
         font-weight: 600;
     }
 
@@ -110,6 +110,6 @@
     }
     li > a > img{
         margin-right: 5vw;
-        width: 8.5vw;
+        width: 5vh;
     }
 </style>

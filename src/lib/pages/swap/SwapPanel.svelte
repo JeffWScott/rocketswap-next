@@ -5,7 +5,11 @@
     import InputNumber from '$lib/inputs/InputNumber.svelte';
 
     //Stores
-    import { swap_from, swap_to, swap_token_spots, swap_type } from '$lib/js/stores/swap-stores'
+    import { swap_from, swap_to, swap_token_spots, swap_type, token_to_swap } from '$lib/js/stores/swap-stores'
+    import { wallet_connected } from '$lib/js/stores/user-stores';
+
+    // Services
+    import { connect_wallet } from '$lib/js/services/wallet.service';
 
     // Images
     import icon_change_arrows from '$lib/svg/change-arrows.svg'
@@ -49,11 +53,20 @@
 
         </div>
         <SwapDetails />
-        <button class="connect outlined primary white"> 
-            <div>
-                CONNECT WALLET
-            </div>
-        </button>
+        
+        {#if $wallet_connected}
+            <button class="connect outlined primary white"> 
+                <div>
+                    {`${$swap_type} ${$token_to_swap.token_symbol}`.toUpperCase()}
+                </div>
+            </button>
+        {:else}
+            <button class="connect outlined primary white" on:click={connect_wallet}> 
+                <div>
+                    CONNECT WALLET
+                </div>
+            </button>
+        {/if}
 
     </div>
 </div>

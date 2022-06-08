@@ -10,6 +10,9 @@
 	import MobileMenu from '$lib/mobile-menu/MobileMenu.svelte';
 	import Modal from '$lib/modals/Modal.svelte';
 
+	// Stores
+	import { wallet_connected } from '$lib/js/stores/user-stores';
+
 </script>
 
 <Header />
@@ -17,8 +20,7 @@
 <MobileMenu />
 <Modal />
 
-<main>
-
+<main class:connected={$wallet_connected}>
 	<slot />
 </main>
 <!--
@@ -40,7 +42,10 @@
 
 	@media (max-width: 480px) {
 		main {
-			padding: 30vw 5vw 15vw;
+			padding: 18vh 5vw 15vw;
+		}
+		main.connected{
+			padding: 25vh 5vw 15vw;
 		}
     }
 </style>

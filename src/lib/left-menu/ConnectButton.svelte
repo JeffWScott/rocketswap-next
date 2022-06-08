@@ -5,12 +5,28 @@
     // Utils
     import { close_menu } from '$lib/mobile-menu/menu-functions'
 
+    // Services
+    import { connect_wallet, disconnect_wallet } from '$lib/js/services/wallet.service'
+
+    // Stores
+    import { wallet_connected } from '$lib/js/stores/user-stores'
+
+    function handle_click(){
+        if ($wallet_connected) disconnect_wallet()
+        else connect_wallet()
+        close_menu()
+    }
+
 </script>
 
 <li>
-    <button class="flex align-center" on:click={close_menu}>
+    <button class="flex align-center" on:click={handle_click}>
         <img src={icon_connect_wallet} alt="Connect Wallet" />
-        Connect Wallet
+        {#if $wallet_connected}
+            Disconnect Wallet
+        {:else}
+            Connect Wallet
+        {/if}
     </button>
 </li>
 
@@ -43,7 +59,8 @@
     @media (max-width: 480px) {
         button{
             flex-direction: row;
-            font-size: 4vw;
+            font-size: 2.5vh;
+            font-weight: 600;
         }
         button{
             padding: 1.5vh 2.5vw;
@@ -55,7 +72,7 @@
         }
         button > img{
             margin-right: 5vw;
-            width: 8.5vw;
+            width: 5vh;
         }
     }
 </style>

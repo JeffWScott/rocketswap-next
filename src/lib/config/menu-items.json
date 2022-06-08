@@ -15,9 +15,9 @@
         "path" : "/fuel"
     },
     {
-        "name": "Pool",
+        "name": "Pools",
         "logo": "icon_pool",
-        "path" : "/pool"
+        "path" : "/pools"
     },
     {
         "name": "Farm",

@@ -1,58 +1,97 @@
 <script>
+	// Images
 	import logo_rocket from '$lib/svg/logo-rocket.svg';
 	import logo_rocketswap from '$lib/svg/logo-rocketswap.svg';
 	import logo_twitter from '$lib/svg/logo-twitter.svg';
 	import logo_medium from '$lib/svg/logo-medium.svg';
 	import logo_telegram from '$lib/svg/logo-telegram.svg';
 	import menu_burger from '$lib/header/menu-burger.svg';
+	import icon_notification from '$lib/header/icon-notification.svg';
 
 	// Utils
 	import { toggle_menu } from '$lib/mobile-menu/menu-functions'
 
+	// Stores
+	import { wallet_connected, wallet_vk, tau_balance } from '$lib/js/stores/user-stores';
+
+	// Service
+	import { format_wallet_address, tauhq_addresses } from '$lib/js/string-formatting'
+
+
 </script>
 
-<header class="flex">
-	<div class="corner left flex row">
-		<a href="https://rocketswap.exchange/" class="desktop max-content">
-			<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
-		</a>
-		<div class="desktop flex row max-content">
-			<div class="ml-1 rocketswap">
-				<a href="https://rocketswap.exchange/">
+<header class="flex col" class:connected={$wallet_connected}>
+	<div class="flex">
+		<div class="corner left flex row">
+			<a href="https://rocketswap.exchange/" class="desktop max-content">
+				<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
+			</a>
+			<div class="desktop flex row max-content">
+				<div class="ml-1 rocketswap">
+					<a href="https://rocketswap.exchange/">
+						<img src={logo_rocketswap} alt="Rocketswap" />
+					</a>
+					TAU: $0.066 | RSWP: $0.016
+				</div>
+	
+				<span class="inline-flex align-center ml-1 weight-300">
+					Powered by <a href="https://www.lamden.io" class="link-primary">Lamden</a>
+				</span>
+			</div>
+			<div class="mobile flex col grow">
+				<a href="https://rocketswap.exchange/" class="rocketswap">
 					<img src={logo_rocketswap} alt="Rocketswap" />
 				</a>
-				TAU: $0.066 | RSWP: $0.016
+				<span class="subtitle inline-flex align-center ml-1 weight-300">
+					Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
+					TAU: $0.066 | RSWP: $0.016
+				</span>
 			</div>
-
-			<span class="inline-flex align-center ml-1 weight-300">
-				Powered by <a href="https://www.lamden.io" class="link-primary">Lamden</a>
-			</span>
 		</div>
-		<div class="mobile flex col grow">
-			<a href="https://rocketswap.exchange/" class="rocketswap">
-				<img src={logo_rocketswap} alt="Rocketswap" />
+	
+		{#if $wallet_connected}
+			<div class="wallet-balance-address desktop flex align-center">
+				{`${$tau_balance} TAU | `}
+				<a class="primary-link" href="{`${tauhq_addresses($wallet_vk)}`}" target="_blank">
+					{format_wallet_address($wallet_vk)}
+				</a>
+			</div>
+		{/if}
+		<div class="corner right flex row align-center mobile">
+			<img src={menu_burger} alt="menu" on:click={toggle_menu}/>
+		</div>
+		<div class="desktop corner right flex row align-center">
+			{#if $wallet_connected}
+				<button class="icon">
+					<img src="{icon_notification}" alt="notification">
+				</button>
+			{/if}
+			<a href="https://twitter.com/RSwapOfficial" class="ml-1">
+				<img src={logo_telegram} alt="Telegram" />
 			</a>
-			<span class="subtitle inline-flex align-center ml-1 weight-300">
-				Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
-				TAU: $0.066 | RSWP: $0.016
-			</span>
+			<a href="https://twitter.com/RSwapOfficial" class="ml-1">
+				<img class="logo_medium" src={logo_medium} alt="Medium" />
+			</a>
+			<a href="https://twitter.com/RSwapOfficial" class="ml-1">
+				<img src={logo_twitter} alt="Twitter" />
+			</a>
 		</div>
 	</div>
+	{#if $wallet_connected}
+		<div class="connected-row flex align-center center">
+			<div class="wallet-balance-address mobile flex align-center">
+				{`${$tau_balance} TAU |`}
+				<a class="primary-link" href="{`${tauhq_addresses($wallet_vk)}`}" target="_blank">
+					{format_wallet_address($wallet_vk)}
+				</a>
+			</div>
+			<button class="icon">
+				<img src="{icon_notification}" alt="notification">
+			</button>
+		</div>
 
-	<div class="corner right flex row align-center mobile">
-		<img src={menu_burger} alt="menu" on:click={toggle_menu}/>
-	</div>
-	<div class="desktop corner right flex row align-center ">
-		<a href="https://twitter.com/RSwapOfficial" class="ml-1">
-			<img src={logo_telegram} alt="Telegram" />
-		</a>
-		<a href="https://twitter.com/RSwapOfficial" class="ml-1">
-			<img class="logo_medium" src={logo_medium} alt="Medium" />
-		</a>
-		<a href="https://twitter.com/RSwapOfficial" class="ml-1">
-			<img src={logo_twitter} alt="Twitter" />
-		</a>
-	</div>
+	{/if}
+
 </header>
 
 <style>
@@ -82,8 +121,12 @@
 		height: 100%;
 	}
 
-	.corner.right{
-		width: var(--units-9vw);
+	.corner.right > a {
+		width: var(--units-2_5vw);
+	}
+
+	.corner.right > button {
+		width: var(--units-2_3vw);
 	}
 
 	.corner.left{
@@ -113,6 +156,23 @@
 	img.logo_medium{
 		height: 136%;
 	}
+
+	.wallet-balance-address{
+		background-color: var(--background-color);
+		border-radius: var(--units-06vw);
+		box-shadow: var(--panel-box-shadow-high);
+
+		height: 100%;
+		padding: 0 var(--units-2vw);
+		margin-right: calc(-1 * 12vw);
+		width: fit-content;
+
+		font-size: var(--units-1_15vw);
+	}
+
+	.wallet-balance-address > a{
+		margin-left: var(--units-03vw);
+	}
 	
 	@media (max-width: 768px) {
         header{
@@ -125,9 +185,12 @@
 
 	@media (max-width: 480px) {
         header{
-			padding: 7vw 5vw;
+			padding: 4vh 5vw;
 			height: unset;
         }
+		header.connected{
+			padding: 4vh 5vw 3vh;
+		}
 		.subtitle{
 			font-size: 3vw;
 		}
@@ -152,5 +215,14 @@
 		.mobile .rocketswap{
 			width: 55vw;
 		}
+		.wallet-balance-address{
+			margin-right: 4vw;
+			padding: 1vh 2vh;
+		}
+		.connected-row{
+			margin-top: 3vh;
+		}
+
+
     }
 </style>

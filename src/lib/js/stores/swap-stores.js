@@ -16,3 +16,8 @@ export const swap_type = derived([swap_from, swap_to], ([$swap_from, $swap_to]) 
     if ($swap_to.contract_name === "currency") return "sell" 
 })
 
+export const token_to_swap = derived([swap_from, swap_to], ([$swap_from, $swap_to]) => {
+    if ($swap_from.contract_name === "currency") return $swap_to 
+    if ($swap_to.contract_name === "currency") return $swap_from
+})
+

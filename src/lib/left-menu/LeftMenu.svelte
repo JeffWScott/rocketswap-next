@@ -2,7 +2,7 @@
     import { page } from '$app/stores';
 
     // Components
-    import ConnectButton from '$lib/misc-components/ConnectButton.svelte'
+    import ConnectButton from '$lib/left-menu/ConnectButton.svelte'
 
     // Icons
     import menu_icon_map from '$lib/config/menu-icons.js'

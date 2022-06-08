@@ -27,3 +27,19 @@ export function handle_show_set_slippage(){
 export function handle_goto_rswp_buy(){
     goto('/swap/con_rswp_lst001')
 }
+
+export function handle_goto_pools_create_liquidity(){
+    goto('/pools/create')
+}
+
+export function handle_goto_pools_add_liquidity(e){
+    const contract_name = e.target.getAttribute("contract_name")
+    if (contract_name) goto(`/pools/add/${contract_name}`)
+    else goto('/pools/add')
+}
+
+export function handle_goto_pools_remove_liquidity(){
+    const contract_name = e.target.getAttribute("contract_name")
+    if (contract_name) goto(`/pools/remove/${contract_name}`)
+    else goto('/pools/remove')
+}

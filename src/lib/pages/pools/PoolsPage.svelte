@@ -15,6 +15,7 @@
     
     // Utils
     import { component_key, component_state, key_string_value } from '$lib/js/misc-utils';
+    import { handle_goto_pools_add_liquidity, handle_goto_pools_create_liquidity, handle_goto_pools_remove_liquidity } from '$lib/js/event_handlers';
 
     // Stores
     import { pools_open } from '$lib/js/stores/component-state-stores';
@@ -79,8 +80,8 @@
 
 <div class="buttons-filters flex row align-center">
     <div class="buttons">
-        <button class="outlined primary white"><div>Add Liquidity</div></button>
-        <button class="outlined white"><div>Create Liquidity</div></button>
+        <button class="outlined primary white" on:click={handle_goto_pools_add_liquidity}><div>Add Liquidity</div></button>
+        <button class="outlined white" on:click={handle_goto_pools_create_liquidity}><div>Create Liquidity</div></button>
     </div>
     <div class="filters flex align-center grow-1">
         <FilterCheckbox {filter_list} />
@@ -136,12 +137,16 @@
                             colspan="100" 
                             in:slide={{duration: 500, easing: quintOut}}>
                             <div class="staking-buttons flex">
-                                <button class="outlined white"><div>
-                                    Remove
-                                </div></button>
-                                <button class="outlined primary white"><div>
-                                    Adjust
-                                </div></button>
+                                <button class="outlined white" contract_name="{mock_pools.staked_token.contract_name}" on:click={handle_goto_pools_remove_liquidity}>
+                                    <div contract_name="{mock_pools.staked_token ? mock_pools.staked_token.contract_name : null}">
+                                        Remove
+                                    </div>
+                                </button>
+                                <button class="outlined primary white" contract_name="{mock_pools.staked_token ? mock_pools.staked_token.contract_name : null}" on:click={handle_goto_pools_add_liquidity}>
+                                    <div contract_name="{mock_pools.staked_token.contract_namemock_pools.staked_token ? mock_pools.staked_token.contract_name : null}">
+                                        Adjust
+                                    </div>
+                                </button>
                             </div>
                         </td>
                     </tr>

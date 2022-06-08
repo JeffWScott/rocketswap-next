@@ -46,6 +46,7 @@
 		--units-2vw: calc(2vw * var(--breakpoint-multiplier));
 		--units-2_1vw: calc(2.1vw * var(--breakpoint-multiplier));
 		--units-2_2vw: calc(2.2vw * var(--breakpoint-multiplier));
+		--units-2_3vw: calc(2.3vw * var(--breakpoint-multiplier));
 		--units-2_5vw: calc(2.5vw * var(--breakpoint-multiplier));
 		--units-3vw: calc(3vw * var(--breakpoint-multiplier));
 		--units-3_1vw: calc(3.1vw * var(--breakpoint-multiplier));
@@ -91,6 +92,8 @@
 	--panel-background-color: #1B2734;
 	--panel-background-highlight: #27384a;
 	--panel-background-highlighter: #908e8e;
+
+	--panel-border-radius: var(--units-1vw);
 
 	--panel-box-shadow-higher: 0px var(--units-07vw) var(--units-08vw) 0 rgba(0, 0, 0, 30%);
 	--panel-box-shadow-high: 0 var(--units-01vw) var(--units-3vw) 0 rgb(0 0 0 / 40%);
@@ -268,6 +271,8 @@ button.icon{
 	background-color: transparent;
 	border: none;
 	padding: 0;
+	height: -webkit-fill-available;
+	cursor: pointer;
 }
 
 button.text{
@@ -346,7 +351,7 @@ button:active{
 
 .panel{
 	box-sizing: border-box;
-	border-radius: var(--units-1vw);
+	border-radius: var(--panel-border-radius);
 	background-color: var(--panel-background-color);
 }
 
@@ -432,6 +437,7 @@ img.sort-arrow.flip{
 		--units-2vw: 2vw;
 		--units-2_1vw: 2.1vw;
 		--units-2_2vw: 2.2vw;
+		--units-2_3vw: 2.3vw;
 		--units-2_5vw: 2.5vw;
 		--units-3vw: 3vw;
 		--units-3_1vw: 3.1vw;
@@ -502,6 +508,7 @@ img.sort-arrow.flip{
 		--units-2vw: calc(var(--unit-base-1vw) * 2);
 		--units-2_1vw: calc(var(--unit-base-1vw) * 2.1);
 		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2);
+		--units-2_3vw: calc(var(--unit-base-1vw) * 2.3);
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5);
 		--units-3vw: calc(var(--unit-base-1vw) * 3);
 		--units-3_1vw: calc(var(--unit-base-1vw) * 3.1);
@@ -583,6 +590,7 @@ img.sort-arrow.flip{
 		--units-2vw: calc(var(--unit-base-1vw) * 2 * var(--breakpoint-multiplier));
 		--units-2_1vw: calc(var(--unit-base-1vw) * 2.1 * var(--breakpoint-multiplier));
 		--units-2_2vw: calc(var(--unit-base-1vw) * 2.2 * var(--breakpoint-multiplier));
+		--units-2_3vw: calc(var(--unit-base-1vw) * 2.3 * var(--breakpoint-multiplier));
 		--units-2_5vw: calc(var(--unit-base-1vw) * 2.5 * var(--breakpoint-multiplier));
 		--units-3vw: calc(var(--unit-base-1vw) * 3 * var(--breakpoint-multiplier));
 		--units-3_1vw: calc(var(--unit-base-1vw) * 3.1 * var(--breakpoint-multiplier));
