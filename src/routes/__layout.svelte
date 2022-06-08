@@ -42,10 +42,10 @@
 
 	@media (max-width: 480px) {
 		main {
-			padding: 18vh 5vw 15vw;
+			padding: 20vh 5vw 15vw;
 		}
 		main.connected{
-			padding: 25vh 5vw 15vw;
+			padding: 27vh 5vw 15vw;
 		}
     }
 </style>

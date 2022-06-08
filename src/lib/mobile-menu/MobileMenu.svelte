@@ -14,6 +14,7 @@
 
     // Store
 	import { menu_open } from '$lib/js/stores/app-stores'
+    import { wallet_connected } from '$lib/js/stores/user-stores'
 
     // Utils
     import { close_menu } from '$lib/mobile-menu/menu-functions'
@@ -23,7 +24,7 @@
 </script>
 
 <div class="mobile">
-    <div class:open={$menu_open} class="menu">
+    <div class:open={$menu_open} class="menu" class:connected={$wallet_connected}>
         <ul>
             {#each menu_items as menu_item}
                 <li class:text-gradient-primary={$page.url.pathname == menu_item.path}>
@@ -65,7 +66,7 @@
         display: none;
         z-index: 9;
         background-color: var(--panel-background-color);
-        padding: 25vh 2.5vw 0;
+        padding: 18vh 2.5vw 0;
         width: 100vw;
         height: 100vh;
         box-sizing: border-box;
@@ -74,8 +75,11 @@
         left: 0;
         touch-action: none;
     }
+    .menu.connected{
+        padding-top: 25vh;
+    }
     .socials{
-        padding: 3vh 20vw;
+        padding: 0 20vw;
         box-sizing: border-box;
     }
     .socials > a > img{
