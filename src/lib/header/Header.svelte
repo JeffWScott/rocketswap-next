@@ -218,6 +218,7 @@
 		.wallet-balance-address{
 			margin-right: 4vw;
 			padding: 1vh 2vh;
+			font-size: 3.5vw;
 		}
 		.connected-row{
 			margin-top: 3vh;
