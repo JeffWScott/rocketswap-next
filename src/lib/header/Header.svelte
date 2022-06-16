@@ -20,8 +20,7 @@
 
 </script>
 
-<header class="flex col" class:connected={$wallet_connected}>
-	<div class="flex">
+<header class="desktop flex" class:connected={$wallet_connected}>
 		<div class="corner left flex row">
 			<a href="https://rocketswap.exchange/" class="desktop max-content">
 				<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
@@ -34,17 +33,8 @@
 					TAU: $0.066 | RSWP: $0.016
 				</div>
 	
-				<span class="inline-flex align-center ml-1 weight-300">
+				<span class="inline-flex align-center ml-1 weight-300 max-content">
 					Powered by <a href="https://www.lamden.io" class="link-primary">Lamden</a>
-				</span>
-			</div>
-			<div class="mobile flex col grow">
-				<a href="https://rocketswap.exchange/" class="rocketswap">
-					<img src={logo_rocketswap} alt="Rocketswap" />
-				</a>
-				<span class="subtitle inline-flex align-center ml-1 weight-300">
-					Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
-					TAU: $0.066 | RSWP: $0.016
 				</span>
 			</div>
 		</div>
@@ -57,10 +47,12 @@
 				</a>
 			</div>
 		{/if}
+
 		<div class="corner right flex row align-center mobile">
 			<img src={menu_burger} alt="menu" on:click={toggle_menu}/>
 		</div>
-		<div class="desktop corner right flex row align-center">
+
+		<div class="corner right flex row align-center">
 			{#if $wallet_connected}
 				<button class="icon">
 					<img src="{icon_notification}" alt="notification">
@@ -76,10 +68,39 @@
 				<img src={logo_twitter} alt="Twitter" />
 			</a>
 		</div>
+</header>
+
+<header class="mobile flex col" class:connected={$wallet_connected}>
+	<div class="flex">
+		<div class="corner left flex row">
+			<a href="https://rocketswap.exchange/" class="desktop max-content">
+				<img src={logo_rocket} alt="Rocketswap" class="rocketship-icon" />
+			</a>
+			<div class="flex col grow">
+				<a href="https://rocketswap.exchange/" class="rocketswap">
+					<img src={logo_rocketswap} alt="Rocketswap" />
+				</a>
+				<span class="subtitle inline-flex align-center ml-1 weight-300 max-content">
+					Powered by <a href="https://www.lamden.io" class="link-primary  ml-1 mr-1em">Lamden</a>
+					TAU: $0.066 | RSWP: $0.016
+				</span>
+			</div>
+		</div>
+		{#if $wallet_connected}
+			<div class="wallet-balance-address desktop flex align-center">
+				{`${$tau_balance} TAU | `}
+				<a class="primary-link" href="{`${tauhq_addresses($wallet_vk)}`}" target="_blank">
+					{format_wallet_address($wallet_vk)}
+				</a>
+			</div>
+		{/if}
+		<div class="corner right flex row align-center mobile">
+			<img src={menu_burger} alt="menu" on:click={toggle_menu}/>
+		</div>
 	</div>
 	{#if $wallet_connected}
 		<div class="connected-row flex align-center center">
-			<div class="wallet-balance-address mobile flex align-center">
+			<div class="wallet-balance-address  flex align-center">
 				{`${$tau_balance} TAU |`}
 				<a class="primary-link" href="{`${tauhq_addresses($wallet_vk)}`}" target="_blank">
 					{format_wallet_address($wallet_vk)}
@@ -89,9 +110,7 @@
 				<img src="{icon_notification}" alt="notification">
 			</button>
 		</div>
-
 	{/if}
-
 </header>
 
 <style>
