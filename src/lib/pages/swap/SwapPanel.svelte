@@ -4,15 +4,28 @@
     import SwapDetails from '$lib/pages/swap/SwapDetails.svelte';
     import InputNumber from '$lib/inputs/InputNumber.svelte';
 
+    // Utils
+    import { set_from_token_callback, set_to_token_callback } from '$lib/pages/swap/swap-page-utils.js'
+
     //Stores
     import { swap_from, swap_to, swap_token_spots, swap_type, token_to_swap } from '$lib/js/stores/swap-stores'
     import { wallet_connected } from '$lib/js/stores/user-stores';
+    import { handle_modal_open } from '$lib/js/event_handlers'
 
     // Services
     import { connect_wallet } from '$lib/js/services/wallet.service';
 
     // Images
     import icon_change_arrows from '$lib/svg/change-arrows.svg'
+
+    function handle_click(e){
+        const position = e.detail
+
+        handle_modal_open({
+            modal_name: "TokenSelect",
+            callback: position === "from" ? set_from_token_callback : set_to_token_callback
+        })
+    }
 </script>
 
 <div class="swap-panel">
@@ -21,7 +34,7 @@
         From 
         <div class="flex row space-between">
             <div class="token-info-box">
-                <TokenDisplay token_info={$swap_from} position="from" />
+                <TokenDisplay token_info={$swap_from} position="from" on:click={handle_click}/>
                 <span>Price 0.1510419 TAU per LUSD</span>
             </div>
             <div class="input-box flex col">
@@ -39,7 +52,7 @@
         To 
         <div class="flex row space-between">
             <div class="token-info-box">
-                <TokenDisplay token_info={$swap_to} position="to" />
+                <TokenDisplay token_info={$swap_to} position="to" on:click={handle_click}/>
                 <span>Price 0.1510419 LUSD per TAU</span>
             </div>
             <div class="input-box flex col">

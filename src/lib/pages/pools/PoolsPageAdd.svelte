@@ -5,23 +5,37 @@
 
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
+    import { handle_modal_open } from '$lib/js/event_handlers'
 
     // Images
     import icon_plus from '$lib/svg/plus.svg'
 
-    export let token_info
+    export let token_info = null
+
+    $: selected_token = token_info
+
+    function set_selected_token(e){
+        selected_token = e
+    }
+
+    function handle_click(e){
+        handle_modal_open({
+            modal_name: "TokenSelect",
+            callback: set_selected_token
+        })
+    }
 </script>
 
 <h2>Add Liquidity</h2>
 <div class="nav flex row">
     <a href="/pools" class="link-primary">Back</a>
-    <a href="/pools" class="link-primary">Remove Liquidity</a>
+    <a href="/pools/remove" class="link-primary">Remove Liquidity</a>
 </div>
 <div class="panel">
     <p class="heading">Base</p>
     <div class="flex row space-between">
         <div class="token-details flex col">
-            <TokenDisplay token_info={currency_token} position="from"/>
+            <TokenDisplay token_info={$currency_token} position="from"/>
             <p>Price 0.1510419 TAU per LUSD</p>
         </div>
         <div class="flex col">
@@ -35,7 +49,7 @@
     <p class="heading">Token</p>
     <div class="flex row space-between">
         <div class="token-details flex col">
-            <TokenDisplay token_info={token_info} />
+            <TokenDisplay token_info={selected_token} position="to" on:click={handle_click}/>
             <p>Price 0.1510419 TAU per LUSD</p>
         </div>
         <div class="flex col">

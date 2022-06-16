@@ -1,25 +1,21 @@
 <script>
+    import { createEventDispatcher  } from 'svelte'
+
     // Image
     import dropdown_arrow_down from '$lib/svg/dropdown-arrow-down.svg'
-
-    // Stores
-    import { handle_modal_open } from '$lib/js/event_handlers'
-
-    // Utils
-    import { set_from_token_callback, set_to_token_callback } from '$lib/pages/swap/swap-page-utils.js'
 
     export let token_info
     export let position
 
+    const dispatch = createEventDispatcher()
+
     $: is_currency_token = token_info && token_info.contract_name === "currency" 
 
-    function handle_click(e){
+    function handle_click(){
+        console.log(token_info)
         if (is_currency_token) return
 
-        handle_modal_open({
-            modal_name: "TokenSelect",
-            callback: position === "from" ? set_from_token_callback : set_to_token_callback
-        })
+        dispatch('click', position)
     }
 </script>
 
