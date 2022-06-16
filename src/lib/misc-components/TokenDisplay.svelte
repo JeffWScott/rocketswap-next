@@ -47,6 +47,7 @@
         color: var(--font-primary);
         font-weight: 200;
         cursor: pointer;
+        border-radius: var(--units-06vw);
     }
     .token-display.no-token{
         padding: var(--units-06vw) var(--units-1_5vw) var(--units-06vw) var(--units-1vw);

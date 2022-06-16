@@ -1,6 +1,6 @@
 <script>
     // Componets
-    import TokenDisplay from '$lib/pages/swap/TokenDisplay.svelte'
+    import TokenDisplay from "$lib/misc-components/TokenDisplay.svelte";
     import SwapDetails from '$lib/pages/swap/SwapDetails.svelte';
     import InputNumber from '$lib/inputs/InputNumber.svelte';
 
@@ -28,7 +28,6 @@
                 <InputNumber />
                 <span class="balance">Balance: 100 TAU</span>
             </div>
-
         </div>
 
         <div class="swap-arrow flex justify-center">

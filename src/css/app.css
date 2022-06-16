@@ -274,6 +274,9 @@ button.icon{
 	height: -webkit-fill-available;
 	cursor: pointer;
 }
+.modal > button.icon{
+	height: fit-content;
+}
 
 button.text{
 	background-color: transparent;
@@ -395,6 +398,10 @@ img.sort-arrow.flip{
 .modal-content > .text-box{
 	font-size: var(--units-1_2vw);
     width: 100%;
+}
+.panel-page{
+	width: fit-content;
+	margin: 0 auto;
 }
 
 @media (max-width: 1920px) {
