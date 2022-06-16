@@ -137,13 +137,13 @@
                             colspan="100" 
                             in:slide={{duration: 500, easing: quintOut}}>
                             <div class="staking-buttons flex">
-                                <button class="outlined white" contract_name="{mock_pools.staked_token.contract_name}" on:click={handle_goto_pools_remove_liquidity}>
-                                    <div contract_name="{mock_pools.staked_token ? mock_pools.staked_token.contract_name : null}">
+                                <button class="outlined white" contract_name="{mock_pool.staked_token.contract_name}" on:click={handle_goto_pools_remove_liquidity}>
+                                    <div contract_name="{mock_pool.staked_token.contract_name}">
                                         Remove
                                     </div>
                                 </button>
-                                <button class="outlined primary white" contract_name="{mock_pools.staked_token ? mock_pools.staked_token.contract_name : null}" on:click={handle_goto_pools_add_liquidity}>
-                                    <div contract_name="{mock_pools.staked_token.contract_namemock_pools.staked_token ? mock_pools.staked_token.contract_name : null}">
+                                <button class="outlined primary white" contract_name="{mock_pool.staked_token.contract_name}" on:click={handle_goto_pools_add_liquidity}>
+                                    <div contract_name="{mock_pool.staked_token.contract_name}">
                                         Adjust
                                     </div>
                                 </button>
