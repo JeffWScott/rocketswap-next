@@ -56,6 +56,57 @@
         padding-left: 0;
         padding-right: 0;
     }
+    @media (max-width: 480px) {
+        h2{
+            text-align: unset;
+        }
+        .modal-content{
+            margin: 0;
+            width: 100%;
+        }
+        img.icon{
+            width: 11vw;
+        }
+        .arrow{
+            width: 4vw;
+            margin: 2vh 4vw ;
+        }
+        .highlight{
+            font-size: 5vw;
+            font-weight: 500;
+        }
+        span{
+            margin-right: var(--units-1vw);
+        }
+        .details{
+            font-size: 3vw;
+            width: max-content;
+        }
+        .details > p {
+            margin: 0;
+        }
+        p.subtitle{
+            font-size: 3vw;
+            margin: 2vh 0 4vh;
+        }
+        p > span{
+            color: var(--font-primary-color-dark);
+        }
+        .buttons{
+            flex-direction: column;
+            margin-top: 5vh;
+        }
+        button{
+            width: 100%;
+        }
+        .buttons > button:first-child{
+            margin-bottom: 2vh;
+        }
+        button >div{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 </style>
 
 <div class="modal-content">
