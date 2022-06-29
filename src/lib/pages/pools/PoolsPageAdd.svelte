@@ -5,7 +5,7 @@
 
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
-    import { handle_modal_open } from '$lib/js/event_handlers'
+    import { handle_modal_open } from '$lib/js/event-handlers'
 
     // Images
     import icon_plus from '$lib/svg/plus.svg'

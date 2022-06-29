@@ -3,7 +3,7 @@
     import FilterSearch from '$lib/misc-components/FilterSearch.svelte';
 
     // Utils
-    import { handle_modal_close } from '$lib/js/event_handlers'
+    import { handle_modal_close } from '$lib/js/event-handlers'
 
     // Stores
     import { slippage_percent_store } from '$lib/js/stores/app-stores'

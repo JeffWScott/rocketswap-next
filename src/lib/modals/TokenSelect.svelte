@@ -10,7 +10,7 @@
     import { modal_callback } from '$lib/js/stores/app-stores'
 
     // Utils
-    import { handle_modal_close } from '$lib/js/event_handlers' 
+    import { handle_modal_close } from '$lib/js/event-handlers' 
 
     // Mock Data
     import mock_tokens from "$lib/mock_data/mock_tokens";

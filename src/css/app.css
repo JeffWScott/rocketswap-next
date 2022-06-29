@@ -262,7 +262,7 @@ button.void{
 	color: var(--font-primary-color)
 }
 
-button.void:hover{
+button:not([disabled]).void:hover{
 	background-color: var(--panel-background-highlight);
 	filter: brightness(110%)
 }
@@ -317,7 +317,7 @@ button.outlined > div{
 	cursor: pointer;
 }
 
-button.outlined > div:hover{
+button.outlined:not([disabled]) > div:hover{
 	background-color: var(--panel-background-highlight);
 	filter: brightness(110%)
 }
@@ -327,11 +327,15 @@ button.outlined.primary > div{
 	background: var(--secondary-gradient-webkit);
 }
 
+button:disabled{
+	filter: contrast(50%);
+}
+
 button.skinny > div{
 	padding: var(--units-005vw) var(--units-1_8vw);
 }
 
-button:active{
+button:not([disabled]):active{
 	position: relative;
 	top: var(--units-01vw);
 }

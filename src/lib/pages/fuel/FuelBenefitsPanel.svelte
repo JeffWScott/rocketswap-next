@@ -1,6 +1,6 @@
 <script>
     // Utils
-    import { handle_goto_rswp_buy } from '$lib/js/event_handlers'
+    import { handle_goto_rswp_buy } from '$lib/js/event-handlers'
 </script>
 
 <div class="panel flex col center">

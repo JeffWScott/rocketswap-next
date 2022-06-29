@@ -3,7 +3,7 @@
     import icon_verified_token from '$lib/svg/verified_token.svg'
 
     // Utils
-    import { handle_modal_close } from '$lib/js/event_handlers'
+    import { handle_modal_close } from '$lib/js/event-handlers'
 </script>
 
 <div class="modal-content flex col align-center">

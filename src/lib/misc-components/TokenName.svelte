@@ -3,7 +3,7 @@
     import verified_token from '$lib/svg/verified_token.svg'
 
     // Utils
-    import { handle_show_verified_token_info } from '$lib/js/event_handlers';
+    import { handle_show_verified_token_info } from '$lib/js/event-handlers';
 
     // Mock imports
     import token_logo_RSWP from '$lib/mock_images/token_logos/RSWP.svg'

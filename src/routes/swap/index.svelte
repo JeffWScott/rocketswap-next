@@ -9,7 +9,6 @@
 
     const mock_token_list = Object.keys(mock_tokens).map(m => mock_tokens[m])
     swap_from.set(mock_token_list.find(f => f.contract_name === 'currency'))
-
 </script>
 
 <svelte:head>

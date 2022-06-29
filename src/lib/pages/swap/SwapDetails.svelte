@@ -2,7 +2,7 @@
     // Stores
     import { slippage_percent_store } from '$lib/js/stores/app-stores'
     // Utils
-    import { handle_show_set_slippage } from '$lib/js/event_handlers'
+    import { handle_show_set_slippage } from '$lib/js/event-handlers'
 </script>
 
 <div class="swap-details">

@@ -10,7 +10,7 @@
     //Stores
     import { swap_from, swap_to, swap_token_spots, swap_type, token_to_swap } from '$lib/js/stores/swap-stores'
     import { wallet_connected } from '$lib/js/stores/user-stores';
-    import { handle_modal_open } from '$lib/js/event_handlers'
+    import { handle_modal_open } from '$lib/js/event-handlers'
 
     // Services
     import { connect_wallet } from '$lib/js/services/wallet.service';
@@ -18,12 +18,21 @@
     // Images
     import icon_change_arrows from '$lib/svg/change-arrows.svg'
 
+    $: token_not_selected = !$swap_from || !$swap_to
+
     function handle_click(e){
         const position = e.detail
 
         handle_modal_open({
             modal_name: "TokenSelect",
             callback: position === "from" ? set_from_token_callback : set_to_token_callback
+        })
+    }
+
+    function handle_confirm(){
+        handle_modal_open({
+            modal_name: "ConfirmSwap",
+            callback: () => console.log("confirm")
         })
     }
 </script>
@@ -67,9 +76,13 @@
         <SwapDetails />
         
         {#if $wallet_connected}
-            <button class="connect outlined primary white"> 
+            <button class="connect outlined primary white" disabled={token_not_selected} on:click={handle_confirm}> 
                 <div>
-                    {`${$swap_type} ${$token_to_swap.token_symbol}`.toUpperCase()}
+                    {#if token_not_selected}
+                        No Token Selected
+                    {:else}
+                        {`${$swap_type} ${$token_to_swap.token_symbol}`.toUpperCase()}
+                    {/if}
                 </div>
             </button>
         {:else}

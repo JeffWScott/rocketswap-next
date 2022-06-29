@@ -8,7 +8,6 @@
     // Mock Data
     import mock_tokens from '$lib/mock_data/mock_tokens';
     
-
     export let token_info
 
     swap_to.set(token_info)

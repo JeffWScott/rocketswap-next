@@ -5,20 +5,22 @@
     import TokenSelect from '$lib/modals/TokenSelect.svelte';
     import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
     import SetSlippage from '$lib/modals/SetSlippage.svelte';
+    import ConfirmSwap from '$lib/modals/ConfirmSwap.svelte';
 
     // Images
     import close_x from '$lib/svg/close-x.svg'
 
     // Stores
     import { modal_open_store } from '$lib/js/stores/app-stores'
-    import { handle_modal_close } from '$lib/js/event_handlers'
+    import { handle_modal_close } from '$lib/js/event-handlers'
 
     modal_open_store.subscribe(setup_document_for_modal)
 
     const modal_map = {
         TokenSelect,
         VerifiedTokens,
-        SetSlippage
+        SetSlippage,
+        ConfirmSwap
     }
 
     function setup_document_for_modal(open_modal_store_value){
