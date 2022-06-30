@@ -114,6 +114,10 @@
     --checkbox-bg: transparent;
 }
 
+html{
+	width: 100%;
+}
+
 input,
 textarea,
 button,
@@ -124,7 +128,7 @@ a {
 
 body {
 	overflow-y: scroll;
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--background-color);
