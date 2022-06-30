@@ -5,7 +5,7 @@
 
 <div class="highlight panel flex col align-center">
     <img src="{temp_chart}" alt="temp_chart" />
-    <h3>{card_data.title}</h3>
+    <h2>{card_data.title}</h2>
 </div>
 
 <style>

@@ -1,6 +1,5 @@
 <script>
     import PoolsPageRemove from '$lib/pages/pools/PoolsPageRemove.svelte'
-
 </script>
 
 <svelte:head>

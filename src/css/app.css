@@ -56,6 +56,7 @@
 		--units-4_2vw: calc(4.2vw * var(--breakpoint-multiplier));
 		--units-4_5vw: calc(4.5vw * var(--breakpoint-multiplier));
 		--units-4_6vw: calc(4.6vw * var(--breakpoint-multiplier));
+		--units-4_7vw: calc(4.7vw * var(--breakpoint-multiplier));
 		--units-5vw: calc(5vw * var(--breakpoint-multiplier));
 		--units-5_5vw: calc(5.5vw * var(--breakpoint-multiplier));
 		--units-6vw: calc(6vw * var(--breakpoint-multiplier));
@@ -72,6 +73,7 @@
 		--units-29vw: calc(29vw * var(--breakpoint-multiplier));
 		--units-30vw: calc(30vw * var(--breakpoint-multiplier));
 		--units-34vw: calc(34vw * var(--breakpoint-multiplier));
+		--units-37vw: calc(37vw * var(--breakpoint-multiplier));
 
 	--primary-gradient: linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
 	--primary-gradient-webkit: -webkit-linear-gradient(95.08deg, #C5FFAA 2.49%, #00BAC6 97.19%);
@@ -159,7 +161,7 @@ h2{
 }
 
 h3{
-	font-size: var(--units-1_5vw);
+	font-size: var(--units-1vw);
 	font-weight: 300;
 }
 
@@ -458,6 +460,7 @@ img.sort-arrow.flip{
 		--units-4_2vw: 4.2vw;
 		--units-4_5vw: 4.5vw;
 		--units-4_6vw: 4.6vw;
+		--units-4_7vw: 4.7vw;
 		--units-5vw: 5vw;
 		--units-5_5vw: 5.5vw;
 		--units-6vw: 6vw;
@@ -474,6 +477,7 @@ img.sort-arrow.flip{
 		--units-29vw: 29vw;
 		--units-30vw: 30vw;
 		--units-34vw: 34vw;
+		--units-37vw: 37vw;
 	}
 }
 
@@ -529,6 +533,7 @@ img.sort-arrow.flip{
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2);
 		--units-4_5vw: calc(var(--unit-base-1vw) * 4.5);
 		--units-4_6vw: calc(var(--unit-base-1vw) * 4.6);
+		--units-4_7vw: calc(var(--unit-base-1vw) * 4.7);
 		--units-5vw: calc(var(--unit-base-1vw) * 5);
 		--units-5_5vw: calc(var(--unit-base-1vw) * 5.5);
 		--units-6vw: calc(var(--unit-base-1vw) * 6);
@@ -545,6 +550,7 @@ img.sort-arrow.flip{
 		--units-29vw: calc(var(--unit-base-1vw) * 29);
 		--units-45vw: calc(var(--unit-base-1vw) * 30);
 		--units-34vw: calc(var(--unit-base-1vw) * 34);
+		--units-37vw: calc(var(--unit-base-1vw) * 37);
 
 	}
 	body {
@@ -611,6 +617,7 @@ img.sort-arrow.flip{
 		--units-4_2vw: calc(var(--unit-base-1vw) * 4.2 * var(--breakpoint-multiplier));
 		--units-4_5vw: calc(var(--unit-base-1vw) * 4.5 * var(--breakpoint-multiplier));
 		--units-4_6vw: calc(var(--unit-base-1vw) * 4.6 * var(--breakpoint-multiplier));
+		--units-4_7vw: calc(var(--unit-base-1vw) * 4.7 * var(--breakpoint-multiplier));
 		--units-5vw: calc(var(--unit-base-1vw) * 5 * var(--breakpoint-multiplier));
 		--units-5_5vw: calc(var(--unit-base-1vw) * 5.5 * var(--breakpoint-multiplier));
 		--units-6vw: calc(var(--unit-base-1vw) * 6 * var(--breakpoint-multiplier));
@@ -627,6 +634,8 @@ img.sort-arrow.flip{
 		--units-29vw: calc(var(--unit-base-1vw) * 29 * var(--breakpoint-multiplier));
 		--units-30vw: calc(var(--unit-base-1vw) * 30 * var(--breakpoint-multiplier));
 		--units-34vw: calc(var(--unit-base-1vw) * 34 * var(--breakpoint-multiplier));
+		--units-37vw: calc(var(--unit-base-1vw) * 37 * var(--breakpoint-multiplier));
+
 
 	}
 	h2{
