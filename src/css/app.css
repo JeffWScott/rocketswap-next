@@ -173,14 +173,6 @@ a:visited{
 	color: var(--font-primary-color);
 }
 
-a {
-	color: var(--font-primary-color);
-	text-decoration: none;
-}
-a:hover{
-	text-decoration: underline;
-}
-
 .text-primary-color{
 	color: var(--primary-color);
 }
@@ -204,6 +196,14 @@ a:hover{
 	-webkit-text-fill-color: transparent;
 }
 
+a {
+	color: var(--font-primary-color);
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
 a.link-primary{
 	color: var(--primary-color);
 }
@@ -214,6 +214,15 @@ a.link-primary:visited{
 
 a.link-primary:hover{
 	color: var(--primary-color-dim);
+}
+
+a.link-primary.disabled{
+	color: var(--primary-color-dim);
+	pointer-events: none;
+}
+
+a.link-primary.disabled:hover{
+	text-decoration: none;
 }
 
 table{

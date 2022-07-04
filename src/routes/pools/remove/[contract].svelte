@@ -9,7 +9,8 @@
 	<title>Rocketswap Add Liquidity</title>
 </svelte:head>
 
-
-<div class="panel-page">
-    <PoolsPageRemove {token_info} />
-</div>
+{#if token_info}
+    <div class="panel-page">
+        <PoolsPageRemove {token_info} />
+    </div>
+{/if}

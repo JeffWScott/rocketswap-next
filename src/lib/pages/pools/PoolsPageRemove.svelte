@@ -17,7 +17,7 @@
 <h2>Remove Liquidity</h2>
 <div class="nav flex row">
     <a href="/pools" class="link-primary">Back</a>
-    <a href="/pools/add" class="link-primary">Add Liquidity</a>
+    <a href="{`/pools/add/${token_info.contract_name}`}" class="link-primary">Add Liquidity</a>
 </div>
 <div class="panel">
     <p class="title">Amount</p>

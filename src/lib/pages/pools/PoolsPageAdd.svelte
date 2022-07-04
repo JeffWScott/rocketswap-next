@@ -10,12 +10,17 @@
     // Images
     import icon_plus from '$lib/svg/plus.svg'
 
+    // Utils
+    import { window_history_set_pools_add_contract } from '$lib/js/page-utils.js'
+
     export let token_info = null
 
     $: selected_token = token_info
+    $: selected_token_contract_name = selected_token ? selected_token.contract_name : ""
 
     function set_selected_token(e){
         selected_token = e
+        window_history_set_pools_add_contract(selected_token.contract_name)
     }
 
     function handle_click(e){
@@ -29,7 +34,7 @@
 <h2>Add Liquidity</h2>
 <div class="nav flex row">
     <a href="/pools" class="link-primary">Back</a>
-    <a href="/pools/remove" class="link-primary">Remove Liquidity</a>
+    <a href="{`/pools/remove/${selected_token_contract_name}`}" class="link-primary" class:disabled={!selected_token}>Remove Liquidity</a>
 </div>
 <div class="panel">
     <p class="heading">Base</p>

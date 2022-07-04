@@ -8,9 +8,18 @@ export async function get({ params }) {
 		return mock_tokens[f].contract_name === contract
 	})
 
-	return {
-		body: {
-			token_info: mock_tokens[token_symbol]
-		}
-	};
+	const token_info = mock_tokens[token_symbol]
+
+	if (!token_info){
+		return {
+			headers: { Location: '/pools' },
+			status: 302
+		  }
+	}else{
+		return {
+			body: {
+				token_info: mock_tokens[token_symbol]
+			}
+		};
+	}
 }
