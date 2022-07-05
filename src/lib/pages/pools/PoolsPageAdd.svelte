@@ -12,6 +12,7 @@
 
     // Utils
     import { window_history_set_pools_add_contract } from '$lib/js/page-utils.js'
+    import { handle_open_confirm_add } from '$lib/pages/pools/pools-page-utils'
 
     export let token_info = null
 
@@ -70,7 +71,7 @@
         <p>0%: New share</p>
     </div>
 
-    <button class="outlined primary white"> 
+    <button class="outlined primary white" on:click={handle_open_confirm_add}> 
         <div>
             ADD SUPPLY
         </div>

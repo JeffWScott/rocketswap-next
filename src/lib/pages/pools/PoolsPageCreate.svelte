@@ -15,7 +15,11 @@
 
     export let token_info = null
 
+    let currency_amount = 0
+    let token_amount = 0
+
     $: selected_token = token_info
+    $: token_not_selected = !selected_token
 
     function set_selected_token(e){
         selected_token = e
@@ -27,6 +31,26 @@
             modal_name: "TokenSelect",
             callback: set_selected_token
         })
+    }
+
+    function handle_open_confirm_create(e){
+        handle_modal_open({
+            modal_name: "ConfirmPoolsCreate",
+            callback: () => console.log("confirm create"),
+            modal_data: {
+                token_info: selected_token,
+                currency_amount,
+                token_amount
+            }
+        })
+    }
+
+    function currency_amount_changed(e){
+        currency_amount = e.detail
+    }
+
+    function token_amount_changed(e){
+        token_amount = e.detail
     }
 </script>
 
@@ -44,7 +68,7 @@
             <p>Price 0.1510419 TAU per LUSD</p>
         </div>
         <div class="flex col">
-            <InputNumber />
+            <InputNumber on:change={currency_amount_changed}/>
             <p>Balance: 100 LUSD</p>
         </div>
     </div>
@@ -58,7 +82,7 @@
             <p>Price 0.1510419 TAU per LUSD</p>
         </div>
         <div class="flex col">
-            <InputNumber />
+            <InputNumber on:change={token_amount_changed}/>
             <p>Balance: 100 LUSD</p>
         </div>
     </div>
@@ -69,9 +93,13 @@
         <p>0.5 NEB per TAU</p>
     </div>
 
-    <button class="outlined primary white"> 
-        <div>
-            CREATE SUPPLY
+    <button class="outlined primary white" disabled={token_not_selected} on:click={handle_open_confirm_create}> 
+        <div >
+            {#if token_not_selected}
+                No Token Selected
+            {:else}
+                CREATE SUPPLY
+            {/if}  
         </div>
     </button>
 </div>

@@ -15,7 +15,7 @@
     
     // Utils
     import { component_key, component_state, key_string_value } from '$lib/js/misc-utils';
-    import { handle_goto_pools_add_liquidity, handle_goto_pools_create_liquidity, handle_goto_pools_remove_liquidity } from '$lib/pages/pools/pools-utils';
+    import { handle_goto_pools_add_liquidity, handle_goto_pools_create_liquidity, handle_goto_pools_remove_liquidity } from '$lib/pages/pools/pools-page-utils';
 
     // Stores
     import { pools_open } from '$lib/js/stores/component-state-stores';

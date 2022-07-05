@@ -6,6 +6,9 @@
     import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
     import SetSlippage from '$lib/modals/SetSlippage.svelte';
     import ConfirmSwap from '$lib/modals/ConfirmSwap.svelte';
+    import ConfirmPoolsAdd from '$lib/modals/ConfirmPoolsAdd.svelte';
+    import ConfirmPoolsCreate from '$lib/modals/ConfirmPoolsCreate.svelte';
+    import ConfirmPoolsRemove from '$lib/modals/ConfirmPoolsRemove.svelte';
 
     // Images
     import close_x from '$lib/svg/close-x.svg'
@@ -20,7 +23,10 @@
         TokenSelect,
         VerifiedTokens,
         SetSlippage,
-        ConfirmSwap
+        ConfirmSwap,
+        ConfirmPoolsAdd,
+        ConfirmPoolsCreate,
+        ConfirmPoolsRemove
     }
 
     function setup_document_for_modal(open_modal_store_value){

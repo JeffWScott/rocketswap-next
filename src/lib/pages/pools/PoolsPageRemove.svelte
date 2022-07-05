@@ -1,6 +1,9 @@
 <script>
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
+    
+    // Utils
+    import { handle_open_confirm_remove } from '$lib/pages/pools/pools-page-utils'
 
     export let token_info
 
@@ -64,7 +67,7 @@
         <p>1 TAU = 0.04002809 LUSD</p>
     </div>
 
-    <button class="remove outlined primary white"> 
+    <button class="remove outlined primary white" on:click={handle_open_confirm_remove}> 
         <div>
             REMOVE SUPPLY
         </div>

@@ -1,5 +1,15 @@
+<script>
+    import { createEventDispatcher } from 'svelte'
+
+    const dispatch = createEventDispatcher()
+
+    function handle_change(e){
+        dispatch('change', e.target.value)
+    }
+</script>
+
 <div >
-    <input class="number-input"  placeholder="0"/>
+    <input class="number-input"  placeholder="0" on:change={handle_change}/>
     <button class="text">max</button>
 </div>
 
