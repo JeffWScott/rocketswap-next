@@ -3,7 +3,7 @@
     import { currency_token } from '$lib/js/stores/token-stores'
     
     // Utils
-    import { handle_open_confirm_remove } from '$lib/pages/pools/pools-page-utils'
+    import { handle_modal_open } from '$lib/js/event-handlers'
 
     export let token_info
 
@@ -14,6 +14,16 @@
     }
     function change_input_percent(e){
         input_percent = e.target.getAttribute('percent')
+    }
+    function handle_open_confirm_remove(){
+        handle_modal_open({
+            modal_name: "ConfirmPoolsRemove",
+            callback: () => console.log("confirm remove"),
+            modal_data: {
+                token_info,
+                input_percent
+            }
+        })
     }
 </script>
 
@@ -106,6 +116,7 @@
     }
     .amount-buttons > button{
         width: fit-content;
+        margin: 0 var(--units-01vw) var(--units-04vw);
     }
     .amount-buttons > button > div{
         padding-left: var(--units-2vw);
@@ -180,6 +191,15 @@
         width: var(--units-2vw);
         height: var(--units-2vw);
         filter: brightness(120%);
+    }
+
+    @media (max-width: 480px) {
+        .panel{
+            min-width: unset;
+        }
+        .amount-buttons{
+            flex-wrap: wrap;
+        }
     }
 
 </style>

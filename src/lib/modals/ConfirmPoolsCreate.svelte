@@ -63,6 +63,7 @@
         margin: 0 auto;
         font-size: var(--units-1_1vw);
     }
+    
     img.icon{
         width: var(--units-2_5vw);
         margin-right: var(--units-2_5vw);

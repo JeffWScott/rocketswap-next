@@ -5,14 +5,13 @@
 
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
-    import { handle_modal_open } from '$lib/js/event-handlers'
 
     // Images
     import icon_plus from '$lib/svg/plus.svg'
 
     // Utils
     import { window_history_set_pools_add_contract } from '$lib/js/page-utils.js'
-    import { handle_open_confirm_add } from '$lib/pages/pools/pools-page-utils'
+    import { handle_modal_open } from '$lib/js/event-handlers'
 
     export let token_info = null
 
@@ -28,6 +27,15 @@
         handle_modal_open({
             modal_name: "TokenSelect",
             callback: set_selected_token
+        })
+    }
+    function handle_open_confirm_add(){
+        handle_modal_open({
+            modal_name: "ConfirmPoolsAdd",
+            callback: () => console.log("confirm add"),
+            modal_data: {
+                token_info: selected_token
+            }
         })
     }
 </script>
