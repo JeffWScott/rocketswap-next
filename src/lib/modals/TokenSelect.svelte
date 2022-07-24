@@ -1,6 +1,4 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-
     // Component
     import FilterSearch from '$lib/misc-components/FilterSearch.svelte';
 
@@ -46,7 +44,7 @@
             })
         }
 
-        return [...return_list, ...return_list] 
+        return return_list
     }
 
     function handle_select_token(e){
@@ -93,6 +91,14 @@
 <style>
     h2{
         align-self: flex-start;
+    }
+    .modal-content{
+        height: 100%;
+    }
+
+    .modal-content > h2{
+        align-self: flex-start;
+        margin-bottom: var(--units-2vw);
     }
     .switch{
         margin-bottom: var(--units-2vw);
@@ -141,7 +147,7 @@
         }
         .token-list{
             width: 100%;
-            font-size: var(--units-09vw);
+            font-size: var(--units-1vw);
         }
         .filters{
             width: 92%;

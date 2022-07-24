@@ -1,6 +1,8 @@
 <script>
     import { createEventDispatcher } from 'svelte'
 
+    export let value = ""
+
     const dispatch = createEventDispatcher()
 
     function handle_change(e){
@@ -9,7 +11,7 @@
 </script>
 
 <div >
-    <input class="number-input"  placeholder="0" on:change={handle_change}/>
+    <input class="number-input"  placeholder="0" value={value} on:change={handle_change}/>
     <button class="text">max</button>
 </div>
 

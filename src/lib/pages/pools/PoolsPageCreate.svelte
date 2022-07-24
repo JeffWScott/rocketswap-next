@@ -2,6 +2,8 @@
     // Components
     import TokenDisplay from "$lib/misc-components/TokenDisplay.svelte";
     import InputNumber from "$lib/inputs/InputNumber.svelte";
+    import TokenSelect from '$lib/modals/TokenSelect.svelte'
+    import ConfirmPoolsCreate from '$lib/modals/confirms/ConfirmPoolsCreate.svelte'
 
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
@@ -28,14 +30,14 @@
 
     function handle_click(e){
         handle_modal_open({
-            modal_name: "TokenSelect",
+            modal: TokenSelect,
             callback: set_selected_token
         })
     }
 
     function handle_open_confirm_create(e){
         handle_modal_open({
-            modal_name: "ConfirmPoolsCreate",
+            modal: ConfirmPoolsCreate,
             callback: () => console.log("confirm create"),
             modal_data: {
                 token_info: selected_token,

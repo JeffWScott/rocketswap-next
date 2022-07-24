@@ -1,14 +1,5 @@
 <script>
-    import { fade, fly } from 'svelte/transition';
-
-    //Components
-    import TokenSelect from '$lib/modals/TokenSelect.svelte';
-    import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
-    import SetSlippage from '$lib/modals/SetSlippage.svelte';
-    import ConfirmSwap from '$lib/modals/ConfirmSwap.svelte';
-    import ConfirmPoolsAdd from '$lib/modals/ConfirmPoolsAdd.svelte';
-    import ConfirmPoolsCreate from '$lib/modals/ConfirmPoolsCreate.svelte';
-    import ConfirmPoolsRemove from '$lib/modals/ConfirmPoolsRemove.svelte';
+    import { fly } from 'svelte/transition';
 
     // Images
     import close_x from '$lib/svg/close-x.svg'
@@ -18,16 +9,6 @@
     import { handle_modal_close } from '$lib/js/event-handlers'
 
     modal_open_store.subscribe(setup_document_for_modal)
-
-    const modal_map = {
-        TokenSelect,
-        VerifiedTokens,
-        SetSlippage,
-        ConfirmSwap,
-        ConfirmPoolsAdd,
-        ConfirmPoolsCreate,
-        ConfirmPoolsRemove
-    }
 
     function setup_document_for_modal(open_modal_store_value){
 
@@ -57,7 +38,7 @@
                     <img src={close_x} alt="close" />
                 </button>
                 
-                <svelte:component this={modal_map[$modal_open_store]} />
+                <svelte:component this={$modal_open_store} />
             </div>
         {/if}
     </div>

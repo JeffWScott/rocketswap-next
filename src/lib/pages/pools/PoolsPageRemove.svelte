@@ -1,4 +1,7 @@
 <script>
+    // Components
+    import ConfirmPoolsRemove from '$lib/modals/confirms/ConfirmPoolsRemove.svelte'
+
     // Stores
     import { currency_token } from '$lib/js/stores/token-stores'
     
@@ -17,7 +20,7 @@
     }
     function handle_open_confirm_remove(){
         handle_modal_open({
-            modal_name: "ConfirmPoolsRemove",
+            modal: ConfirmPoolsRemove,
             callback: () => console.log("confirm remove"),
             modal_data: {
                 token_info,

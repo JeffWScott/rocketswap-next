@@ -2,7 +2,7 @@
     {
         "staked_token": "JEFF",
         "earned_token": "WETH",
-        "apy": 28,
+        "apr": 28,
         "staked": 541.16426104,
         "earned": 10.00,
         "ends": 1655353865000
@@ -10,7 +10,7 @@
     {
         "staked_token": "RSWP",
         "earned_token": "TAU",
-        "apy": 10,
+        "apr": 10,
         "staked": 12.4,
         "earned": 1.12,
         "ends": 1654749065000
@@ -18,7 +18,7 @@
     {
         "staked_token": "NEB",
         "earned_token": "LUSD",
-        "apy": 125,
+        "apr": 125,
         "staked": 1221950.40,
         "earned": 911.12,
         "ends": 1659328265000
@@ -26,7 +26,7 @@
     {
         "staked_token": "WETH",
         "earned_token": "TAU",
-        "apy": 16,
+        "apr": 16,
         "staked": 89992.10,
         "earned": 1190.12,
         "ends": 1669354265000
@@ -34,7 +34,7 @@
     {
         "staked_token": "WETH",
         "earned_token": "TAU",
-        "apy": 450,
+        "apr": 450,
         "staked": 0,
         "earned": 0,
         "ends": 1673760665000
@@ -42,7 +42,7 @@
     {
         "staked_token": "TAU",
         "earned_token": "JEFF",
-        "apy": 230.5,
+        "apr": 230.5,
         "staked": 402.987,
         "earned": 72929800.9782367,
         "ends": 1651379465000

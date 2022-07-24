@@ -3,6 +3,8 @@
     import TokenDisplay from "$lib/misc-components/TokenDisplay.svelte";
     import SwapDetails from '$lib/pages/swap/SwapDetails.svelte';
     import InputNumber from '$lib/inputs/InputNumber.svelte';
+    import ConfirmSwap from '$lib/modals/confirms/ConfirmSwap.svelte'
+    import TokenSelect from '$lib/modals/TokenSelect.svelte'
 
     // Utils
     import { set_from_token_callback, set_to_token_callback } from '$lib/pages/swap/swap-page-utils.js'
@@ -24,14 +26,14 @@
         const position = e.detail
 
         handle_modal_open({
-            modal_name: "TokenSelect",
+            modal: TokenSelect,
             callback: position === "from" ? set_from_token_callback : set_to_token_callback
         })
     }
 
     function handle_confirm(){
         handle_modal_open({
-            modal_name: "ConfirmSwap",
+            modal: ConfirmSwap,
             callback: () => console.log("confirm")
         })
     }
