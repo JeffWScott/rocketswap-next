@@ -34,7 +34,7 @@
     }
 </script>
 
-{#if $staking_token && $earned_token}
+{#if $staking_token && $earned_token && $farm_info}
     <h2 class="modal-heading">Confirm Staking</h2>
     <div class="modal-content-confirm">
             <div class="modal-highlight-box">

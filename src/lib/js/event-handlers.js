@@ -8,6 +8,8 @@ import VerifiedTokens from '$lib/modals/info/VerifiedTokens.svelte';
 import ConfirmStakeAdd from '$lib/modals/confirms/ConfirmStakeAdd.svelte'
 import ConfirmStakeRemove from '$lib/modals/confirms/ConfirmStakeRemove.svelte'
 import ConfirmStakeWithdraw from '$lib/modals/confirms/ConfirmStakeWithdraw.svelte'
+import ConfirmFuelAdd from '$lib/modals/confirms/ConfirmFuelAdd.svelte'
+import ConfirmFuelRemove from '$lib/modals/confirms/ConfirmFuelRemove.svelte'
 
 export function handle_modal_open(args){
     console.log(args)
@@ -42,11 +44,11 @@ export function handle_goto_rswp_buy(){
     goto('/swap/con_rswp_lst001')
 }
 
-export function handle_open_confirm_stake_add(farm_info){
+export function handle_open_confirm_stake_add(fuel_amount){
     handle_modal_open({
         modal: ConfirmStakeAdd,
         modal_data: {
-            farm_info
+            fuel_amount
         },
         callback: () => console.log("staking add confirm callback")
     })
@@ -71,5 +73,24 @@ export function handle_open_confirm_stake_withdraw(farm_info){
         },
         callback: () => console.log("staking withdraw confirm callback")
     })
+}
 
+export function handle_open_confirm_fuel_add(fuel_amount){
+    handle_modal_open({
+        modal: ConfirmFuelAdd,
+        modal_data: {
+            fuel_amount
+        },
+        callback: () => console.log("fuel add confirm callback")
+    })
+}
+
+export function handle_open_confirm_fuel_remove(fuel_amount){
+    handle_modal_open({
+        modal: ConfirmFuelRemove,
+        modal_data: {
+            fuel_amount
+        },
+        callback: () => console.log("fuel add confirm callback")
+    })
 }

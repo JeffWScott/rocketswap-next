@@ -22,7 +22,7 @@
     })
 </script>
 
-{#if $token_info}
+{#if $token_info && $currency_amount && $token_amount}
     <h2 class="modal-heading">You are creating this pair</h2>
     <div class="modal-content-confirm">
             <div class="modal-highlight-box">
