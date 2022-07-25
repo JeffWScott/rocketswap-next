@@ -3,6 +3,7 @@
 
     // Components
     import TokenName from '$lib/misc-components/TokenName.svelte'
+    import TokenLogo from '$lib/misc-components/TokenLogo.svelte'
     import FilterSearch from '$lib/misc-components/FilterSearch.svelte';
     import FilterCheckbox from '$lib/misc-components/FilterCheckbox.svelte';
     import SetSort from '$lib/misc-components/SetSort.svelte';
@@ -86,7 +87,8 @@
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th class="sticky">#</th>
+                    <th class="sticky logo-row"></th>
                     <th>Name <SetSort {sort_store} sort_name={"token_name"} /></th>
                     <th>Price TAU <SetSort {sort_store} sort_name={"price"} /></th>
                     <th>24hr % <SetSort {sort_store} sort_name={"daily_price_change"} /></th>
@@ -99,9 +101,12 @@
                 {#if mock_token_details_filtered.length > 0}
                     {#each mock_token_details_filtered as token_details, index}
                         <tr>
-                            <td>{index + 1}</td>
+                            <td class="sticky">{index + 1}</td>
+                            <td class="sticky logo-row">
+                                <TokenLogo token_info={token_details} />
+                            </td>
                             <td>
-                                <TokenName token_info={token_details} />
+                                <TokenName token_info={token_details} show_logo={false}/>
                             </td>
                             <td>{token_details.price}</td>
                             <td class:text-red={is_negative(token_details.daily_price_change)} class:text-green={!is_negative(token_details.daily_price_change)}>{token_details.daily_price_change}%</td>
@@ -138,6 +143,17 @@
     @media (max-width: 480px) {
         img.chart{
             width: 15vw;
+        }
+        .sticky{
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            background-color: var(--panel-background-color);
+            padding-right: 5px;
+        }
+        .logo-row{
+            left: 43px;
+            z-index: 1;
         }
     }
 </style>
