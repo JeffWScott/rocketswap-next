@@ -10,10 +10,10 @@ import ConfirmStakeRemove from '$lib/modals/confirms/ConfirmStakeRemove.svelte'
 import ConfirmStakeWithdraw from '$lib/modals/confirms/ConfirmStakeWithdraw.svelte'
 import ConfirmFuelAdd from '$lib/modals/confirms/ConfirmFuelAdd.svelte'
 import ConfirmFuelRemove from '$lib/modals/confirms/ConfirmFuelRemove.svelte'
+import ConnectMain from '$lib/modals/wallet_connect/ConnectMain.svelte'
 
 export function handle_modal_open(args){
-    console.log(args)
-    const {modal, modal_name, modal_data = {}, callback = false} = args
+    const {modal, modal_data = {}, callback = false} = args
 
     modal_open_store.set(modal)
     modal_data_store.set(modal_data)
@@ -22,8 +22,8 @@ export function handle_modal_open(args){
 
 export function handle_modal_close(){
     modal_open_store.set(false)
-    // modal_data_store.set({})
-    // modal_callback.set(false)
+    modal_data_store.set({})
+    modal_callback.set(false)
 }
 
 export function handle_modal_callback(){
@@ -92,5 +92,11 @@ export function handle_open_confirm_fuel_remove(fuel_amount){
             fuel_amount
         },
         callback: () => console.log("fuel add confirm callback")
+    })
+}
+
+export function open_connect_main(){
+    handle_modal_open({
+        modal: ConnectMain
     })
 }

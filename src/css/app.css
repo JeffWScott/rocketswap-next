@@ -721,12 +721,17 @@ img.sort-arrow.flip{
 		font-size: var(--units-2vw);
 	}
 
+	.modal-content{
+		overflow-y: scroll;
+	}
+
 	.modal-content-confirm{
 		margin: 0;
 		width: 100%;
 		font-size: var(--units-1_4vw);
 		display: flex;
 		flex-direction: column;
+		overflow-y: scroll;
 	}
 	.modal-content > img.hero{
 		width: 9vh;

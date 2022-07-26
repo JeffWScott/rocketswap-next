@@ -4,17 +4,20 @@
 
     // Utils
     import { close_menu } from '$lib/mobile-menu/menu-functions'
-
-    // Services
-    import { connect_wallet, disconnect_wallet } from '$lib/js/services/wallet.service'
+    import { open_connect_main } from '$lib/js/event-handlers'
 
     // Stores
     import { wallet_connected } from '$lib/js/stores/user-stores'
 
+    // Services
+    import { disconnect_wallet } from '$lib/js/services/wallet.service'
+
     function handle_click(){
-        if ($wallet_connected) disconnect_wallet()
-        else connect_wallet()
         close_menu()
+        if ($wallet_connected) disconnect_wallet()
+        else{
+            open_connect_main()
+        }
     }
 
 </script>
